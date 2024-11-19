@@ -1,0 +1,129 @@
+
+
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    color:var(--green-primary);
+    background-color: var(--green-primary);
+}
+
+/* Colour Paltte */
+:root{
+    --green-primary: #3ea74a;
+    --yellow: yellow;
+    --blue: rgb(61, 168, 255);
+    --orange: #ff9b06;
+    --grey-light: #f0f5f7;
+}
+
+/* Body and Main Container */
+
+.container{
+    max-width: 1200px;
+    margin:0 auto;
+    padding: 20px;
+}
+
+/* Header Styling */
+header{
+    background-color: var(--green-primary);
+    color: white;
+    padding: 20px 0;
+    text-align: left;
+}
+
+
+header ul{
+    list-style-type: none;
+    margin: 0;
+    padding:0;
+    overflow: hidden;
+    background-color: var(--orange);
+}
+header li{
+    float: left;
+}
+
+header li a{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+header li a:hover{
+    background-color: var(--grey-light);
+}
+
+/* Buttons TBC */
+
+/* Section Styling */
+section{
+    margin: 20px 0;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Links */
+a{
+    color: var(--orange);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover{
+    color: var(white);
+}
+
+
+/* Footer Styling */
+footer{
+    background-color: var(--green-primary);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: var(--orange);
+    text-decoration: underline;
+}
+
+footer a:hover{
+    color: white;
+}
+
+
+
+
+
+
+/* Responsive Design */
+@media (max-width: 768px){
+    header h1{
+        font-size: 2rem;
+    }
+
+    .container{
+        padding{
+            padding: 10px;
+        }
+    }
+
+    section h2{
+        font-size: 1.5rem;
+    }
+}
