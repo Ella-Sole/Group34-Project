@@ -3,8 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width. initial-scale = 1.0">
-        <title>Login Page</title>
-        <link rel="stylesheet" href="style.css"> <!-- Link to CSS File-->
+        <title>Contact Us</title>
+        <link rel="stylesheet" href="../CSS/style.css"> <!-- Link to CSS File-->
     </head>
 
     <body>
@@ -12,7 +12,7 @@
         <!-- Header Section-->
          <header>
             <div class="LOGO">
-                <h1> RetroXchange</h1> <!-- Placeholder for Logo-->
+                <img src="Images/logo.png" alt="LOGO"/> 
             </div>
 
             <!-- Navigation Bar-->
@@ -24,32 +24,33 @@
                             
                 </ul>
             </nav>
-
-            <h1> Log In </h1><br>
-
+            <h1> Contact Us </h1><br>
          </header>
 
          <!-- Main Content-->
          <main>
-           <!-- Form Section-->
-           <section class="login-form-section">
+            <!-- Form Section-->
+           <section class="contact-us-form-section">
+            <form>
+                <lablel for="name"> Full Name:</lablel><br>
+                <input type="text" id="name" name="name"><br>
 
                 <label for="email address"> Email Address:</label><br>
-                <input type="text" id="email" name="email"><br>
+                <input type="text" id="email" name="email"> <br>
 
-                <label for="password">Password</label><br>
-                <input type="password" id="password" name="password"><br>
+                <textarea id="query" name="query" rows="10" cols="50"> 
 
-                <input type="submit" value="login" >
-
+                </textarea> <br>
+                <input type="submit" value="submit">
+            </form>
            </section>
 
-           <!--Image Section-->
+           <!-- Image Section-->
            <section class="image-section">
                 <div class="image">
-                    <img src="example1" style="width:200px">
+                    <img src="example3" style="width:200px">
                 </div>
-            </section>
+           </section>
          </main>
          
                
