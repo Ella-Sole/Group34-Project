@@ -27,8 +27,8 @@
 
             <h1> Home </h1><br>
             <!-- Login and Sign in links-->
-             <a href="LoginPage.html"> Login</a>
-             <a href="SignUp.html"> Sign Up</a>
+             <a href="{{ url('/login') }}"> Login</a>
+             <a href="{{ url('/signup') }}"> Sign Up</a>
          </header>
          <main>
             <!-- Image Slideshow-->
