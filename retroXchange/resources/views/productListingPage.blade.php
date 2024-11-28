@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width. initial-scale = 1.0">
-        <link rel="stylesheet" type="text/css" href="{{ url('/style.css') }}" /> <!-- Link to CSS File-->
+        <link rel="stylesheet" href="style.css"> <!-- Link to CSS File-->
         <title>Products</title>
     </head>
 
@@ -17,9 +17,9 @@
                 <li><div class="LOGO">
                         <img src="RetroXchange-Logo.png" alt="RetroXchange"
                         style="width:100px;height:100px;"></div></li>
-                    <li> <a href="{{ url('/home') }}"> Home</a></li>
-                    <li> <a href="{{ url('/about') }}">About Us </a></li>
-                    <li> <a href="{{ url('/contact') }}"> Contact Us</a></li>  
+                <li> <a href="Homepage.html"> Home</a></li>
+                <li> <a href="AboutUs.html">About Us </a></li>
+                <li> <a href="ContactUs.html"> Contact Us</a></li>
             </ul>
         </nav>
          </header>
@@ -139,17 +139,47 @@
                             <button class="basket"><img src="basket-icon.png" style="height: 25px; width: 25px;"></button>
                         </div>
                     </div>
+
+                     <!-- Product 9 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                        <img src="overwatch.jpg" class="product-thumbnail" alt="">
+                    </div>
+                    <div class="product-info">
+                         <p class="product-brand">Playstation4 games</p>
+                        <h2 class="product-short-description">Overwatch</h2>
+                        <span class="price">£12</span>
+                        <button class="basket"><img src="basket-icon.png" style="height: 25px; width: 25px;"></button>
+                     </div>
+                    </div>
+
+                    <!-- Product 10 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="Wii-Sports.jpg" class="product-thumbnail" alt="">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-brand">Wii Console Games</p>
+                            <h2 class="product-short-description">Wii Sports</h2>
+                            <span class="price">£30</span>
+                            <button class="basket"><img src="basket-icon.png" style="height: 25px; width: 25px;"></button>
+                        </div>
+                    </div>
+
+
                 </div>
             </section>
 
          <!-- Consoles   -->
-          <!--
+          
          <section class="product"> 
             <h2 class="product-category">Consoles</h2>
             <button class="pre-btn"><img src="arrow-button.png" alt="back-button"></button>
             <button class="nxt-btn"><img src="arrow-button.png" alt="fwd-button"></button>
          <div>
             <div class="product-container">
+
+                <!-- Product 11 -->
             <div class="product-card">
                 <div class="product-image">
                     <img src="Nintendo_switch.jpg" class="product-thumbnail" alt="">
@@ -161,7 +191,7 @@
                     <button class="basket"><img src="basket-icon.png" alt="" style="width:20px; height:20px"></button>
                 </div>
             </div>
-
+            <!-- Product 12 -->
             <div class="product-card">
                 <div class="product-image">
                     <img src="ps4_black_unboxed.jpg" class="product-thumbnail" alt="">
@@ -173,7 +203,7 @@
                     <button class="basket"><img src="basket-icon.png" alt="" style="width:20px; height:20px"></button>
                 </div>
             </div>
-
+            <!-- Product 13 -->
             <div class="product-card">
                 <div class="product-image">
                     <img src="ps5_white_boxed.jpg" class="product-thumbnail" alt="">
@@ -185,7 +215,7 @@
                     <button class="basket"><img src="basket-icon.png" alt="" style="width:20px; height:20px"></button>
                 </div>
             </div>
-
+            <!-- Product 14 -->
             <div class="product-card">
                 <div class="product-image">
                     <img src="ps5_white_unboxed.jpg" class="product-thumbnail" alt="">
@@ -197,7 +227,7 @@
                     <button class="basket"><img src="basket-icon.png" alt="" style="width:20px; height:20px"></button>
                 </div>
             </div>
-
+            <!-- Product 15 -->
             <div class="product-card">
                 <div class="product-image">
                     <img src="xbox_seriesX.jpg" class="product-thumbnail" alt="">
@@ -209,7 +239,7 @@
                     <button class="basket"><img src="basket-icon.png" alt="" style="width:20px; height:20px"></button>
                 </div>
             </div>
-
+            <!-- Product 16 -->
             <div class="product-card">
                 <div class="product-image">
                     <img src="xbox_seriesS.jpg" class="product-thumbnail" alt="">
@@ -221,7 +251,7 @@
                     <button class="basket"><img src="basket-icon.png" alt="" style="width:20px; height:20px"></button>
                 </div>
             </div>
-
+            <!-- Product 17 -->
             <div class="product-card">
                 <div class="product-image">
                     <img src="ps4_black_controller.jpg" class="product-thumbnail" alt="">
@@ -233,7 +263,7 @@
                     <button class="basket"><img src="basket-icon.png" alt="" style="width:20px; height:20px"></button>
                 </div>
             </div>
-        
+             <!-- Product 18 -->
             <div class="product-card">
                 <div class="product-image">
                     <img src="xbox_controller.jpg" class="product-thumbnail" alt="">
@@ -245,11 +275,38 @@
                     <button class="basket"><img src="basket-icon.png" alt="" style="width:20px; height:20px"></button>
                 </div>
             </div>
+
+            <!-- Product 19 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="ps4-controller-red-accessory.webp" class="product-thumbnail" alt="">
+                </div>
+                <div class="product-info">
+                <p class="product-brand">Xbox Accessories</p>
+                                <h2 class="product-short-description">Xbox Controller, Red</h2>
+                                <span class="price">£48</span>
+                                <button class="basket"><img src="basket-icon.png" alt="" style="width:20px; height:20px"></button>
+                            </div>
+                        </div>
+
+            <!-- Product 20 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="xbox_360.jpg" class="product-thumbnail" alt="">
+                </div>
+                <div class="product-info">
+                    <p class="product-brand">Xbox Consoles</p>
+                    <h2 class="product-short-description">Xbox360 500GB</h2>
+                    <span class="price">£200</span>
+                    <button class="basket"><img src="basket-icon.png" alt="" style="width:20px; height:20px"></button>
+                </div>
+            </div>
         </div>
          </div>
     </section>
--->
-         <script src = "{{ asset('/script.js') }}"></script>
+
+
+         <script src = "script.js"></script>
         </main>
     </body>
 </html>
