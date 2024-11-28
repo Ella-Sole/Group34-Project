@@ -22,7 +22,7 @@ COLORS:
     height: 4rem;
 
     grid-template-columns: 2fr 2fr 48fr 2fr;
-    grid-template-rows: 1fr 4fr;
+    grid-template-rows: 4fr 2fr;
     column-gap: 0.2rem;
     grid-column: 2;
 }
@@ -31,6 +31,9 @@ COLORS:
     display: flex;
     justify-content: center;
     align-self: center;
+
+    padding-top: 8px;
+    padding-bottom: 8px;
 }
 
 .side-menu:hover {
@@ -39,6 +42,7 @@ COLORS:
     align-self: center;
 
     background-color: #52734D;
+    flex: 1;
 }
 
 .retroxchange-logo {
@@ -83,6 +87,9 @@ COLORS:
     display: flex;
     justify-content: center;
     align-self: center;
+
+    padding-top: 8px;
+    padding-bottom: 8px;
 }
 
 .login-icon:hover {
@@ -123,10 +130,10 @@ COLORS:
 }
 
 .navbar-item:hover {
-    background-color: #52734D;
+    background-color: #91C788;
 }
 
-svg {
+header > div {
     gap: 0;
     margin: 0;
     padding: 0;
