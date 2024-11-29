@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+//add use of arr functions
+use Illuminate\Support\Arr;
+//put in use app\Models\modelName; maybe (e.g. Product)
 
 Route::get('/', function () {
     return view('welcome');
@@ -52,3 +55,8 @@ Route::get('/shoppingbaskettable', function(){
 Route::get('/products', function(){
     return view('productListingPage');
 });
+
+//first make database migrations and models
+//make the controllers for the products page
+//have singular product page that use wildcards for product id
+//use controller to get this database info into variables
