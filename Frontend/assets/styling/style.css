@@ -7,6 +7,12 @@ COLORS:
 
 */
 
+* {
+    font-family: "Audiowide", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
 .frontpage-grid {
     display: grid;
 
@@ -21,7 +27,7 @@ COLORS:
 
     height: 4rem;
 
-    grid-template-columns: 2fr 2fr 48fr 2fr;
+    grid-template-columns: 2fr 2fr 46fr 2fr 2fr;
     grid-template-rows: 4fr 2fr;
     column-gap: 0.2rem;
     grid-column: 2;
@@ -92,6 +98,23 @@ COLORS:
     padding-bottom: 8px;
 }
 
+.basket-icon {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+
+    padding-top: 12px;
+    padding-bottom: 12px;
+} 
+
+.basket-icon:hover {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+
+    background-color: #52734D;
+}
+
 .login-icon:hover {
     display: flex;
     justify-content: center;
@@ -103,7 +126,7 @@ COLORS:
 .navigation-bar-gridbox {
     display: flex;
     background-color: #DDFFBC;
-    grid-column: 1 / span 4;
+    grid-column: 1 / span 5;
 
     justify-content: center;
     align-self: center;
@@ -136,7 +159,7 @@ COLORS:
 .about-us-body {
     display: grid;
     grid-template-columns: 1fr 5fr 5fr 1fr;
-    grid-template-rows: 1fr 15fr 10fr 4fr 1fr 5fr 1fr;
+    grid-template-rows: 1fr 10fr 8fr 2fr 1fr 5fr 1fr;
 
     gap: 1rem;
 }
@@ -151,7 +174,7 @@ COLORS:
 }
 
 .about-us-logo > img {
-    width: 20rem;
+    width: 25rem;
     height: auto;
 }
 
