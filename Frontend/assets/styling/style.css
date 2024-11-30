@@ -13,24 +13,25 @@ COLORS:
     font-style: normal;
 }
 
-.frontpage-grid {
-    display: grid;
-
-    grid-template-columns: 1fr;
-    grid-template-rows: 5fr 1fr 28fr;
+.background {
+    background-color: #FEFFDE;
 }
 
+.index-page-layout {
+    display: grid;
+
+    grid-template-rows: 1fr 5fr 5fr 5fr 1fr;
+}
 
 .header-grid-layout {
     display: grid;
     background-color: #91C788;
 
-    height: 4rem;
-
     grid-template-columns: 2fr 2fr 46fr 2fr 2fr;
     grid-template-rows: 4fr 2fr;
     column-gap: 0.2rem;
-    grid-column: 2;
+
+    grid-row: 1;
 }
 
 .side-menu {
@@ -38,8 +39,11 @@ COLORS:
     justify-content: center;
     align-self: center;
 
-    padding-top: 8px;
-    padding-bottom: 8px;
+    padding-top: 11px;
+    padding-bottom: 11px;
+
+    grid-row: 1;
+    grid-column: 1;
 }
 
 .side-menu:hover {
@@ -49,6 +53,8 @@ COLORS:
 
     background-color: #52734D;
     flex: 1;
+    grid-row: 1;
+    grid-column: 1;
 }
 
 .retroxchange-logo {
@@ -60,20 +66,18 @@ COLORS:
     display: flex;
     justify-content: center;
     align-self: center;
-}
 
-.background {
-    background-color: #FEFFDE;
-}
-
-.homepage-grid {
-    display: grid;
+    grid-row: 1;
+    grid-column: 2;
 }
 
 .search-bar-placement {
     display: flex;
     justify-content: center;
     align-self: center;
+
+    grid-row: 1;
+    grid-column: 3;
 }
 
 .search-bar-temp {
@@ -94,8 +98,11 @@ COLORS:
     justify-content: center;
     align-self: center;
 
-    padding-top: 8px;
-    padding-bottom: 8px;
+    padding-top: 11px;
+    padding-bottom: 11px;
+
+    grid-row: 1;
+    grid-column: 5;
 }
 
 .basket-icon {
@@ -103,9 +110,12 @@ COLORS:
     justify-content: center;
     align-self: center;
 
-    padding-top: 12px;
-    padding-bottom: 12px;
-} 
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    grid-row: 1;
+    grid-column: 4;
+}
 
 .basket-icon:hover {
     display: flex;
@@ -113,6 +123,9 @@ COLORS:
     align-self: center;
 
     background-color: #52734D;
+
+    grid-row: 1;
+    grid-column: 4;
 }
 
 .login-icon:hover {
@@ -121,9 +134,12 @@ COLORS:
     align-self: center;
 
     background-color: #52734D;
+
+    grid-row: 1;
+    grid-column: 5;
 }
 
-.navigation-bar-gridbox {
+.navigation-bar-flexbox {
     display: flex;
     background-color: #DDFFBC;
     grid-column: 1 / span 5;
@@ -131,11 +147,13 @@ COLORS:
     justify-content: center;
     align-self: center;
     flex: 1;
+
+    grid-row: 2;
+    grid-column: 1 / span 5;
 }
 
 .navigation-bar {
     display: flex;
-
 }
 
 .navigation-bar > div > a {
