@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Arr;
 //allow use of the Product model
 use App\Models\Product;
+//allow use of Product controller
+use App\Http\Controllers\ProductController;
 
 Route::get('/', function () {
     return view('welcome');
