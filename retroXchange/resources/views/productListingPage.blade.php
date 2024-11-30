@@ -37,20 +37,29 @@
 
                     <!-- Product 1 -->
                     <!-- class that holds individual products-->
-                    <div class="product-card">
-                        <div class="product-image">
-                            <img src="{{asset('images/fifa21.jpg')}}" class="product-thumbnail" alt="">
+                     <!--loop through the array $products, each element being a variable $product-->
+                     @foreach($products as $product)
+                        <div class="product-card">
+                            <div class="product-image">
+                                <!--make image location point to image named with same item ID-->
+                                <img src="{{asset('images/'.$product->item_id.'.jpg')}}" class="product-thumbnail" alt="">
+                            </div>
+                            <div class="product-info"> <!--product info from database -->
+                                <p class="product-brand">{{ $product['category'] }}</p> <!-- Category -->
+                                <h2 class="product-short-description">{{ $product['item_name'] }}</h2> <!--*should be title here-->
+                                <span class="price">£{{ $product['item_price'] }}</span> <!-- price -->
+                                <!--make the button send this products info into basket-->
+                                <!-- temporarily just redirects to basket page-->
+                                 <a href = "{{url('/basket')}}">
+                                <button class="basket"><img src="{{asset('images/basket-icon.png')}}" alt="" style="height: 25px; width: 25px;"></button>
+                                </a>
+                            </div>
                         </div>
-                        <div class="product-info">
-                            <p class="product-brand">PlayStation4 Games</p>
-                            <h2 class="product-short-description">EA Sports Fifa 21</h2>
-                            <span class="price">£2</span>
-                            <button class="basket"><img src="{{asset('images/basket-icon.png')}}" alt="" style="height: 25px; width: 25px;"></button>
-                        </div>
-                    </div>
-            
+                    @endforeach
+
+                    <!--commented out the extra frontend code:-->
                     <!-- Product 2 ******-->
-                    <div class="product-card">
+                    <!--<div class="product-card">
                         <div class="product-image">
                             <img src="LastOfUsRemastered.webp" class="product-thumbnail" alt="">
                         </div>
@@ -60,10 +69,10 @@
                             <span class="price">£10</span>
                             <button class="basket"><img src="{{asset('images/basket-icon.png')}}" alt="" style="height: 25px; width: 25px;"></button>
                         </div>
-                    </div>
+                    </div> -->
             
                     <!-- Product 3 -->
-                    <div class="product-card">
+                    <!--<div class="product-card">
                         <div class="product-image">
                             <img src="{{asset('images/super_mario.jpg')}}" class="product-thumbnail" alt="">
                         </div>
@@ -73,10 +82,10 @@
                             <span class="price">£20</span>
                             <button class="basket"><img src="{{asset('images/basket-icon.png')}}" alt="" style="height: 25px; width: 25px;"></button>
                         </div>
-                    </div>
+                    </div> -->
             
                     <!-- Product 4 -->
-                    <div class="product-card">
+                    <!--<div class="product-card">
                         <div class="product-image">
                             <img src="{{asset('images/Zelda.jpg')}}" class="product-thumbnail" alt="">
                         </div>
@@ -86,10 +95,10 @@
                             <span class="price">£13</span>
                             <button class="basket"><img src="{{asset('images/basket-icon.png')}}" alt="" style="height: 25px; width: 25px;"></button>
                         </div>
-                    </div>
+                    </div> -->
             
                     <!-- Product  5 -->
-                    <div class="product-card">
+                    <!--<div class="product-card">
                         <div class="product-image">
                             <img src="{{asset('images/Red_Dead_Redemption.jpg')}}" class="product-thumbnail" alt="">
                         </div>
@@ -99,10 +108,10 @@
                             <span class="price">£25</span>
                             <button class="basket"><img src="{{asset('images/basket-icon.png')}}" alt="" style="height: 25px; width: 25px;"></button>
                         </div>
-                    </div>
+                    </div>-->
             
                     <!-- Product 6 -->
-                    <div class="product-card">
+                    <!--<div class="product-card">
                         <div class="product-image">
                             <img src="{{asset('images/gta.jpg')}}" class="product-thumbnail" alt="">
                         </div>
@@ -112,10 +121,10 @@
                             <span class="price">£15</span>
                             <button class="basket"><img src="{{asset('images/basket-icon.png')}}" alt="" style="height: 25px; width: 25px;"></button>
                         </div>
-                    </div>
+                    </div> -->
             
                     <!-- Product 7 -->
-                    <div class="product-card">
+                    <!--<div class="product-card">
                         <div class="product-image">
                             <img src="{{asset('images/fallout.jpg')}}" class="product-thumbnail" alt="">
                         </div>
@@ -125,10 +134,10 @@
                             <span class="price">£4</span>
                             <button class="basket"><img src="{{asset('images/basket-icon.png')}}" alt=" "style="height: 25px; width: 25px;"></button>
                         </div>
-                    </div>
+                    </div>-->
             
                     <!-- Product 8 -->
-                    <div class="product-card">
+                    <!--<div class="product-card">
                         <div class="product-image">
                             <img src="{{asset('images/animal_crossing.jpg')}}" class="product-thumbnail" alt="">
                         </div>
@@ -138,10 +147,10 @@
                             <span class="price">£30</span>
                             <button class="basket"><img src="{{asset('images/basket-icon.png')}}" style="height: 25px; width: 25px;"></button>
                         </div>
-                    </div>
+                    </div>-->
 
                      <!-- Product 9 -->
-                    <div class="product-card">
+                    <!--<div class="product-card">
                         <div class="product-image">
                         <img src="{{asset('images/overwatch.jpg')}}" class="product-thumbnail" alt="">
                     </div>
@@ -151,10 +160,10 @@
                         <span class="price">£12</span>
                         <button class="basket"><img src="{{asset('images/basket-icon.png')}}" style="height: 25px; width: 25px;"></button>
                      </div>
-                    </div>
+                    </div>-->
 
                     <!-- Product 10 -->
-                    <div class="product-card">
+                    <!--<div class="product-card">
                         <div class="product-image">
                             <img src="{{asset('images/Wii-Sports.jpg')}}" class="product-thumbnail" alt="">
                         </div>
@@ -164,7 +173,7 @@
                             <span class="price">£30</span>
                             <button class="basket"><img src="{{asset('images/basket-icon.png')}}" style="height: 25px; width: 25px;"></button>
                         </div>
-                    </div>
+                    </div>-->
 
 
                 </div>
@@ -172,15 +181,15 @@
 
          <!-- Consoles   -->
           
-         <section class="product"> 
+         <!--<section class="product"> 
             <h2 class="product-category">Consoles</h2>
             <button class="pre-btn"><img src="{{asset('images/arrow-button.png')}}" alt="back-button"></button>
             <button class="nxt-btn"><img src="{{asset('images/arrow-button.png')}}" alt="fwd-button"></button>
          <div>
-            <div class="product-container">
+            <div class="product-container"> -->
 
                 <!-- Product 11 -->
-            <div class="product-card">
+            <!--<div class="product-card">
                 <div class="product-image">
                     <img src="{{asset('images/Nintendo_switch.jpg')}}" class="product-thumbnail" alt="">
                 </div>
@@ -190,9 +199,9 @@
                     <span class="price">£200</span>
                     <button class="basket"><img src="{{asset('images/basket-icon.png')}}" alt="" style="width:20px; height:20px"></button>
                 </div>
-            </div>
+            </div> -->
             <!-- Product 12 ******-->
-            <div class="product-card">
+            <!--<div class="product-card">
                 <div class="product-image">
                     <img src="ps4_black_unboxed.jpg" class="product-thumbnail" alt="">
                 </div>
@@ -202,9 +211,9 @@
                     <span class="price">£210</span>
                     <button class="basket"><img src="{{asset('images/basket-icon.png')}}" alt="" style="width:20px; height:20px"></button>
                 </div>
-            </div>
+            </div>-->
             <!-- Product 13 *****-->
-            <div class="product-card">
+            <!--<div class="product-card">
                 <div class="product-image">
                     <img src="ps5_white_boxed.jpg" class="product-thumbnail" alt="">
                 </div>
@@ -214,9 +223,9 @@
                     <span class="price">£400</span>
                     <button class="basket"><img src="basket-icon.png" alt="" style="width:20px; height:20px"></button>
                 </div>
-            </div>
+            </div>-->
             <!-- Product 14 -->
-            <div class="product-card">
+            <!--<div class="product-card">
                 <div class="product-image">
                     <img src="{{asset('images/ps5_white_unboxed.jpg')}}" class="product-thumbnail" alt="">
                 </div>
@@ -226,9 +235,9 @@
                     <span class="price">£350</span>
                     <button class="basket"><img src="{{asset('images/basket-icon.png')}}" alt="" style="width:20px; height:20px"></button>
                 </div>
-            </div>
+            </div>-->
             <!-- Product 15 -->
-            <div class="product-card">
+            <!--<div class="product-card">
                 <div class="product-image">
                     <img src="{{asset('images/xbox_seriesX.jpg')}}" class="product-thumbnail" alt="">
                 </div>
@@ -238,9 +247,9 @@
                     <span class="price">£220</span>
                     <button class="basket"><img src="{{asset('images/basket-icon.png')}}" alt="" style="width:20px; height:20px"></button>
                 </div>
-            </div>
+            </div>-->
             <!-- Product 16 -->
-            <div class="product-card">
+            <!--<div class="product-card">
                 <div class="product-image">
                     <img src="{{asset('images/xbox_seriesS.jpg')}}" class="product-thumbnail" alt="">
                 </div>
@@ -250,9 +259,9 @@
                     <span class="price">£320</span>
                     <button class="basket"><img src="{{asset('images/basket-icon.png')}}" alt="" style="width:20px; height:20px"></button>
                 </div>
-            </div>
+            </div>-->
             <!-- Product 17 *****-->
-            <div class="product-card">
+           <!-- <div class="product-card">
                 <div class="product-image">
                     <img src="ps4_black_controller.jpg" class="product-thumbnail" alt="">
                 </div>
@@ -262,9 +271,9 @@
                     <span class="price">£50</span>
                     <button class="basket"><img src="{{asset('images/basket-icon.png')}}" alt="" style="width:20px; height:20px"></button>
                 </div>
-            </div>
+            </div>-->
              <!-- Product 18 -->
-            <div class="product-card">
+            <!--<div class="product-card">
                 <div class="product-image">
                     <img src="{{asset('images/xbox_controller.jpg')}}" class="product-thumbnail" alt="">
                 </div>
@@ -274,10 +283,10 @@
                     <span class="price">£48</span>
                     <button class="basket"><img src="{{asset('images/basket-icon.png')}}" alt="" style="width:20px; height:20px"></button>
                 </div>
-            </div>
+            </div>-->
 
             <!-- Product 19 ****-->
-            <div class="product-card">
+            <!--<div class="product-card">
                 <div class="product-image">
                     <img src="ps4-controller-red-accessory.webp" class="product-thumbnail" alt="">
                 </div>
@@ -287,10 +296,10 @@
                                 <span class="price">£48</span>
                                 <button class="basket"><img src="{{asset('images/basket-icon.png')}}" alt="" style="width:20px; height:20px"></button>
                             </div>
-                        </div>
+                        </div>-->
 
             <!-- Product 20 -->
-            <div class="product-card">
+            <!--<div class="product-card">
                 <div class="product-image">
                     <img src="{{asset('images/xbox_360.jpg')}}" class="product-thumbnail" alt="">
                 </div>
@@ -301,9 +310,9 @@
                     <button class="basket"><img src="{{asset('images/basket-icon.png')}}" alt="" style="width:20px; height:20px"></button>
                 </div>
             </div>
-        </div>
+            </div> 
          </div>
-    </section>
+    </section>-->
 
 
          <script src = "{{asset('/script.js')}}"></script>

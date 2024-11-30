@@ -10,9 +10,9 @@ class PurchaseHistory extends Model
     protected $table = 'purchase_history';
 
     //for safety precautions define which attributes can be fillable/set when data is input
-    protected $fillable = [
-        'purchased_item',
-        'date_of_purchase',
-        'purchase_status'
-    ];
+    // protected $fillable = [
+    //     'purchased_item',
+    //     'date_of_purchase',
+    //     'purchase_status'
+    // ];
 }

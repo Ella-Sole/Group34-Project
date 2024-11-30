@@ -3,7 +3,8 @@
 use Illuminate\Support\Facades\Route;
 //add use of arr functions
 use Illuminate\Support\Arr;
-//put in use app\Models\modelName; maybe (e.g. Product)
+//allow use of the Product model
+use App\Models\Product;
 
 Route::get('/', function () {
     return view('welcome');
@@ -48,15 +49,19 @@ Route::get('/previousorderstable', function(){
     return view('previousOrdersTable');
 });
 
-Route::get('/shoppingbaskettable', function(){
+//basket page maybe has an array that stores products across a user's session
+//when check out is done, array is emptied, and purchase history in DB is updated with the array's values
+Route::get('/basket', function(){
     return view('shoppingBasketTable');
 });
 
 Route::get('/products', function(){
-    return view('productListingPage');
+
+    return view('productListingPage', [
+        //fetch all the product rows data from the Product Model and put into an array 'products'
+        //this variable will be passed into the view to be used
+        'products' => Product::all()
+    ]);
 });
 
-//first make database migrations and models
-//make the controllers for the products page
-//have singular product page that use wildcards for product id
-//use controller to get this database info into variables
+//make page for individual products that has product id passed into it
