@@ -49,10 +49,12 @@
                                 <h2 class="product-short-description">{{ $product['item_name'] }}</h2> <!--*should be title here-->
                                 <span class="price">£{{ $product['item_price'] }}</span> <!-- price -->
                                 <!--make the button send this products info into basket-->
-                                <!-- temporarily just redirects to basket page-->
-                                 <a href = "{{url('/basket')}}">
-                                <button class="basket"><img src="{{asset('images/basket-icon.png')}}" alt="" style="height: 25px; width: 25px;"></button>
-                                </a>
+                                <!--add item to basket when button is clicked (**add confirmation message to user)-->
+                                 <form action = "{{ route('addBasketItem', $product->item_id) }}" method ="post">
+                                <!--csrf is for form protection-->
+                                @csrf
+                                <button type = "submit" class="basket"><img src="{{asset('images/basket-icon.png')}}" alt="add-to-basket" style="height: 25px; width: 25px;"></button>
+                                </form>
                             </div>
                         </div>
                     @endforeach

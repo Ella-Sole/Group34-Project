@@ -54,11 +54,13 @@ Route::get('/previousorderstable', function(){
 //basket page maybe has an array that stores products across a user's session
 //when check out is done, array is emptied, and purchase history in DB is updated with the array's values
 Route::get('/basket', function(){
-    return view('shoppingBasketTable');
+    return view('shoppingBasketTable', [
+        'testBasket' => ProductController::class, 'showBasket'
+
+    ]);
 });
 
 Route::get('/products', function(){
-
     return view('productListingPage', [
         //fetch all the product rows data from the Product Model and put into an array 'products'
         //this variable will be passed into the view to be used
@@ -66,4 +68,6 @@ Route::get('/products', function(){
     ]);
 });
 
-//make page for individual products that has product id passed into it
+//when add to basket button is clicked, the method addToBasket used
+//->name() defines the name of the route in the view (leaving it out caused an error)
+Route::post('addBasketItem', [ProductController::class, 'addToBasket'])->name('addBasketItem');

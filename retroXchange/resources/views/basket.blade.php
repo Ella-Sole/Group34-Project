@@ -32,11 +32,18 @@
 
                 <!-- Basket Items -->
                 <div class="basket-items">
-                    <div class="basket-item">
-                        <p>Item 1 - <span>Description of Game 1</span></p>
-                        <span>£20.00</span>
-                    </div>
-                    <div class="basket-item">
+                    <!--if the basket is not empty-->
+                    @if(!empty($testbasket))
+                        @foreach($testbasket as $item)
+                        <div class="basket-item">
+                            <!--Item title and description-->
+                            <p>{{ $item['item_name'] }} <span>{{ $item['item_description'] }}</span></p>
+                            <!--price-->
+                            <span>£{{ $item['item_price'] }}</span>
+                        </div>
+                        @endforeach
+                    @endif
+                    <!--<div class="basket-item">
                         <p>Item 2 - <span>Description of Game 2</span></p>
                         <span>£15.00</span>
                     </div>
@@ -47,7 +54,7 @@
                     <div class="basket-item">
                         <p>Item 4 - <span>Description of Game 4</span></p>
                         <span>£25.00</span>
-                    </div>
+                    </div>-->
                 </div>
 
                 <!-- Grand Total -->
