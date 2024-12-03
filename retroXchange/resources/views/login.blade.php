@@ -4,65 +4,114 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width. initial-scale = 1.0">
         <title>Login Page</title>
-        <link rel="stylesheet" type="text/css" href="{{ url('/style.css') }}" /> <!-- Link to CSS File-->
+        <link rel="stylesheet" href="../css/style.css"> <!-- Link to CSS File-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+    
     </head>
 
-    <body>
-
-        <!-- Header Section-->
-         <header>
-            <div class="LOGO">
-                <h1> RetroXchange</h1> <!-- Placeholder for Logo-->
+    <body class = "body-form">
+        <header>
+        <div class="header-grid-layout">
+            <div class="side-menu">
+                <!-- This SVG was obtained from the bootstrap website -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="2.5rem" height="2.5rem" fill="currentColor"
+                    class="bi bi-list" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
+                </svg></a>
             </div>
+            <div class="logo-div">
+                <img src="assets/images/logo.png" alt="retroxchange-logo" class="retroxchange-logo">
+            </div>
+            <div class="search-bar-placement">
+                <div class="search-bar-temp">
+                    <p>Temporary Searchbar Placeholder</p>
+                    <!-- This SVG was obtained from the bootstrap website -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1.5rem" height="1.5rem" fill="currentColor"
+                        class="bi bi-search" viewBox="0 0 16 16">
+                        <path
+                            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                    </svg>
+                </div>
+            </div>
+            <div class="basket-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="1.7rem" height="2rem" fill="currentColor"
+                    class="bi bi-basket3-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15.5a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H.5a.5.5 0 0 1-.5-.5v-1A.5.5 0 0 1 .5 6h1.717L5.07 1.243a.5.5 0 0 1 .686-.172zM2.468 15.426.943 9h14.114l-1.525 6.426a.75.75 0 0 1-.729.574H3.197a.75.75 0 0 1-.73-.574z" />
+                </svg>
+            </div>
+            <div class="login-icon">
+                <!-- This SVG was obtained from the bootstrap website -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="2.5rem" height="2.5rem" fill="currentColor"
+                    class="bi bi-person-fill" viewBox="0 0 16 16">
+                    <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+                </svg>
+                </div>
 
             <!-- Navigation Bar-->
-            <nav>
-                <ul>
-                    <li> <a href="{{ url('/home') }}"> Home</a></li>
-                    <li> <a href="{{ url('/about') }}">About Us </a></li>
-                    <li> <a href="{{ url('/contact') }}"> Contact Us</a></li>
-                            
-                </ul>
+             <div class = "navigation-bar-flexbox">
+            <nav class = "navigation-bar">
+                <div class="navbar-item">
+                    <a href="index.html">HOME</a>
+                </div>
+                <div class="navbar-item">
+                    <a href="#">GAMES</a>
+                </div>
+                <!--<div class="navbar-item">
+                    <a href="#">CONSOLES</a>
+                </div>-->
+                <div class="navbar-item">
+                    <a href="about-us.html">ABOUT US</a>
+                </div>
             </nav>
-
-            <h1> Log In </h1><br>
+            </div>
+            </div>
 
          </header>
 
          <!-- Main Content-->
-         <main>
-           <!-- Form Section-->
-           <section class="login-form-section">
 
+         <main class = "push-elements">
+            <div>
+                <h1>Log In</h1>
+            </div>
+           <!-- Form Section-->
+           <div>
                 <label for="email address"> Email Address:</label><br>
                 <input type="text" id="email" name="email"><br>
 
-                <label for="password">Password</label><br>
+                <label for="password"> Password:</label><br>
                 <input type="password" id="password" name="password"><br>
 
-                <input type="submit" value="login" >
-
-           </section>
-
-           <!--Image Section-->
-           <section class="image-section">
-                <div class="image">
-                    <img src="example1" style="width:200px">
-                </div>
-            </section>
-         </main>
-         
+                <input type="submit" value="login" ><br>
+           </div>
+           <div>
+            <p>Not yet got an account?<a href = "SignUp.html"> Sign up.</a></p>
+           </div>
                
-
+</main>
          <!-- Footer Section-->
           <footer>
-            <div class="footer-content">
+            <div class="footer-grid-content">
                 <p> &copy 2024 RetroXchange. All rights reserved</p>
-                <div class="social-links">
-                    <a href="#"> Facebook</a>
-                    <a href="#"> Twitter</a>
-                    <a href="#"> Instagram</a>
-                    <a href="#"> LinkedIn</a>
+                <div>
+                <nav class = "navigation-bar">
+                    <div class = "navbar-item-login">
+                    <a href="#"> <img src = "assets/images/facebook.jpg"> Facebook</a>
+                    </div>
+                    <div class = "navbar-item-login">
+                    <a href="#"><img src = "assets/images/twitter.png"> Twitter</a>
+                    </div>
+                    <div class = "navbar-item-login">
+                    <a href="#"><img src = "assets/images/thegram.jpg"> Instagram</a>
+                    </div>
+                    <div class = "navbar-item-login">
+                    <a href="#"><img src = "assets/images/linked.png"> LinkedIn</a>
+                    </div>
+                </nav>
                 </div>
             </div>
           </footer>
