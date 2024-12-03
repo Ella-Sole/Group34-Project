@@ -400,3 +400,61 @@ COLORS:
 .product-container::-webkit-scrollbar {
     display: none;
 }
+.table-display{
+    width:200%
+    
+}
+.product-title{
+    text-align: center;
+}
+.contact-us{
+    text-align: center;
+    align-items: center;
+    background-color: #DDFFBC;
+}
+.login-form-section{
+    display:flex;
+    align-items: center;
+    margin: auto;
+    background-color: #DDFFBC;
+    position: absolute;
+  padding-left: 25px;
+  width:100%
+    
+}   
+
+
+.footer-grid-content{
+    background-color:#91C788;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+   position:absolute;
+   bottom:0;
+   width:100%;
+}
+
+
+.footer-grid-content img{
+    height:30px;
+    width:30px;
+
+}
+.navbar-item-login:hover {
+    background-color:#DDFFBC;
+}
+.push-elements{
+    padding-left: 500px;
+    
+}
+.body-form{
+    background-color: #FEFFDE;
+    height: 100%;
+    min-height: 100%;
+    margin:0;
+    padding:0;
+}
+
+
