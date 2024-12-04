@@ -26,7 +26,7 @@
                     </svg></a>
                 </div>
                 <div class="logo-div">
-                    <img src="assets/images/logo.png" alt="retroxchange-logo" class="retroxchange-logo">
+                    <img src="{{asset('images/logo.png')}}" alt="retroxchange-logo" class="retroxchange-logo">
                 </div>
                 <div class="search-bar-placement">
                     <div class="search-bar-temp">
@@ -40,6 +40,7 @@
                     </div>
                 </div>
                 <div class="basket-icon">
+                    <a href="{{url('/basket')}}"></a>
                     <svg xmlns="http://www.w3.org/2000/svg" width="1.7rem" height="2rem" fill="currentColor"
                         class="bi bi-basket3-fill" viewBox="0 0 16 16">
                         <path
@@ -47,6 +48,7 @@
                     </svg>
                 </div>
                 <div class="login-icon">
+                    <a href="{{url('/login')}}"></a>
                     <!-- This SVG was obtained from the bootstrap website -->
                     <svg xmlns="http://www.w3.org/2000/svg" width="2.5rem" height="2.5rem" fill="currentColor"
                         class="bi bi-person-fill" viewBox="0 0 16 16">
@@ -56,20 +58,23 @@
     
                 <!-- Navigation Bar-->
                  <div class = "navigation-bar-flexbox">
-                <nav class = "navigation-bar">
+                    <nav class=navigation-bar>
                     <div class="navbar-item">
-                        <a href="index.html">HOME</a>
-                    </div>
-                    <div class="navbar-item">
-                        <a href="#">GAMES</a>
-                    </div>
-                    <!--<div class="navbar-item">
-                        <a href="#">CONSOLES</a>
-                    </div>-->
-                    <div class="navbar-item">
-                        <a href="about-us.html">ABOUT US</a>
-                    </div>
-                </nav>
+                        <a href="{{url('/')}}">HOME</a>
+                        </div>
+                        <div class="navbar-item">
+                            <a href="{{url('/products')}}">GAMES</a>
+                        </div>
+                        <!--<div class="navbar-item">
+                            <a href="#">CONSOLES</a>
+                        </div>-->
+                        <div class="navbar-item">
+                            <a href="{{url('/about')}}">ABOUT US</a>
+                        </div>
+                        <div class="navbar-item">
+                            <a href="{{url('/contact')}}">CONTACT US</a>
+                        </div>
+                    </nav>
                 </div>
                 </div>
     
@@ -105,16 +110,16 @@
                 <div>
                 <nav class = "navigation-bar">
                     <div class = "navbar-item-login">
-                    <a href="#"> <img src = "assets/images/facebook.jpg"> Facebook</a>
+                    <a href="#"> <img src = "{{asset('images/facebook.jpg')}}"> Facebook</a>
                     </div>
                     <div class = "navbar-item-login">
-                    <a href="#"><img src = "assets/images/twitter.png"> Twitter</a>
+                    <a href="#"><img src = "{{asset('images/twitter.png')}}"> Twitter</a>
                     </div>
                     <div class = "navbar-item-login">
-                    <a href="#"><img src = "assets/images/thegram.jpg"> Instagram</a>
+                    <a href="#"><img src = "{{asset('images/thegram.jpg')}}"> Instagram</a>
                     </div>
                     <div class = "navbar-item-login">
-                    <a href="#"><img src = "assets/images/linked.png"> LinkedIn</a>
+                    <a href="#"><img src = "{{asset('images/linked.png')}}"> LinkedIn</a>
                     </div>
                 </nav>
             </div>

@@ -1,69 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width. initial-scale = 1.0">
-        <title>RetroXchange - Buy Used Games</title>
-        <link rel="stylesheet" type="text/css" href="{{ url('/style.css') }}" /> <!-- Link to CSS File-->
-    </head>
 
-    <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{asset('/style.css')}}">
+    <title>RetroXChange</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+</head>
 
-        <!-- Header Section-->
-         <header>
-            <div class="LOGO">
-                <h1> RetroXchange</h1> <!-- Placeholder for Logo-->
+
+<body class="background index-page-layout">
+    <header>
+        <div class="header-grid-layout">
+            <div class="side-menu">
+                <!-- This SVG was obtained from the bootstrap website -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="2.5rem" height="2.5rem" fill="currentColor"
+                    class="bi bi-list" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
+                </svg></a>
+            </div>
+            <div class="logo-div">
+                <img src="{{asset('images/logo.png')}}" alt="retroxchange-logo" class="retroxchange-logo">
+            </div>
+            <div class="search-bar-placement">
+                <div class="search-bar-temp">
+                    <p>Temporary Searchbar Placeholder</p>
+                    <!-- This SVG was obtained from the bootstrap website -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1.5rem" height="1.5rem" fill="currentColor"
+                        class="bi bi-search" viewBox="0 0 16 16">
+                        <path
+                            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                    </svg>
+                </div>
+            </div>
+            <div class="basket-icon">
+                <a href="{{url('/basket')}}"></a>
+                <svg xmlns="http://www.w3.org/2000/svg" width="1.7rem" height="2rem" fill="currentColor"
+                    class="bi bi-basket3-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15.5a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H.5a.5.5 0 0 1-.5-.5v-1A.5.5 0 0 1 .5 6h1.717L5.07 1.243a.5.5 0 0 1 .686-.172zM2.468 15.426.943 9h14.114l-1.525 6.426a.75.75 0 0 1-.729.574H3.197a.75.75 0 0 1-.73-.574z" />
+                </svg>
+            </div>
+            <div class="login-icon">
+                <a href="{{url('/login')}}"></a>
+                <!-- This SVG was obtained from the bootstrap website -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="2.5rem" height="2.5rem" fill="currentColor"
+                    class="bi bi-person-fill" viewBox="0 0 16 16">
+                    <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+                </svg>
             </div>
 
             <!-- Navigation Bar-->
-            <nav>
-                <ul>
-                    <li> <a href="{{ url('/home') }}"> Home</a></li>
-                    <li> <a href="{{ url('/about') }}">About Us </a></li>
-                    <li> <a href="{{ url('/contact') }}"> Contact Us</a></li>
-                            
-                </ul>
-            </nav>
+            <div class="navigation-bar-flexbox">
+                <nav class=navigation-bar>
+                <div class="navbar-item">
+                    <a href="{{url('/')}}">HOME</a>
+                    </div>
+                    <div class="navbar-item">
+                        <a href="{{url('/products')}}">GAMES</a>
+                    </div>
+                    <!--<div class="navbar-item">
+                        <a href="#">CONSOLES</a>
+                    </div>-->
+                    <div class="navbar-item">
+                        <a href="{{url('/about')}}">ABOUT US</a>
+                    </div>
+                    <div class="navbar-item">
+                        <a href="{{url('/contact')}}">CONTACT US</a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
 
-            <h1> Home </h1><br>
-            <!-- Login and Sign in links-->
-             <a href="{{ url('/login') }}"> Login</a>
-             <a href="{{ url('/signup') }}"> Sign Up</a>
-         </header>
-         <main>
-            <!-- Image Slideshow-->
-            <section class="img-slideshow-section">
+    <!-- Mostly Viviene's Work, Edited by Igors -->
+    <main>
+        <div class="index-body-grid-layout">
+            <!-- <div class="products">
+                <h2 class="product-category">Games</h2> -->
 
-                    <!-- Images with caption text-->
-                    <div class="slideshow">
-                        <img src="img1.jpg" alt="Image 1">
-                        <img src="img2.jpg" alt="Image 2">
-                        <img src="img3.jpg" alt="Image 3">
-                        <img src="img4.jpg" alt="Image 4">
+                <!-- <div class="product-container">
+                    <button class="pre-btn"><img src="assets/images/arrow-button.png" alt="back-button"></button>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="assets/images/Red_Dead_Redemption.jpg" class="product-thumbnail" alt="">
+                        </div>
+
+                        <div class="product-info">
+                            <p class="product-brand">PlayStation 3 Games</p>
+                            <h2 class="product-short-description">Read Ded Redemption</h2>
+                            <span class="price">£10</span>
+                            <button class="basket"><img src="assets/images/basket-icon.png" alt="" style="height: 25px; width: 25px;"></button>
+                        </div>
                     </div>
 
-                      
-            </section>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="assets/images/fifa21.jpg" class="product-thumbnail" alt="">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-brand">PlayStation4 Games</p>
+                            <h2 class="product-short-description">EA Sports Fifa 21</h2>
+                            <span class="price">£2</span>
+                            <button class="basket"><img src="assets/images/basket-icon.png" alt="" style="height: 25px; width: 25px;"></button>
+                        </div>
+                    </div>
 
-            <!-- Best Sellers Section-->
-            <section class="best-sellers-section">
-                <!-- Any ideas for what we could put here would be appreciated-->
-            </section> 
-        </main>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="assets/images/super mario.jpg" class="product-thumbnail" alt="">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-brand">Nintendo Switch games</p>
+                            <h2 class="product-short-description">Super Mario</h2>
+                            <span class="price">£20</span>
+                            <button class="basket"><img src="basket-icon.png" alt="" style="height: 25px; width: 25px;"></button>
+                        </div>
+                    </div>
 
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="assets/images/Zelda.webp" class="product-thumbnail" alt="">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-brand">Nintendo Switch games</p>
+                            <h2 class="product-short-description">Zelda: The Legend of the Breath of the Wild</h2>
+                            <span class="price">£13</span>
+                            <button class="basket"><img src="basket-icon.png" alt="" style="height: 25px; width: 25px;"></button>
+                        </div>
+                    </div>
 
-        <!-- Footer Section-->
-        <footer>
-            <div class="footer-content">
-                <p> &copy 2024 RetroXchange. All rights reserved</p>
-                <div class="social-links">
-                    <a href="#"> Facebook</a>
-                    <a href="#"> Twitter</a>
-                    <a href="#"> Instagram</a>
-                    <a href="#"> LinkedIn</a>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="assets/images/gta.jpg" class="product-thumbnail" alt="">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-brand">Xbox360 Games</p>
+                            <h2 class="product-short-description">Grand Theft Auto V</h2>
+                            <span class="price">£15</span>
+                            <button class="basket"><img src="basket-icon.png" alt="" style="height: 25px; width: 25px;"></button>
+                        </div>
+                    </div> -->
+
+                    <!-- <div class="product-card">
+                        <div class="product-image">
+                            <img src="assets/images/fallout.jpg" class="product-thumbnail" alt="">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-brand">Xbox Games</p>
+                            <h2 class="product-short-description">Fallout</h2>
+                            <span class="price">£4</span>
+                            <button class="basket"><img src="basket-icon.png" alt=" "style="height: 25px; width: 25px;"></button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="assets/images/animal crossing.jpg" class="product-thumbnail" alt="">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-brand">Nintendo Switch games</p>
+                            <h2 class="product-short-description">Animal Crossing: New Horizons</h2>
+                            <span class="price">£30</span>
+                            <button class="basket"><img src="basket-icon.png" style="height: 25px; width: 25px;"></button>
+                        </div>
+                    </div> -->
+
+                    <!-- <button class="nxt-btn"><img src="assets/images/arrow-button.png" alt="forward-button"></button> -->
                 </div>
             </div>
-        </footer>
-        
-    </body>
+        </div>
+    </main>
+    <script src = "{{asset('/script.js')}}"></script>
+</body>
+
 </html>
