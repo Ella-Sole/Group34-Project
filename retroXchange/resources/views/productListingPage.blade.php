@@ -381,7 +381,7 @@
         </main>
 
         <!-- Footer Section-->
-        <footer>
+        <!--<footer>
             <div class="footer-grid-content">
                 <p> &copy 2024 RetroXchange. All rights reserved</p>
                 <div>
@@ -400,7 +400,7 @@
                     </div>
                 </nav>
             </div>
-          </footer>
+          </footer>-->
           
     </body>
 </html>
