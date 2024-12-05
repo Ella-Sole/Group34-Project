@@ -32,7 +32,7 @@ if (isset($_POST['submitted'])) {
 
         // Check if the insert was successful
         if ($stmt->rowCount() > 0) {
-            echo "User registered successfully! <a href='login.php'>Click here to login</a>";
+            echo "User registered successfully! <a href='login.html'>Click here to login</a>";
         } else {
             echo "User registration failed.";
         }
