@@ -1,7 +1,7 @@
 <?php
 
 $db_host = 'localhost';
-$db_name = 'retro_xchange';
+$db_name = 'retro_xchange_new';
 $username = 'root';
 $password = '';
 

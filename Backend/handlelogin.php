@@ -41,8 +41,8 @@ try {
                 // Regenerate session ID for security
                 session_regenerate_id(true);
 
-                // Redirect to homepage.php
-                header("Location: homepage.php");
+                // Redirect to index.html
+                header("Location: index.html");
                 exit();
             } else {
                 echo "Invalid password.";
