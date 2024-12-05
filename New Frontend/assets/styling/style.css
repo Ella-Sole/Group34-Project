@@ -261,13 +261,19 @@ COLORS:
 }
 
 
-/* Mostly Viviene's Work, Heavily Edited by Igors */
+/* Products */
+
 .products {
     display: grid;
     background-color: #DDFFBC;
     grid-row: 3;
 
     grid-template-rows: 10fr 40fr;
+}
+
+.product-section img {
+    width: 200;
+    height: 150px;
 }
 
 .product-category {
@@ -278,7 +284,22 @@ COLORS:
     justify-content: center;
     align-items: center;
 }
+.pre-btn,
+.nxt-btn {
+    border: none;
+    width: 2vw;
+    height: 81%;
+    position: absolute;
+    display: flex;
+    margin-top: 0;
+    justify-content: left;
+    align-items: center;
+    background: #DDFFBC;
+    cursor: pointer;
+    z-index: 8;
+}
 
+/*
 .pre-btn {
     display: flex;
     justify-content: right;
@@ -290,11 +311,11 @@ COLORS:
     transform: rotate(180deg);
     border: none;
     background-color: #DDFFBC;
-    /* background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #91C788 100%); */
+    // background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #91C788 100%); 
     cursor: pointer;
     z-index: 8;
     
-}
+} 
 
 .nxt-btn {
     display: flex;
@@ -305,17 +326,26 @@ COLORS:
     
     border: none;
     background-color: #DDFFBC;
-    /* background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #91C788 100%); */
+    // background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #91C788 100%); 
     cursor: pointer;
     z-index: 8;
 
-}
+} */
 
 .pre-btn img,
 .nxt-btn img {
     opacity: 20%;
     width: 20%;
     height: auto;
+}
+
+.pre-btn {
+    left: 0;
+    transform: rotate(180deg);
+}
+
+.nxt-btn {
+    right: 0;
 }
 
 .pre-btn:hover img,
@@ -326,9 +356,11 @@ COLORS:
 .product-container {
     display: flex;
     grid-row: 2;
-
+    overflow-x: auto;
+    scroll-behavior: smooth;
     justify-content: space-between;
     align-items: center;
+    height: 500px;
 }
 
 .product-card {
@@ -340,7 +372,7 @@ COLORS:
 
 .product-image {
     width: 100%;
-    height: auto;
+    height: 300px;
     overflow: hidden;
 }
 
@@ -354,22 +386,22 @@ COLORS:
 }
 
 .product-thumbnail {
-    width: 60%;
-    height: auto;
+    width: 90%;
+    height: 90%;
     object-fit: cover;
 }
 
 .price {
     font-weight: 900;
     font-size: 20px;
-    padding-top: 10px;
+    padding-top: 5px;
 }
 
 .price-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 30px;
+    margin-top: 10px;
 }
 
 .basket {
@@ -389,7 +421,16 @@ COLORS:
     height: 20px;
     line-height: 20px;
     padding-bottom: 10%;
-    padding-bottom: 10%;
+    
+}
+
+.product-info {
+    width: 100%;
+    height: 100px;
+    padding-top: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .product-brand {
@@ -406,6 +447,22 @@ COLORS:
 }
 .product-title{
     text-align: center;
+}
+.collection-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+}
+
+.collection {
+    position: relative;
+}
+
+.collection img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 .contact-us{
     text-align: center;
