@@ -7,6 +7,7 @@ use Illuminate\Support\Arr;
 use App\Models\Product;
 //allow use of Product controller
 use App\Http\Controllers\ProductController;
+use Illuminate\Support\Facades\Session;
 
 //Route::get('/', function () {
 //    return view('welcome');
@@ -48,19 +49,7 @@ Route::get('/previousorderstable', function(){
     return view('previousOrdersTable');
 });
 
-//basket page maybe has an array that stores products across a user's session
-//when check out is done, array is emptied, and purchase history in DB is updated with the array's values
-//Route::get('/basket', function(){
-//   return view('basket', [
-//       'testBasket' => ProductController::class, 'showBasket'
-//
-//    ]);
-//});
-
-//to display the basket?
-Route::get('/basket',[ProductController::class,'showBasket'])->name('showBasket');
-//otherwise try Route::get('basket', 'ProductController@cart'); 
-
+//products page
 Route::get('/products', function(){
     return view('productListingPage', [
         //fetch all the product rows data from the Product Model and put into an array 'products'
@@ -69,5 +58,8 @@ Route::get('/products', function(){
     ]);
 });
 
-//when add to basket button is clicked, the method addToBasket used
+//uses showBasket function to display the basket content in the basket page
+Route::get('/basket', [ProductController::class,'showBasket'])->name('basket');
+
+//when add to basket button is clicked, the function addToBasket is done
 Route::get('addToBasket/{id}', [ProductController::class, 'addToBasket']);
