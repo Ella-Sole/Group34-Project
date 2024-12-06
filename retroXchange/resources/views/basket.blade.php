@@ -40,6 +40,7 @@
                     </div>
                 </div>
                 <div class="basket-icon">
+                    
                     <a href="{{url('/basket')}}">
                     <svg xmlns="http://www.w3.org/2000/svg" width="1.7rem" height="2rem" fill="currentColor"
                         class="bi bi-basket3-fill" viewBox="0 0 16 16">
@@ -94,37 +95,34 @@
                 <!-- Basket Items -->
                 <div class="basket-items">
                     <!--if the basket is not empty-->
-                    <!--@if(!empty($testbasket))-->
-                        @foreach(Session::get('basket') as $item)
-                        <div class="basket-item">
-                            <!--Item title and description-->
-                            <p>{{ $item->item_name }} <span>{{ $item->item_description }}</span></p>
-                            <!--price-->
-                            <span>£{{ $item->item_price }}</span>
-                            <p>(debug) confirmation text that it's looping</p>
-                        </div>
+                    @if(!is_null($thebasket))
+                        @foreach($thebasket as $b)
+                            <div class="basket-item">
+                                <!--Item title and description-->
+                                <p>{{ $b['item_name'] }}: <span>{{ $b['item_description'] }}</span></p>
+                                <!--price-->
+                                <span>£{{ $b['item_price'] }}</span>
+                                
+                            </div>
+                            <!--check if total price variable is set-->
+                            @isset($total)
+                            <!--add up total price-->
+                                <?php $total = $total + $b['item_price'] ?>
+                            @else
+                                <?php $total = 0 ?>
+                            @endisset
                         @endforeach
-                    <!--@endif-->
-                    <!--<div class="basket-item">
-                        <p>Item 2 - <span>Description of Game 2</span></p>
-                        <span>£15.0
-                            0</span>
-                    </div>
-                    <div class="basket-item">
-                        <p>Item 3 - <span>Description of Game 3</span></p>
-                        <span>£30.00</span>
-                    </div>
-                    <div class="basket-item">
-                        <p>Item 4 - <span>Description of Game 4</span></p>
-                        <span>£25.00</span>
-                    </div>-->
+                    @else
+                        <p>Basket is currently empty</p>
+                    @endif
                 </div>
-
+                @isset($total)
                 <!-- Grand Total -->
                 <div class="basket-total">
                     <p><strong>Grand Total:</strong></p>
-                    <span><strong>£90.00</strong></span> <!-- Placeholder for Grand Total -->
+                    <span><strong>£{{$total}}</strong></span>
                 </div>
+                @endisset
 
                 <!-- Action Buttons -->
                 <div class="basket-actions">
