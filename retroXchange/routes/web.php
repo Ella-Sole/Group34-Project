@@ -45,10 +45,6 @@ Route::get('/previousorders', function(){
     return view('previousOrders');
 });
 
-Route::get('/previousorderstable', function(){
-    return view('previousOrdersTable');
-});
-
 //products page
 Route::get('/products', function(){
     return view('productListingPage', [
