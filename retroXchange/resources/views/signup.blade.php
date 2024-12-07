@@ -15,7 +15,6 @@
 
         <!-- Header Section-->
         <header>
-            <!-- Header Section-->
              <div class = "header-grid-layout">
                 <div class="side-menu">
                     <!-- This SVG was obtained from the bootstrap website -->
@@ -85,13 +84,37 @@
              </header>
 
          <!-- Main Content-->
-         <main class = "push-elements">
-           <!-- Form Section-->
-            <h1>Sign Up Today!</h1>
-           <section class="sign-up-form-section">
-            <p> Already got an account? <a href = "{{url('/login')}}">Log in</a></p>
+    <main class="push-elements">
+        <!-- Form Section-->
+        <div class = 'center-header'>
+        <h1>Sign Up Today!</h1>
+        </div>
+        <section class="center-form">
 
-               <label for="first name"> First Name:</label><br>
+
+             <!-- Start of the form -->
+             <form action="{{asset('/process.php')}}" method="POST" onsubmit="validateForm(event)">
+                @csrf
+                <input type="hidden" name="submitted" value="1">
+
+                <!-- Email Input -->
+                <label for="email">Email Address:</label><br>
+                <input type="email" id="email" name="email" required><br>
+
+                <!-- Password Input -->
+                <label for="password">Password:</label><br>
+                <input type="password" id="password" name="password" required><br>
+
+                <!-- Confirm Password Input -->
+                <label for="confirm-password">Confirm Password:</label><br>
+                <input type="password" id="confirm-password" name="confirm-password" required><br>
+
+                <!-- Submit Button -->
+                <input type="submit" value="Sign Up">
+            <p> Already got an account? <a href="{{url('/login')}}">Log in</a></p>
+
+            <!-- SIGNUP PAGE DOES NOT NEED THIS INFORMATION, IT SHOULD BE OPTIONAL LATER IN SETTINGS OR WHEN BUYING-->
+            <!-- <label for="first name"> First Name:</label><br>
                <input type="text" id="fname" name="fname"><br>
 
                <label for="last name"> Last Name:</label><br>
@@ -101,27 +124,25 @@
                <input type="text" id="streetaddress" name="streetaddress"><br>
 
                <label for="post code"> Post Code:</label><br>
-               <input type="text" id="postcode" name="postcode"><br>
+               <input type="text" id="postcode" name="postcode"><br> -->
 
-               <label for="email address"> Email Address:</label><br>
-               <input type="text" id="email" name="email"><br>
+          <!----  <label for="email address"> Email Address:</label><br> 
+            <input type="text" id="email" name="email"><br>
 
-               <label for="password"> Password:</label><br>
-               <input type="password" id="password" name="password"><br>
+            <label for="password"> Password:</label><br>
+            <input type="password" id="password" name="password"><br>
 
-               <label for="confirmpassword"> Confirm Password:</label><br>
-               <input type="confirmpassword" id="confirmpassword" name="confirmpassword"><br>
+            <label for="confirmpassword"> Confirm Password:</label><br>
+            <input type="confirmpassword" id="confirmpassword" name="confirmpassword"><br>
+             
+
+            <input type="submit" value="sign up"><br>
+             -->
 
 
-                <input type="submit" value="sign up"><br>
+        </section>
 
-                
-
-           </section>
-
-           <!--Image Section-->
-        
-         </main>
+    </main>
          
                
 

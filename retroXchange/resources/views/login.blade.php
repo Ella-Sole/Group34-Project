@@ -15,7 +15,6 @@
 
         <!-- Header Section-->
         <header>
-            <!-- Header Section-->
              <div class = "header-grid-layout">
                 <div class="side-menu">
                     <!-- This SVG was obtained from the bootstrap website -->
@@ -91,6 +90,17 @@
                 <h1>Log In</h1>
             </div>
            <!-- Form Section-->
+           <form action="{{asset('/handlelogin.php')}}" method="POST">
+            @csrf
+            <label for="email address"> Email Address:</label><br>
+            <input type="text" id="email" name="email" required><br>
+        
+            <label for="password"> Password:</label><br>
+            <input type="password" id="password" name="password" required><br>
+        
+            <input type="submit" value="Login"><br>
+        </form>
+            <!--
            <div>
                 <label for="email address"> Email Address:</label><br>
                 <input type="text" id="email" name="email"><br>
@@ -99,9 +109,10 @@
                 <input type="password" id="password" name="password"><br>
 
                 <input type="submit" value="login" ><br>
+                -->
            </div>
            <div>
-            <p>Not yet got an account?<a href = "{{url('/signup')}}"> Sign up.</a></p>
+            <p>Not yet got an account?<a href = "{{url('/signup')}}"> Sign up</a></p>
            </div>
                
 </main>

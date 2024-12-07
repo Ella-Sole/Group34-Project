@@ -120,7 +120,7 @@
                             @endisset
                         @endforeach
                     @else
-                        <p>Basket is currently empty!</p>
+                        <p> Basket is currently empty!</p>
                     @endif
 
                 </table>
