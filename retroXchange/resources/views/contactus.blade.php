@@ -87,9 +87,11 @@
 
          <!-- Main Content-->
          <main class = "push-elements">
+             <div class = "center-header">
             <h1>Contact Us</h1>
+             </div>
             <!-- Form Section-->
-           <section class="push-form">
+           <section class="center-form">
             <form>
                 <label for="name"> Full Name:</lablel><br>
                 <input type="text" id="name" name="name"><br>
