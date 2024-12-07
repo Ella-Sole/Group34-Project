@@ -127,17 +127,21 @@
 
                 <!--displays total price if theres a total variable set-->
                 @isset($total)
-                <!--ShoppingBasket Total-->
-                <div class="shopping-basket-total">
-                    <p><strong>Total Price:</span>£{{$total}}</span></strong></p>
-                </div>
+                    <!--ShoppingBasket Total-->
+                    <div class="shopping-basket-total">
+                        <p><strong>Total Price:</span>£{{$total}}</span></strong></p>
+                    </div>
+                @else <!--else total price is empty-->
+                    <div class="shopping-basket-total">
+                        <p><strong>Total Price:</span> </span></strong></p>
+                    </div>
                 @endisset
 
                 <!--ShoppingBasket Actions-->
                 <div class="shopping-basket-actions">
                     <button class="checkout-button" onclick="location.href='{{url('/checkout')}}'">Proceed to Checkout</button>
                     <button class="continue-button" onclick="location.href='{{url('/products')}}'">Continue Shopping</button>
-                    <button class="previous-orders-button" onclick="location.href='{{url('/previousorders')}}'">PreviousOrders</button>
+                    <button class="previous-orders-button" onclick="location.href='{{url('/previousorders')}}'">Previous Orders</button>
                 </div>
             </div>
         </main>
