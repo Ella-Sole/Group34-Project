@@ -42,8 +42,8 @@ try {
                 session_regenerate_id(true);
 
                 // Redirect to index.html
-                header("Location: index.html");
-                exit();
+                header("Location: ../New Frontend/index.html");
+            exit();
             } else {
                 echo "Invalid password.";
             }
