@@ -117,9 +117,9 @@
                             @isset($total)
                                 <!--add up total price-->
                                 <?php $total = $total + $b['item_price'] ?>
-                                <!--else its intially £0-->
                             @else
-                                <?php $total = 0 ?>
+                                <!--else its the item's price as its at the start of the loop-->
+                                <?php $total = $b['item_price'] ?>
                             @endisset
                         @endforeach
                     @else
