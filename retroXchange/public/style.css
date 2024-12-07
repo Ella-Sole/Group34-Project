@@ -446,11 +446,26 @@ COLORS:
     background-color:#DDFFBC;
 }
 .push-elements{
-    padding-left: 500px;
+    display: flex;
+    flex:0 0 auto;
+    margin: 0 auto;
+    flex-direction: column;
     
 }
-.push-form{
-    padding-right: 200px
+.input[type=button],input[type = submit]{
+    background-color: #52734D;
+}
+.input[type=button],input[type = submit]:hover{
+    background-color: #DDFFBC;
+}
+.center-header{
+    margin: 0 auto;
+}
+.center-form{
+    margin: 0 auto;
+}
+.center-p{
+    margin: 0 auto;
 }
 .body-form{
     background-color: #FEFFDE;
@@ -459,5 +474,29 @@ COLORS:
     margin:0;
     padding:0;
 }
+.shopping-basket{
+    display: flex;
+    flex:0 0 auto;
+    flex-direction: column;
+    
+}
+.basket-item{
+    margin: 0 auto;
+}
+.shopping-basket-total{
+    margin:0 auto;
+}
+.shopping-basket-actions{
+    margin: 0 auto;
+}
+.shopping-basket button{
+    background-color: #52734D;
+
+}
+.shopping-basket button:hover{
+    background-color:#DDFFBC;
+}
+
+
 
 
