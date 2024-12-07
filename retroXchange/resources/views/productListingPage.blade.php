@@ -15,7 +15,6 @@
 
         <!-- Header Section-->
         <header>
-            <!-- Header Section-->
              <div class = "header-grid-layout">
                 <div class="side-menu">
                     <!-- This SVG was obtained from the bootstrap website -->

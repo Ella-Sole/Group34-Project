@@ -85,52 +85,70 @@
     
              </header>
 
-        <!-- Main Content -->
+        <!--Main Content-->
         <main>
-            <!-- Basket Section -->
-            <section class="basket-section">
-                <h1>Your Basket</h1>
+            <!-- ShoppingBasket Section-->
+            <div class="shopping-basket">
+                <div class="basket-item">
+                <h2>Your Shopping Basket</h2>
                 <p>Review your selected games before proceeding to checkout!</p>
-
-                <!-- Basket Items -->
-                <div class="basket-items">
-                    <!--if the basket is not empty-->
+                </div>
+                <!--ShoppingBasket Table-->
+                <table class="shopping-basket-table" >
+                        <tr>
+                            <th> Game </th>
+                            <th> Description of Game </th>
+                            <th> Quantity </th>
+                            <th> Price </th>
+                        </tr>
+                        <!--if the basket is not empty-->
                     @if(!is_null($thebasket))
                         @foreach($thebasket as $b)
-                            <div class="basket-item">
-                                <!--Item title and description-->
-                                <p>{{ $b['item_name'] }}: <span>{{ $b['item_description'] }}</span></p>
-                                <!--price-->
-                                <span>£{{ $b['item_price'] }}</span>
+                            <tr align="center">
+                                <td> <span class="game-title">{{ $b['item_name'] }}</span> </td>
+                                <td> <span class="game-description">{{ $b['item_description'] }}</span> </td>
+                                <td> <span class="game-quantity">1</span> </td>
+                                <td> <span class="game-price">£{{ $b['item_price'] }}</span> </td>
+                                <td> <a href = "{{ url('removeFromBasket/'.$b->item_id) }}"><button class="remove-button">Remove</button></a> </td>
                                 
-                            </div>
+                            </tr>
+
                             <!--check if total price variable is set-->
                             @isset($total)
-                            <!--add up total price-->
+                                <!--add up total price-->
                                 <?php $total = $total + $b['item_price'] ?>
+                                <!--else its intially £0-->
                             @else
                                 <?php $total = 0 ?>
                             @endisset
                         @endforeach
                     @else
-                        <p>Basket is currently empty</p>
+                        <p> Basket is currently empty!</p>
                     @endif
-                </div>
+
+                </table>
+
+                <!--displays total price if theres a total variable set-->
                 @isset($total)
-                <!-- Grand Total -->
-                <div class="basket-total">
-                    <p><strong>Grand Total:</strong></p>
-                    <span><strong>£{{$total}}</strong></span>
-                </div>
+                    <!--ShoppingBasket Total-->
+                    <div class="shopping-basket-total">
+                        <p><strong>Total Price:</span>£{{$total}}</span></strong></p>
+                    </div>
+                @else <!--else total price is empty-->
+                    <div class="shopping-basket-total">
+                        <p><strong>Total Price:</span> </span></strong></p>
+                    </div>
                 @endisset
 
-                <!-- Action Buttons -->
-                <div class="basket-actions">
-                    <button onclick="location.href='{{url('/checkout')}}'" class="proceed-btn">Proceed to Checkout</button>
-                    <button onclick="location.href='{{url('/products')}}'" class="continue-btn">Continue Shopping</button>
+                <!--ShoppingBasket Actions-->
+                <div class="shopping-basket-actions">
+                    <button class="checkout-button" onclick="location.href='{{url('/checkout')}}'">Proceed to Checkout</button>
+                    <button class="continue-button" onclick="location.href='{{url('/products')}}'">Continue Shopping</button>
+                    <button class="previous-orders-button" onclick="location.href='{{url('/previousorders')}}'">Previous Orders</button>
                 </div>
-            </section>
+            </div>
         </main>
+        
 
         <!-- Footer Section-->
         <footer>

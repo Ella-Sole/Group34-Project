@@ -45,10 +45,6 @@ Route::get('/previousorders', function(){
     return view('previousOrders');
 });
 
-Route::get('/previousorderstable', function(){
-    return view('previousOrdersTable');
-});
-
 //products page
 Route::get('/products', function(){
     return view('productListingPage', [
@@ -63,3 +59,6 @@ Route::get('/basket', [ProductController::class,'showBasket'])->name('basket');
 
 //when add to basket button is clicked, the function addToBasket is done
 Route::get('addToBasket/{id}', [ProductController::class, 'addToBasket']);
+
+//remove from basket when the button is clicked
+Route::get('removeFromBasket/{id}', [ProductController::class, 'removeFromBasket']);
