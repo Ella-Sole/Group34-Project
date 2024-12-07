@@ -107,7 +107,8 @@
                                 <td> <span class="game-title">{{ $b['item_name'] }}</span> </td>
                                 <td> <span class="game-description">{{ $b['item_description'] }}</span> </td>
                                 <td> <span class="game-price">£{{ $b['item_price'] }}</span> </td>
-                                <td> <button class="remove-button">Remove</button> </td>
+                                <td> <a href = "{{ url('removeFromBasket/'.$b->item_id) }}"><button class="remove-button">Remove</button></a> </td>
+                                
                             </tr>
 
                             <!--check if total price variable is set-->

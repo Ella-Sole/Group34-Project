@@ -41,4 +41,27 @@ class ProductController extends Controller
         //return basket page with an array
         return view('basket', array('thebasket' => $thebasket));
     }
+
+    public function removeFromBasket($id) {
+        $thebasket = Session::get('basket');
+        //array('thebasket' => $thebasket);
+
+        //get the item from database by id
+        $removedItem = Product::where('item_id',$id)->first();
+
+        //loop over the array, getting key (index in array) and its value (the row stored there)
+        foreach($thebasket as $key => $val){
+            //if the id matched with the one that is supposed to be removed:
+            if($val['item_id'] == $removedItem['item_id']){
+
+                //unset removes element from the array by its key
+                unset($thebasket[$key]);
+                
+                //put new basket contents into session variable
+                Session::put('basket', $thebasket);
+            }
+        }
+        //return basket page with an array (again)
+        return view('basket', array('thebasket' => $thebasket));
+    }
 }
