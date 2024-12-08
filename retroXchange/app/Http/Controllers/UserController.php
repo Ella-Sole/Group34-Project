@@ -19,8 +19,8 @@ class UserController extends Controller
         //attempt handles the login attempts
         //validates the email and password and that they've bee put in
         $a = $details->validate([
-            'email' => ['required'], //required, email??
-            'password' => ['required'],
+            'email' => 'required',
+            'password' => 'required',
         ]);
 
         //if the authorisation has been successful using Auth
