@@ -7,6 +7,8 @@ use Illuminate\Support\Arr;
 use App\Models\Product;
 //allow use of Product controller
 use App\Http\Controllers\ProductController;
+//allow use of User controller
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Session;
 
 //Route::get('/', function () {
@@ -37,9 +39,14 @@ Route::get('/login', function(){
     return view('login');
 });
 
+//login functionality calls the login function of usercontroller
+Route::post('loginUser', [UserController::class, 'login'])->name('loginUser');
+
 Route::get('/signup', function(){
     return view('signup');
 });
+
+Route::post('register', [UserController::class, 'signup'])->name('register');
  
 Route::get('/previousorders', function(){
     return view('previousOrders');
