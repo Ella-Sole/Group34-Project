@@ -474,31 +474,89 @@ COLORS:
     margin:0;
     padding:0;
 }
+
+
+/*Shopping Basket Page*/
 .shopping-basket{
     display: flex;
     flex:0 0 auto;
     flex-direction: column;
+    max-width: 1200px;
+    margin: 0 auto;
     
 }
+
+.shopping-basket h2 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.shopping-basket p {
+    font-size: 16;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.shopping-basket-table th {
+    padding: 20px;
+    text-align: center;
+    background-color: #91C788;
+}
+
+.shopping-basket-table td {
+    padding: 20px;
+    text-align: center;
+    background-color: white;
+}
+
 .basket-item{
     margin: 0 auto;
 }
+
 .shopping-basket-total{
     margin:0 auto;
 }
 .shopping-basket-actions{
     margin: 0 auto;
 }
-.shopping-basket button{
-    background-color: #52734D;
-
+.shopping-basket-actions button{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 10px 20px;
+    background-color: #91C788;
+    color: black;
+    transition: background 0.3s, transform 0.3s;
+    cursor: pointer;
 }
-.shopping-basket button:hover{
+.shopping-basket-actions button:hover{
     background-color:#DDFFBC;
+    transform: scale(1.2);
 }
 
+.remove-button {
+    background-color: red;
+    cursor: pointer;
+}
+.remove-button:hover {
+    transform: scale(1.1);
+}
 
+.shopping-basket-total {
+    padding: 20px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    background-color: #DDFFBC ;
 
+}
+
+.shopping-basket-total p {
+    font-size: 18px;
+
+}
+/*Shopping Basket Page*/
 
 /*PreviousOrderPage*/
 .previous-orders-section {
