@@ -33,7 +33,7 @@ CREATE TABLE `items_for_sale` (
   `item_name` varchar(100) NOT NULL,
   `item_image` varchar(255) NOT NULL,
   `item_description` text DEFAULT NULL,
-  `category` enum('ps3','ps4','xbox one','xbox 360','3ds','2ds','ds','gameboy colour','xbox','psp','psvita','wii','wiiu') NOT NULL
+  `category` enum('ps3','ps4','xbox one','xbox 360','switch','3ds','2ds','ds','gameboy colour','xbox','psp','psvita','wii','wiiu') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -209,7 +209,17 @@ ALTER TABLE `user_details`
   ADD CONSTRAINT `fkPaymentMethod` FOREIGN KEY (`payment_metod`) REFERENCES `payment_method` (`payment_method_id`),
   ADD CONSTRAINT `fkPersonalDetails` FOREIGN KEY (`personal_details_info`) REFERENCES `personal_details` (`personal_details_id`),
   ADD CONSTRAINT `fkPurchaseHistory` FOREIGN KEY (`purchase_history`) REFERENCES `purchase_history` (`receipt_id`);
+
+INSERT INTO `items_for_sale` (`item_id`, `item_price`, `item_name`, `item_image`,`item_description`,`category`) VALUES
+(1, 10, 'Red Dead Redemption 2', 'assets/images/Red_Dead_Redemption.jpg','Action Survival','ps3'),
+(2, 4, 'Fallout 4', 'assets/images/fallout.jpg','Action RPG','xbox one'),
+(3, 13, 'Legend of Zelda Breath of the Wild', 'assets/images/Zelda.webp','Action Adventure','switch'),
+(4, 20, 'Super Mario 64', 'assets/images/super mario.jpg','Action platformer','switch'),
+(5, 15, 'GTA V', 'assets/images/gta.jpg','Action Platformer','xbox 360');
 COMMIT;
+
+
+
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
