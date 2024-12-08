@@ -12,13 +12,18 @@ class User extends Authenticatable
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
 
+    //specify which database table the Model uses
+    protected $table = 'login_details';
+
+    //made timestamps false or else laravel will try to insert timestamps into the db into columns that dont exist
+    public $timestamps = false;
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
         'email',
         'password',
     ];

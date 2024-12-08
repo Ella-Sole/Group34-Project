@@ -15,7 +15,9 @@
                 <h1>Log In</h1>
             </div>
            <!-- Form Section-->
-           <form action="{{asset('/handlelogin.php')}}" method="POST">
+            <!--when form is submitted, routes to loginuser-->
+           <form action="{{ route('loginUser') }}" method="POST">
+            <!--csrf important for form security-->
             @csrf
             <label for="email address"> Email Address:</label><br>
             <input type="text" id="email" name="email" required><br>

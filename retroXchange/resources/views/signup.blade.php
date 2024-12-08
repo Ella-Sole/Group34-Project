@@ -16,7 +16,7 @@
 
 
              <!-- Start of the form -->
-             <form action="{{asset('/process.php')}}" method="POST" onsubmit="validateForm(event)">
+             <form action="{{route('register')}}" method="POST">
                 @csrf
                 <input type="hidden" name="submitted" value="1">
 

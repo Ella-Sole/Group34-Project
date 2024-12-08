@@ -16,7 +16,7 @@ class CreateLoginDetailsTable extends Migration
         Schema::create('login_details', function (Blueprint $table) {
             $table->integer('login_id')->primary();
             $table->string('email', 150);
-            $table->string('password', 50);
+            $table->string('password');
         });
     }
 
