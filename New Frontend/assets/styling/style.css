@@ -500,3 +500,95 @@ COLORS:
 
 
 
+/*PreviousOrderPage*/
+.previous-orders-section {
+    padding: 20px;
+    text-align: center; 
+}
+
+.previous-orders-section h1 {
+    font-size: 2rem; 
+    margin-bottom: 10px; 
+}
+
+.previous-orders-section p {
+    font-size: 1rem; 
+    margin-bottom: 60px; 
+}
+
+.order-details {
+    display: grid; 
+    grid-template-columns: 1fr 2fr 1fr 1fr 1fr; 
+    gap: 20px; 
+    align-items: center;
+    background-color: white; 
+    padding: 30px;
+    border-radius: 10px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.order-id {
+    font-size: 0.7rem; 
+    color: black;
+    top: 5px;
+    left: 5px;
+    position: absolute;
+}
+
+.p-game-title {
+    font-size: 1.5rem; 
+    color: black;
+}
+
+.p-quantity {
+    font-size: 1.2rem;
+    color: black;
+}
+
+.order-date {
+    font-size: 0.8rem;
+    color: white;
+}
+
+.order-date1 {
+    font-size: 0.8rem;
+    color: #505050;
+}
+
+.order-date p {
+    margin: 0;  
+    line-height: 1; 
+}
+
+.p-game-price {
+    font-size: 1.2rem; 
+    color: #91C788; 
+}
+
+.p-game-image {
+    width: 70px;  
+}
+
+.p-game-image img {
+    width: 100%;
+}
+
+.basket-button {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    background-color: #91C788;
+    color: black;
+    transition: background 0.3s, transform 0.3s;
+    cursor: pointer;
+}
+
+.basket-button:hover{
+    transform: scale(1.2);
+}
+/*PreviousOrderPage*/
+
