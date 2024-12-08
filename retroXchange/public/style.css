@@ -20,7 +20,7 @@ COLORS:
 .index-page-layout {
     display: grid;
 
-    grid-template-rows: 4fr 30fr 30fr 10fr;
+    grid-template-rows: 4fr 30fr 30fr 50fr 50fr 10fr;
 }
 
 .header-grid-layout {
@@ -261,13 +261,19 @@ COLORS:
 }
 
 
-/* Mostly Viviene's Work, Heavily Edited by Igors */
+/* Products */
+
 .products {
     display: grid;
     background-color: #DDFFBC;
     grid-row: 3;
 
     grid-template-rows: 10fr 40fr;
+}
+
+.product-section img {
+    width: 200;
+    height: 150px;
 }
 
 .product-category {
@@ -278,37 +284,19 @@ COLORS:
     justify-content: center;
     align-items: center;
 }
-
-.pre-btn {
-    display: flex;
-    justify-content: right;
-    align-items: center;
-
-    grid-column: 1;
-    
-
-    transform: rotate(180deg);
-    border: none;
-    background-color: #DDFFBC;
-    /* background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #91C788 100%); */
-    cursor: pointer;
-    z-index: 8;
-    
-}
-
+.pre-btn,
 .nxt-btn {
-    display: flex;
-    justify-content: right;
-    align-items: center;
-
-    grid-column: 1 / span -1;
-    
     border: none;
-    background-color: #DDFFBC;
-    /* background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #91C788 100%); */
+    width: 2vw;
+    height: 81%;
+    position: absolute;
+    display: flex;
+    margin-top: 0;
+    justify-content: left;
+    align-items: center;
+    background: #DDFFBC;
     cursor: pointer;
     z-index: 8;
-
 }
 
 .pre-btn img,
@@ -316,6 +304,15 @@ COLORS:
     opacity: 20%;
     width: 20%;
     height: auto;
+}
+
+.pre-btn {
+    left: 0;
+    transform: rotate(180deg);
+}
+
+.nxt-btn {
+    right: 0;
 }
 
 .pre-btn:hover img,
@@ -326,9 +323,11 @@ COLORS:
 .product-container {
     display: flex;
     grid-row: 2;
-
+    overflow-x: auto;
+    scroll-behavior: smooth;
     justify-content: space-between;
     align-items: center;
+    height: 500px;
 }
 
 .product-card {
@@ -340,7 +339,7 @@ COLORS:
 
 .product-image {
     width: 100%;
-    height: auto;
+    height: 300px;
     overflow: hidden;
 }
 
@@ -354,58 +353,22 @@ COLORS:
 }
 
 .product-thumbnail {
-    width: 60%;
-    height: auto;
+    width: 90%;
+    height: 90%;
     object-fit: cover;
 }
 
 .price {
     font-weight: 900;
     font-size: 20px;
-    padding-top: 10px;
+    padding-top: 5px;
 }
 
 .price-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 30px;
-}
-
-.basket {
-    width: 25px;
-    height: 25px;
-    background-color: #3ea74a;
-    border-radius: 50%;
-    border-color: #3ea74a;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-}
-
-.product-short-description {
-    width: 100%;
-    height: 20px;
-    line-height: 20px;
-    padding-bottom: 10%;
-    padding-bottom: 10%;
-}
-
-.product-brand {
-    text-transform: uppercase;
-    opacity: 60%;
-}
-
-.product-container::-webkit-scrollbar {
-    display: none;
-}
-.table-display{
-    width:200%
-    
-}
-.product-title{
-    text-align: center;
+    margin-top: 10px;
 }
 .contact-us{
     text-align: center;
@@ -474,29 +437,179 @@ COLORS:
     margin:0;
     padding:0;
 }
+
+
+/*Shopping Basket Page*/
 .shopping-basket{
     display: flex;
     flex:0 0 auto;
     flex-direction: column;
+    max-width: 1200px;
+    margin: 0 auto;
     
 }
+
+.shopping-basket h2 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.shopping-basket p {
+    font-size: 16;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.shopping-basket-table th {
+    padding: 20px;
+    text-align: center;
+    background-color: #91C788;
+}
+
+.shopping-basket-table td {
+    padding: 20px;
+    text-align: center;
+    background-color: white;
+}
+
 .basket-item{
     margin: 0 auto;
 }
+
 .shopping-basket-total{
     margin:0 auto;
 }
 .shopping-basket-actions{
     margin: 0 auto;
 }
-.shopping-basket button{
-    background-color: #52734D;
-
+.shopping-basket-actions button{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 10px 20px;
+    background-color: #91C788;
+    color: black;
+    transition: background 0.3s, transform 0.3s;
+    cursor: pointer;
 }
-.shopping-basket button:hover{
+.shopping-basket-actions button:hover{
     background-color:#DDFFBC;
+    transform: scale(1.2);
 }
 
+.remove-button {
+    background-color: red;
+    cursor: pointer;
+}
+.remove-button:hover {
+    transform: scale(1.1);
+}
 
+.shopping-basket-total {
+    padding: 20px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    background-color: #DDFFBC ;
 
+}
+
+.shopping-basket-total p {
+    font-size: 18px;
+
+}
+/*Shopping Basket Page*/
+
+/*PreviousOrderPage*/
+.previous-orders-section {
+    padding: 20px;
+    text-align: center; 
+}
+
+.previous-orders-section h1 {
+    font-size: 2rem; 
+    margin-bottom: 10px; 
+}
+
+.previous-orders-section p {
+    font-size: 1rem; 
+    margin-bottom: 60px; 
+}
+
+.order-details {
+    display: grid; 
+    grid-template-columns: 1fr 2fr 1fr 1fr 1fr; 
+    gap: 20px; 
+    align-items: center;
+    background-color: white; 
+    padding: 30px;
+    border-radius: 10px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.order-id {
+    font-size: 0.7rem; 
+    color: black;
+    top: 5px;
+    left: 5px;
+    position: absolute;
+}
+
+.p-game-title {
+    font-size: 1.5rem; 
+    color: black;
+}
+
+.p-quantity {
+    font-size: 1.2rem;
+    color: black;
+}
+
+.order-date {
+    font-size: 0.8rem;
+    color: #d3d3d3;
+}
+
+.order-date1 {
+    font-size: 0.8rem;
+    color: #505050;
+}
+
+.order-date p {
+    margin: 0;  
+    line-height: 1; 
+}
+
+.p-game-price {
+    font-size: 1.2rem; 
+    color: #91C788; 
+}
+
+.p-game-image {
+    width: 70px;  
+}
+
+.p-game-image img {
+    width: 100%;
+}
+
+.basket-button {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    background-color: #91C788;
+    color: black;
+    transition: background 0.3s, transform 0.3s;
+    cursor: pointer;
+}
+
+.basket-button:hover{
+    transform: scale(1.2);
+}
+/*PreviousOrderPage*/
 
