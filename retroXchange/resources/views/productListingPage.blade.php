@@ -24,7 +24,7 @@
                         <div class="product-card">
                             <div class="product-image">
                                 <!--make image location point to image named with same item ID-->
-                                <img src="{{asset('images/'.$product->item_id.'.jpg')}}" class="product-thumbnail" alt="">
+                                <img src="{{url('https://m.media-amazon.com/images/I/'.$product->item_image.'.jpg')}}" class="product-thumbnail" alt="">
                             </div>
                             <div class="product-info"> <!--product info from database -->
                                 <p class="product-brand">{{ $product['category'] }}</p> <!-- Category -->
