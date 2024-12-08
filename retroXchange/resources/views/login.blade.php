@@ -1,15 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width. initial-scale = 1.0">
-        <title>Log-in</title>
-        <link rel="stylesheet" href="{{asset('/style.css')}}"> <!-- Link to CSS File-->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
-    
-    </head>
+    <x-head>
+        @section('title', "Login")
+    </x-head>
 
     <body class = "body-form">
 
@@ -32,17 +25,6 @@
         
             <input type="submit" value="Login"><br>
         </form>
-            <!--
-           <div>
-                <label for="email address"> Email Address:</label><br>
-                <input type="text" id="email" name="email"><br>
-
-                <label for="password"> Password:</label><br>
-                <input type="password" id="password" name="password"><br>
-
-                <input type="submit" value="login" ><br>
-                -->
-           </div>
            <div>
             <p>Not yet got an account?<a href = "{{url('/signup')}}"> Sign up</a></p>
            </div>
