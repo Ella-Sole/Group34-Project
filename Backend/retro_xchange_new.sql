@@ -211,11 +211,11 @@ ALTER TABLE `user_details`
   ADD CONSTRAINT `fkPurchaseHistory` FOREIGN KEY (`purchase_history`) REFERENCES `purchase_history` (`receipt_id`);
 
 INSERT INTO `items_for_sale` (`item_id`, `item_price`, `item_name`, `item_image`,`item_description`,`category`) VALUES
-(1, 10, 'Red Dead Redemption 2', 'assets/images/Red_Dead_Redemption.jpg','Action Survival','ps3'),
-(2, 4, 'Fallout 4', 'assets/images/fallout.jpg','Action RPG','xbox one'),
-(3, 13, 'Legend of Zelda Breath of the Wild', 'assets/images/Zelda.webp','Action Adventure','switch'),
-(4, 20, 'Super Mario 64', 'assets/images/super mario.jpg','Action platformer','switch'),
-(5, 15, 'GTA V', 'assets/images/gta.jpg','Action Platformer','xbox 360');
+(1, 10, 'Red Dead Redemption 2', 'Red_Dead_Redemption.jpg','Action Survival','ps3'),
+(2, 4, 'Fallout 4', 'fallout.jpg','Action RPG','xbox one'),
+(3, 13, 'Legend of Zelda Breath of the Wild', 'Zelda.webp','Action Adventure','switch'),
+(4, 20, 'Super Mario 64', 'super mario.jpg','Action platformer','switch'),
+(5, 15, 'GTA V', 'gta.jpg','Action Platformer','xbox 360');
 COMMIT;
 
 
