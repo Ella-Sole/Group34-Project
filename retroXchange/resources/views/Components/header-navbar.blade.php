@@ -51,9 +51,9 @@
                 <div class="navbar-item">
                     <a href="{{url('/products')}}">GAMES</a>
                 </div>
-                <div class="navbar-item">
+                <!--<div class="navbar-item">
                     <a href="#">CONSOLES</a>
-                </div>
+                </div>-->
                 <div class="navbar-item">
                     <a href="{{url('/about')}}">ABOUT US</a>
                 </div>
