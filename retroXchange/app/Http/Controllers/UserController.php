@@ -30,8 +30,7 @@ class UserController extends Controller
             $details->session()->regenerate();
 
             //redirect to homepage if successful
-            //return view('homepage');
-            return redirect()->route('homepage');
+            return redirect()->intended('/');
 
         }
 
@@ -58,7 +57,7 @@ class UserController extends Controller
         ]);
 
         //redirect to login if successful
-        return redirect()->route('login');
+        return redirect()->intended('/login');
 
     }
 }
