@@ -45,7 +45,7 @@ CREATE TABLE `items_for_sale` (
 CREATE TABLE `login_details` (
   `login_id` int(9) NOT NULL,
   `email` varchar(150) NOT NULL,
-  `password` varchar(50) NOT NULL
+  `password` varchar(65535) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -211,11 +211,13 @@ ALTER TABLE `user_details`
   ADD CONSTRAINT `fkPurchaseHistory` FOREIGN KEY (`purchase_history`) REFERENCES `purchase_history` (`receipt_id`);
 
 INSERT INTO `items_for_sale` (`item_id`, `item_price`, `item_name`, `item_image`,`item_description`,`category`) VALUES
-(1, 10, 'Red Dead Redemption 2', 'Red_Dead_Redemption.jpg','Action Survival','ps3'),
-(2, 4, 'Fallout 4', 'fallout.jpg','Action RPG','xbox one'),
-(3, 13, 'Legend of Zelda Breath of the Wild', 'Zelda.webp','Action Adventure','switch'),
-(4, 20, 'Super Mario 64', 'super mario.jpg','Action platformer','switch'),
-(5, 15, 'GTA V', 'gta.jpg','Action Platformer','xbox 360');
+(1, 10, 'Red Dead Redemption', '71W0shS7ylL._AC_SL1000','Action Survival','ps3'),
+(2, 4, 'Fallout 4', '812nlgWkM6L.AC_SL1500','Action RPG','xbox one'),
+(3, 13, 'Legend of Zelda Breath of the Wild', '81eHh0BNU0L._AC_SL1500','Action Adventure','switch'),
+(4, 20, 'Super Mario 64', '81Xi9uVRf4L.AC_SL1500','Action platformer','switch'),
+(5, 15, 'GTA V', '91Y4xD7QGNL.AC_SL1500','Action Platformer','xbox 360'),
+(6, 2, 'FIFA 21','91KwPLW4BqL._AC_SL1500_','Football','ps4'),
+(7,30,'Animal Crossing: New Horizons','81s8etnYPrL._AC_SL1500_','Social Simulation','switch');
 COMMIT;
 
 
