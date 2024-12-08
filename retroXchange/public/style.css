@@ -20,7 +20,7 @@ COLORS:
 .index-page-layout {
     display: grid;
 
-    grid-template-rows: 4fr 30fr 30fr 50fr 50fr 10fr;
+    grid-template-rows: 4fr 30fr 30fr 10fr;
 }
 
 .header-grid-layout {

@@ -10,7 +10,7 @@
     <!-- Mostly Viviene's Work, Edited by Igors -->
     <main>
         <div class="index-body-grid-layout">
-             <div class="products">
+             {{-- <div class="products">
                 <h2 class="product-category">Games</h2> 
 
                  <div class="product-container">
@@ -103,7 +103,7 @@
 
                      <button class="nxt-btn"><img src="{{ asset('images/arrow-button.png') }}" alt="forward-button"></button>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </main>
     <script src = "{{asset('/script.js')}}"></script>
