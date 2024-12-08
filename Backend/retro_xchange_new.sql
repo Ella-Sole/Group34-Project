@@ -31,6 +31,7 @@ CREATE TABLE `items_for_sale` (
   `item_id` int(11) NOT NULL,
   `item_price` decimal(10,0) NOT NULL,
   `item_name` varchar(100) NOT NULL,
+  `item_image` varchar(255) NOT NULL,
   `item_description` text DEFAULT NULL,
   `category` enum('ps3','ps4','xbox one','xbox 360','3ds','2ds','ds','gameboy colour','xbox','psp','psvita','wii','wiiu') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
