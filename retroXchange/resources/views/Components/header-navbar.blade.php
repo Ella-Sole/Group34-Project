@@ -32,11 +32,13 @@
             </a>
         </div>
         <div class="login-icon">
-            <!-- This SVG was obtained from the bootstrap website -->
+            <a href="{{url('/login')}}">
+                 <!-- This SVG was obtained from the bootstrap website -->
             <svg xmlns="http://www.w3.org/2000/svg" width="2.5rem" height="2.5rem" fill="currentColor"
                 class="bi bi-person-fill" viewBox="0 0 16 16">
                 <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
-            </svg>
+                </svg>
+            </a>
         </div>
 
         <!-- Navigation Bar-->
@@ -46,14 +48,11 @@
                 <a href="{{url('/')}}">HOME</a>
                 </div>
                 <div class="navbar-item">
-                    <a href="{{url('/login')}}">LOG IN</a>
-                </div>
-                <div class="navbar-item">
                     <a href="{{url('/products')}}">GAMES</a>
                 </div>
-                <!--<div class="navbar-item">
+                <div class="navbar-item">
                     <a href="#">CONSOLES</a>
-                </div>-->
+                </div>
                 <div class="navbar-item">
                     <a href="{{url('/about')}}">ABOUT US</a>
                 </div>
