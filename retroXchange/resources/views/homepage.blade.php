@@ -14,11 +14,11 @@
                 <h2 class="product-category">Games</h2> 
 
                  <div class="product-container">
-                    <button class="pre-btn"><img src="assets/images/arrow-button.png" alt="back-button"></button>
+                    <button class="pre-btn"><img src="{{ asset('images/arrow-button.png') }}" alt="back-button"></button>
 
                     <div class="product-card">
                         <div class="product-image">
-                            <img src="assets/images/Red_Dead_Redemption.jpg" class="product-thumbnail" alt="">
+                            <img src="{{ asset('images/red_dead_redemption.jpg') }}" class="product-thumbnail" alt="">
                         </div>
 
                         <div class="product-info">
@@ -101,7 +101,7 @@
                         </div>
                     </div> 
 
-                     <button class="nxt-btn"><img src="assets/images/arrow-button.png" alt="forward-button"></button>
+                     <button class="nxt-btn"><img src="{{ asset('images/arrow-button.png') }}" alt="forward-button"></button>
                 </div>
             </div>
         </div>
