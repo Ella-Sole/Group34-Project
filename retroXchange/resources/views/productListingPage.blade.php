@@ -4,7 +4,7 @@
     @section('title', 'Games')
 </x-head>
 
-<body class = "body-form">
+<body class = "games-page-layout background">
     <x-header-navbar> </x-header-navbar>
     <main>
 

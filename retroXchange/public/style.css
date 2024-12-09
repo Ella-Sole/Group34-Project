@@ -39,6 +39,12 @@ a:visited {
     grid-template-rows: 1fr 9.7fr 1fr;
 }
 
+.games-page-layout {
+    display: grid;
+
+    grid-template-rows: 1fr 9.7fr 1fr;
+}
+
 .login-page-layout {
     display: grid;
 
