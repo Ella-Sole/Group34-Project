@@ -2,17 +2,17 @@
 <html lang="en">
 
 <x-head>
-    @section('title', "About Us")
+    @section('title', 'About Us')
 </x-head>
 
-    <body class = "body-form">
+<body class = "body-form">
 
-        <x-header-navbar> </x-header-navbar>
+    <x-header-navbar> </x-header-navbar>
 
     <!-- Mostly Jeremiah's Work, Heavily Edited by Igors -->
     <main class="about-us-body">
         <div class="about-us-logo">
-            <img src="{{asset('images/logo.png')}}" alt="retroxchange-logo">
+            <img src="{{ asset('images/logo.png') }}" alt="retroxchange-logo">
         </div>
 
         <div class="about-us-company-story about-us-box-style">
@@ -39,7 +39,7 @@
 
         <div class="team-heading about-us-box-style">
             <h2>Meet Our Team</h2>
-        </div> 
+        </div>
 
         <div class="about-us-team-members">
             <div class="team-member about-us-box-style">
@@ -113,7 +113,7 @@
 
 
     <x-footer> </x-footer>
-    <script src = "{{asset('/script.js')}}"></script>
+    <script src="{{ asset('/script.js') }}"></script>
 </body>
 
 </html>

@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-    <x-head>
-        @section('title', "Checkout Page")
-    </x-head>
+<x-head>
+    @section('title', 'Checkout Page')
+</x-head>
 
-    <body class = "body-form">
-        <x-header-navbar> </x-header-navbar>
+<body class = "body-form">
+    <x-header-navbar> </x-header-navbar>
     <!-- Main Content-->
     <main>
         <!-- Checkout Title-->
@@ -66,6 +66,7 @@
         </section>
     </main>
     <x-footer> </x-footer>
-    <script src = "{{asset('/script.js')}}"></script>
+    <script src="{{ asset('/script.js') }}"></script>
 </body>
+
 </html>

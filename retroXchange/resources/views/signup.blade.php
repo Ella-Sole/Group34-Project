@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-    <x-head>
-        @section('title', "Sign Up!")
-    </x-head>
+<x-head>
+    @section('title', 'Sign Up!')
+</x-head>
 
-    <body class = "body-form">
-        <x-header-navbar> </x-header-navbar>
-         <!-- Main Content-->
+<body class = "body-form">
+    <x-header-navbar> </x-header-navbar>
+    <!-- Main Content-->
     <main class="push-elements">
         <!-- Form Section-->
         <div class = 'center-header'>
-        <h1>Sign Up Today!</h1>
+            <h1>Sign Up Today!</h1>
         </div>
         <section class="center-form">
 
 
-             <!-- Start of the form -->
-             <form action="{{route('register')}}" method="POST">
+            <!-- Start of the form -->
+            <form action="{{ route('register') }}" method="POST">
                 @csrf
                 <input type="hidden" name="submitted" value="1">
 
@@ -34,10 +34,10 @@
 
                 <!-- Submit Button -->
                 <input type="submit" value="Sign Up">
-            <p> Already got an account? <a href="{{url('/login')}}">Log in</a></p>
+                <p> Already got an account? <a href="{{ url('/login') }}">Log in</a></p>
 
-            <!-- SIGNUP PAGE DOES NOT NEED THIS INFORMATION, IT SHOULD BE OPTIONAL LATER IN SETTINGS OR WHEN BUYING-->
-            <!-- <label for="first name"> First Name:</label><br>
+                <!-- SIGNUP PAGE DOES NOT NEED THIS INFORMATION, IT SHOULD BE OPTIONAL LATER IN SETTINGS OR WHEN BUYING-->
+                <!-- <label for="first name"> First Name:</label><br>
                <input type="text" id="fname" name="fname"><br>
 
                <label for="last name"> Last Name:</label><br>
@@ -49,7 +49,7 @@
                <label for="post code"> Post Code:</label><br>
                <input type="text" id="postcode" name="postcode"><br> -->
 
-          <!----  <label for="email address"> Email Address:</label><br> 
+                <!----  <label for="email address"> Email Address:</label><br>
             <input type="text" id="email" name="email"><br>
 
             <label for="password"> Password:</label><br>
@@ -66,7 +66,8 @@
         </section>
 
     </main>
-         <x-footer> </x-footer>
-          <script src = "{{asset('/script.js')}}"></script>
-    </body>
+    <x-footer> </x-footer>
+    <script src="{{ asset('/script.js') }}"></script>
+</body>
+
 </html>

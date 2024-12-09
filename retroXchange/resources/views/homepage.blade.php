@@ -2,7 +2,7 @@
 <html lang="en">
 
 <x-head>
-    @section('title', "retroXchange")
+    @section('title', 'retroXchange')
 </x-head>
 
 <body class="background index-page-layout">
@@ -10,7 +10,7 @@
     <!-- Mostly Viviene's Work, Edited by Igors -->
     <main>
         <div class="index-body-grid-layout">
-             {{-- <div class="products">
+            {{-- <div class="products">
                 <h2 class="product-category">Games</h2> 
 
                  <div class="product-container">
@@ -107,7 +107,7 @@
         </div>
     </main>
     <x-footer> </x-footer>
-    <script src = "{{asset('/script.js')}}"></script>
+    <script src="{{ asset('/script.js') }}"></script>
 </body>
 
 </html>
