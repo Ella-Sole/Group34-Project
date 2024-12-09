@@ -27,7 +27,6 @@ function myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
 }
 
-
 function toggleDropdown(event, dropdownId) {
     event.stopPropagation();  
     var dropdown = document.getElementById(dropdownId);

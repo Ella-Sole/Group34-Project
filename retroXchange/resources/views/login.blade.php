@@ -54,4 +54,5 @@
             </div>
           </footer>
     </body>
+    <script src = "{{asset('/script.js')}}"></script>
 </html>

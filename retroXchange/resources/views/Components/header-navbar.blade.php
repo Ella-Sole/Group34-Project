@@ -1,8 +1,8 @@
 <header>
     <div class="header-grid-layout">
-        <div class="dropdown side-menu">
+        <div class="dropdown">
             <button onclick="myFunction()" class="dropbtn">
-               <a><svg xmlns="http://www.w3.org/2000/svg" width="2.5rem" height="2.5rem" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+               <a><svg xmlns="http://www.w3.org/2000/svg" width="3.8rem" height="3.9rem" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
                 </svg></a>
             </button>

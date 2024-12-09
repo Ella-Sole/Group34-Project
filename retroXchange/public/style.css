@@ -13,6 +13,10 @@ COLORS:
     font-style: normal;
 }
 
+a:visited {
+    color: #000000;
+}
+
 .background {
     background-color: #FEFFDE;
 }
@@ -20,7 +24,7 @@ COLORS:
 .index-page-layout {
     display: grid;
 
-    grid-template-rows: 4fr 30fr 30fr 50fr 50fr 10fr;
+    grid-template-rows: 4fr 30fr 30fr 10fr;
 }
 
 .header-grid-layout {
@@ -28,7 +32,7 @@ COLORS:
     background-color: #91C788;
 
     grid-template-columns: 2fr 2fr 46fr 2fr 2fr;
-    grid-template-rows: 4fr 2fr;
+    grid-template-rows: 4.5fr 2fr;
     column-gap: 0.2rem;
 
     grid-row: 1;
@@ -133,19 +137,20 @@ COLORS:
     justify-content: center;
     align-self: center;
 
-    padding-top: 11px;
-    padding-bottom: 11px;
+    padding-top: 12px;
+    padding-bottom: 12px;
 
     grid-row: 1;
     grid-column: 5;
 }
+
 
 .basket-icon {
     display: flex;
     justify-content: center;
     align-self: center;
 
-    padding-top: 15px;
+    padding-top: 16px;
     padding-bottom: 15px;
 
     grid-row: 1;
