@@ -1,3 +1,4 @@
+<br>
 <div class="footer-grid-content">
     <footer>
         <p> &copy 2024 RetroXchange. All rights reserved</p>
