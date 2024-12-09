@@ -34,27 +34,62 @@ COLORS:
     grid-row: 1;
 }
 
-.side-menu {
-    display: flex;
-    justify-content: center;
-    align-self: center;
-
-    padding-top: 11px;
-    padding-bottom: 11px;
-
-    grid-row: 1;
-    grid-column: 1;
+.dropbtn {
+    background-color: #91C788;
+    color: black;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
 }
 
-.side-menu:hover {
-    display: flex;
-    justify-content: center;
-    align-self: center;
-
+.dropbtn:hover, .dropbtn:focus {
     background-color: #52734D;
-    flex: 1;
-    grid-row: 1;
-    grid-column: 1;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    z-index: 999;
+}
+
+.dropdown-content,
+.dropdown-content2,
+.dropdown-content3 {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a,
+.dropdown-content2 a,
+.dropdown-content3 a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover,
+.dropdown-content2 a:hover,
+.dropdown-content3 a:hover {
+    background-color: #ddd;
+}
+
+.show {
+    display: block;
+}
+
+.dropdown-content2 {
+    left: 100%;
+    top: 0;
+}
+
+.dropdown-content3 {
+    left: 100%;
+    top: 0;
 }
 
 .retroxchange-logo {
