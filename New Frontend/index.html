@@ -15,13 +15,33 @@
 <body class="background index-page-layout">
     <header>
         <div class="header-grid-layout">
-            <div class="side-menu">
-                <!-- This SVG was obtained from the bootstrap website -->
-                <svg xmlns="http://www.w3.org/2000/svg" width="2.5rem" height="2.5rem" fill="currentColor"
-                    class="bi bi-list" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd"
-                        d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
-                </svg></a>
+            <div class="dropdown">
+                <button onclick="myFunction()" class="dropbtn">
+                   <a><svg xmlns="http://www.w3.org/2000/svg" width="2.5rem" height="2.5rem" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
+                    </svg></a>
+                </button>
+            
+                <div id="myDropdown" class="dropdown-content">
+                    <a href="javascript:void(0);" onclick="toggleDropdown(event, 'productsDropdown')">Products</a>
+                    <div id="productsDropdown" class="dropdown-content2">
+                        <a href="javascript:void(0);" onclick="toggleDropdown(event, 'gamesDropdown')">Games</a>
+                        <div id="gamesDropdown" class="dropdown-content3">
+                            <a href="#">PlayStation Games</a>
+                            <a href="#">Xbox Games</a>
+                            <a href="#">Switch Games</a>
+                        </div>
+                        <a href="javascript:void(0);" onclick="toggleDropdown(event, 'consolesDropdown')">Consoles</a>
+                        <div id="consolesDropdown" class="dropdown-content3">
+                            <a href="#">PlayStation Consoles</a>
+                            <a href="#">Xbox Consoles</a>
+                        </div>
+                    </div>
+                    <a href="javascript:void(0);" onclick="toggleDropdown(event, 'settingsDropdown')">Settings</a>
+                    <div id="settingsDropdown" class="dropdown-content2">
+                        <a href="#">Dark Mode</a>
+                    </div>
+                </div>
             </div>
             <div class="logo-div">
                 <img src="assets/images/logo.png" alt="retroxchange-logo" class="retroxchange-logo">
