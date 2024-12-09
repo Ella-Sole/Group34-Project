@@ -20,7 +20,11 @@ use Illuminate\Support\Facades\Session;
 
 //default '/' will just be homepage
 Route::get('/', function(){
-    return view('homepage');
+    return view('homepage', [
+        //fetch all the product rows data from the Product Model and put into an array 'products'
+        //this variable will be passed into the view to be used
+        'products' => Product::all()
+    ]);
 });
 
 Route::get('/about', function(){
