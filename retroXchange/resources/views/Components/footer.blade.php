@@ -1,5 +1,5 @@
-<footer>
-    <div class="footer-grid-content">
+<div class="footer-grid-content">
+    <footer>
         <p> &copy 2024 RetroXchange. All rights reserved</p>
         <div>
             <nav class = "navigation-bar">
@@ -16,6 +16,5 @@
                     <a href="#"><img src = "{{ asset('images/linkedin.png') }}"> LinkedIn</a>
                 </div>
             </nav>
-        </div>
-</footer>
-  
+    </footer>
+</div>

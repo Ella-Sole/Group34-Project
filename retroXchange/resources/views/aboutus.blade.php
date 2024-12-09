@@ -5,7 +5,7 @@
     @section('title', 'About Us')
 </x-head>
 
-<body class = "page-layout background">
+<body class = "about-us-page-layout background">
 
     <x-header-navbar> </x-header-navbar>
 

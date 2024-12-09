@@ -27,6 +27,12 @@ a:visited {
     grid-template-rows: 4fr 30fr 30fr 10fr;
 }
 
+.about-us-page-layout {
+    display: grid;
+
+    grid-template-rows: 1fr 10fr 1fr;
+}
+
 .header-grid-layout {
     display: grid;
     background-color: #91c788;
@@ -289,15 +295,6 @@ a:visited {
     border-radius: 10px;
 }
 
-.footer-content {
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-
-    flex-direction: column;
-}
-
 /* Products */
 
 .products {
@@ -423,24 +420,25 @@ a:visited {
 }
 
 .footer-grid-content {
-    background-color: #91c788;
+    background-color: #ddffbc;
     display: flex;
-
     flex: 1;
 
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    /* position: absolute;
-    bottom: 0;
-    width: 100%; */
 
-    grid-row: 5;
+    grid-row: -1;
 }
 
 .footer-grid-content img {
     height: 30px;
     width: 30px;
+}
+
+footer > p {
+    align-self: center;
+    justify-content: center;
 }
 .navbar-item-login:hover {
     background-color: #ddffbc;
