@@ -106,6 +106,7 @@
             </div> --}}
         </div>
     </main>
+    <x-footer> </x-footer>
     <script src = "{{asset('/script.js')}}"></script>
 </body>
 

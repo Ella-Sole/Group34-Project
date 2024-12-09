@@ -96,30 +96,8 @@
     <!--</section>-->
 
 
-         <script src = "{{asset('/script.js')}}"></script>
         </main>
-
-        <!-- Footer Section-->
-        <!--<footer>
-            <div class="footer-grid-content">
-                <p> &copy 2024 RetroXchange. All rights reserved</p>
-                <div>
-                <nav class = "navigation-bar">
-                    <div class = "navbar-item-login">
-                    <a href="#"> <img src = "{{asset('images/facebook.jpg')}}"> Facebook</a>
-                    </div>
-                    <div class = "navbar-item-login">
-                    <a href="#"><img src = "{{asset('images/twitter.png')}}"> Twitter</a>
-                    </div>
-                    <div class = "navbar-item-login">
-                    <a href="#"><img src = "{{asset('images/thegram.jpg')}}"> Instagram</a>
-                    </div>
-                    <div class = "navbar-item-login">
-                    <a href="#"><img src = "{{asset('images/linked.png')}}"> LinkedIn</a>
-                    </div>
-                </nav>
-            </div>
-          </footer>-->
-          <script src = "{{asset('/script.js')}}"></script>
+        <x-footer> </x-footer>
+        <script src = "{{asset('/script.js')}}"></script>
     </body>
 </html>

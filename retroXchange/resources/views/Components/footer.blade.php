@@ -10,10 +10,10 @@
             <a href="#"><img src = "{{asset('images/twitter.png')}}"> Twitter</a>
             </div>
             <div class = "navbar-item-login">
-            <a href="#"><img src = "{{asset('images/thegram.jpg')}}"> Instagram</a>
+            <a href="#"><img src = "{{asset('images/instagram.jpg')}}"> Instagram</a>
             </div>
             <div class = "navbar-item-login">
-            <a href="#"><img src = "{{asset('images/linked.png')}}"> LinkedIn</a>
+            <a href="#"><img src = "{{asset('images/linkedin.png')}}"> LinkedIn</a>
             </div>
         </nav>
     </div>

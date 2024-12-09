@@ -112,18 +112,7 @@
     </main>
 
 
-        <!-- Footer Section-->
-    <footer>
-        <div class="footer-content">
-            <p> &copy 2024 RetroXchange. All rights reserved</p>
-            <div class="social-links">
-                <a href="#"> Facebook</a>
-                <a href="#"> Twitter</a>
-                <a href="#"> Instagram</a>
-                <a href="#"> LinkedIn</a>
-            </div>
-        </div>
-    </footer>
+    <x-footer> </x-footer>
     <script src = "{{asset('/script.js')}}"></script>
 </body>
 
