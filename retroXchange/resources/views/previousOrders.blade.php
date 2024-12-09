@@ -1,22 +1,21 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
     <html lang="en">
     <x-head>
         @section('title', 'Previous Orders')
     </x-head>
 
-    <body class = "body-form">
+    <body class = "previous-order-page-layout background">
 
         <x-header-navbar> </x-header-navbar>
 
         <main>
-            <!--PreviousOrders Section-->
             <section class="previous-orders-section">
                 <h1>Your Previous Orders</h1>
                 <p>Review your past orders</p>
 
-                <!--PreviousOrders Table-->
+
                 <div class="order-details">
-                    <!--Exampele-->
+
                     <span class="p-game-image"><img src="assets/images/Red_Dead_Redemption.jpg" alt="RDR Image"></span>
                     <span class="order-id">Order 1</span>
                     <span class="p-game-title"><b>Red Dead Redemption</b></span>
@@ -53,7 +52,6 @@
                     <span class="p-game-price">Total: £20.00</span>
                 </div>
 
-                <!--PreviousOrders Actions-->
                 <div class="previous-orders-actions">
                     <button class="basket-button" onclick="location.href='{{ url('/basket') }}'">Return to Shopping
                         Basket</button>

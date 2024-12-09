@@ -30,9 +30,8 @@
         </main>
         </div>
 
-        <div class="contact-us-footer">
-            <x-footer> </x-footer>
-        </div>
+        <x-footer> </x-footer>
+
         <script src="{{ asset('/script.js') }}"></script>
 </body>
 
