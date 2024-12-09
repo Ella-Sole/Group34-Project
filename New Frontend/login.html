@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width. initial-scale = 1.0">
-        <title>Login Page</title>
-        <link rel="stylesheet" href="assets/styling/style.css"> <!-- Link to CSS File-->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
-    
-    </head>
 
-    <body class = "body-form">
-        <header>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width. initial-scale = 1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="assets/styling/style.css"> <!-- Link to CSS File-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+
+</head>
+
+<body class="body-form">
+    <header>
         <div class="header-grid-layout">
             <div class="side-menu">
                 <!-- This SVG was obtained from the bootstrap website -->
@@ -49,44 +50,44 @@
                     class="bi bi-person-fill" viewBox="0 0 16 16">
                     <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
                 </svg>
-                </div>
+            </div>
 
             <!-- Navigation Bar-->
-             <div class = "navigation-bar-flexbox">
-            <nav class = "navigation-bar">
-                <div class="navbar-item">
-                    <a href="index.html">HOME</a>
-                </div>
-                <div class="navbar-item">
-                    <a href="#">GAMES</a>
-                </div>
-                <div class="navbar-item">
-                    <a href="#">CONSOLES</a>
-                </div>
-                <div class="navbar-item">
-                    <a href="about-us.html">ABOUT US</a>
-                </div>
-            </nav>
+            <div class="navigation-bar-flexbox">
+                <nav class="navigation-bar">
+                    <div class="navbar-item">
+                        <a href="index.html">HOME</a>
+                    </div>
+                    <div class="navbar-item">
+                        <a href="#">GAMES</a>
+                    </div>
+                    <div class="navbar-item">
+                        <a href="#">CONSOLES</a>
+                    </div>
+                    <div class="navbar-item">
+                        <a href="about-us.html">ABOUT US</a>
+                    </div>
+                </nav>
 
-         </header>
+    </header>
 
-         <!-- Main Content-->
+    <!-- Main Content-->
 
-         <main class = "push-elements">
-            <div>
-                <h1>Log In</h1>
-            </div>
-           <!-- Form Section-->
-           <form action="../Backend/handlelogin.php" method="POST">
+    <main class="push-elements">
+        <div>
+            <h1>Log In</h1>
+        </div>
+        <!-- Form Section-->
+        <form action="../Backend/handlelogin.php" method="POST">
             <label for="email address"> Email Address:</label><br>
             <input type="text" id="email" name="email" required><br>
-        
+
             <label for="password"> Password:</label><br>
             <input type="password" id="password" name="password" required><br>
-        
+
             <input type="submit" value="Login"><br>
         </form>
-    <!--
+        <!--
            <div>
                 <label for="email address"> Email Address:</label><br>
                 <input type="text" id="email" name="email"><br>
@@ -96,33 +97,34 @@
 
                 <input type="submit" value="login" ><br>
                 -->
-           </div>
-           <div>
-            <p>Not yet got an account?<a href = "sign-up.html"> Sign up.</a></p>
-           </div>
-               
-</main>
-         <!-- Footer Section-->
-          <footer>
-            <div class="footer-grid-content">
-                <p> &copy 2024 RetroXchange. All rights reserved</p>
-                <div>
-                <nav class = "navigation-bar">
-                    <div class = "navbar-item-login">
-                    <a href="#"> <img src = "assets/images/facebook.jpg"> Facebook</a>
+        </div>
+        <div>
+            <p>Not yet got an account?<a href="sign-up.html"> Sign up.</a></p>
+        </div>
+
+    </main>
+    <!-- Footer Section-->
+    <footer>
+        <div class="footer-grid-content">
+            <p> &copy 2024 RetroXchange. All rights reserved</p>
+            <div>
+                <nav class="navigation-bar">
+                    <div class="navbar-item-login">
+                        <a href="#"> <img src="assets/images/facebook.jpg"> Facebook</a>
                     </div>
-                    <div class = "navbar-item-login">
-                    <a href="#"><img src = "assets/images/twitter.png"> Twitter</a>
+                    <div class="navbar-item-login">
+                        <a href="#"><img src="assets/images/twitter.png"> Twitter</a>
                     </div>
-                    <div class = "navbar-item-login">
-                    <a href="#"><img src = "assets/images/thegram.jpg"> Instagram</a>
+                    <div class="navbar-item-login">
+                        <a href="#"><img src="assets/images/thegram.jpg"> Instagram</a>
                     </div>
-                    <div class = "navbar-item-login">
-                    <a href="#"><img src = "assets/images/linked.png"> LinkedIn</a>
+                    <div class="navbar-item-login">
+                        <a href="#"><img src="assets/images/linked.png"> LinkedIn</a>
                     </div>
                 </nav>
-                </div>
             </div>
-          </footer>
-    </body>
+        </div>
+    </footer>
+</body>
+
 </html>

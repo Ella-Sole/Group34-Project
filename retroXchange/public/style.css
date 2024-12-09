@@ -13,37 +13,171 @@ COLORS:
     font-style: normal;
 }
 
-.background {
-    background-color: #FEFFDE;
+a:visited {
+    color: #000000;
 }
 
-.index-page-layout {
+.background {
+    background-color: #feffde;
+}
+
+.page-layout {
     display: grid;
 
-    grid-template-rows: 4fr 30fr 30fr 50fr 50fr 10fr;
+    grid-template-rows: 1fr 9.7fr 1fr;
+}
+
+.about-us-page-layout {
+    display: grid;
+
+    grid-template-rows: 1fr 10fr 1fr;
+}
+
+.contact-us-page-layout {
+    display: grid;
+
+    grid-template-rows: 1fr 9.44fr 1fr;
+}
+
+.login-page-layout {
+    display: grid;
+
+    grid-template-rows: 1fr 9.7fr 1fr;
+}
+
+.signup-page-layout {
+    display: grid;
+
+    grid-template-rows: 1fr 8.7fr 1fr 1fr;
+}
+
+.basket-page-layout {
+    display: grid;
+
+    grid-template-rows: 1fr 8.7fr 1fr 1fr;
+}
+
+.signup-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    grid-row: 1;
+}
+
+.signup-form {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    grid-row: 2;
+}
+
+.signup-form input {
+    display: flex;
+    flex-wrap: wrap;
+
+    margin: 10px;
+    border-radius: 10px;
+    border: 1px solid black;
+
+    font-size: 120%;
+}
+
+.contact-us-form input {
+    display: flex;
+    flex-wrap: wrap;
+
+    margin: 10px;
+    border-radius: 10px;
+    border: 1px solid black;
+
+    font-size: 120%;
+}
+
+.contact-us-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    grid-row: 1;
+}
+
+.contact-us-form {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-us-form textarea {
+    display: flex;
+    flex-wrap: wrap;
+    width: 97%;
+
+    margin: 10px;
+    border-radius: 10px;
+    border: 1px solid black;
+
+    resize: none;
+    font-size: 120%;
+}
+
+.login-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    grid-row: 1;
+}
+
+.login-form {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.login-form input {
+    display: flex;
+    flex-wrap: wrap;
+
+    margin: 10px;
+    border-radius: 10px;
+    border: 1px solid black;
+
+    font-size: 120%;
+}
+
+.account-option {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .header-grid-layout {
     display: grid;
-    background-color: #91C788;
+    background-color: #91c788;
 
-    grid-template-columns: 2fr 2fr 46fr 2fr 2fr;
-    grid-template-rows: 4fr 2fr;
-    column-gap: 0.2rem;
+    grid-template-columns: 1fr 3fr 50fr 2fr 2fr;
+    grid-template-rows: 4.5fr 2fr;
+    column-gap: 0.1rem;
 
     grid-row: 1;
 }
 
 .dropbtn {
-    background-color: #91C788;
+    background-color: #91c788;
     color: black;
     font-size: 16px;
     border: none;
     cursor: pointer;
 }
 
-.dropbtn:hover, .dropbtn:focus {
-    background-color: #52734D;
+.dropbtn:hover,
+.dropbtn:focus {
+    background-color: #52734d;
 }
 
 .dropdown {
@@ -133,8 +267,8 @@ COLORS:
     justify-content: center;
     align-self: center;
 
-    padding-top: 11px;
-    padding-bottom: 11px;
+    padding-top: 12px;
+    padding-bottom: 12px;
 
     grid-row: 1;
     grid-column: 5;
@@ -145,7 +279,7 @@ COLORS:
     justify-content: center;
     align-self: center;
 
-    padding-top: 15px;
+    padding-top: 16px;
     padding-bottom: 15px;
 
     grid-row: 1;
@@ -157,7 +291,7 @@ COLORS:
     justify-content: center;
     align-self: center;
 
-    background-color: #52734D;
+    background-color: #52734d;
 
     grid-row: 1;
     grid-column: 4;
@@ -168,7 +302,7 @@ COLORS:
     justify-content: center;
     align-self: center;
 
-    background-color: #52734D;
+    background-color: #52734d;
 
     grid-row: 1;
     grid-column: 5;
@@ -176,7 +310,7 @@ COLORS:
 
 .navigation-bar-flexbox {
     display: flex;
-    background-color: #DDFFBC;
+    background-color: #ddffbc;
     grid-column: 1 / span 5;
 
     justify-content: center;
@@ -206,7 +340,7 @@ COLORS:
 }
 
 .navbar-item:hover {
-    background-color: #91C788;
+    background-color: #91c788;
 }
 
 .about-us-body {
@@ -239,7 +373,6 @@ COLORS:
 
     justify-content: center;
     align-items: center;
-
 }
 
 .about-us-company-values {
@@ -264,7 +397,7 @@ COLORS:
 
 .about-us-team-members {
     display: flex;
-    
+
     grid-column: 2 / span 2;
     grid-row: 5 / span 2;
 
@@ -278,29 +411,19 @@ COLORS:
 
     justify-content: center;
     align-items: center;
-
 }
 
 .about-us-box-style {
     background-color: white;
     border-radius: 10px;
+    border: 1px solid black;
 }
-
-.footer-content {
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-
-    flex-direction: column;
-}
-
 
 /* Products */
 
 .products {
     display: grid;
-    background-color: #DDFFBC;
+    background-color: #ddffbc;
     grid-row: 3;
 
     grid-template-rows: 10fr 40fr;
@@ -329,7 +452,7 @@ COLORS:
     margin-top: 0;
     justify-content: left;
     align-items: center;
-    background: #DDFFBC;
+    background: #ddffbc;
     cursor: pointer;
     z-index: 8;
 }
@@ -405,83 +528,85 @@ COLORS:
     justify-content: space-between;
     margin-top: 10px;
 }
-.contact-us{
+.contact-us {
     text-align: center;
     align-items: center;
-    background-color: #DDFFBC;
+    background-color: #ddffbc;
 }
-.login-form-section{
-    display:flex;
+.login-form-section {
+    display: flex;
     align-items: center;
     margin: auto;
-    background-color: #DDFFBC;
+    background-color: #ddffbc;
     position: absolute;
-  padding-left: 25px;
-  width:100%
-    
-}   
+    padding-left: 25px;
+    width: 100%;
+}
 
-
-.footer-grid-content{
-    background-color:#91C788;
+.footer-grid-content {
+    background-color: #ddffbc;
     display: flex;
+    flex: 1;
 
     justify-content: center;
     align-items: center;
     flex-direction: column;
-   position:absolute;
-   bottom:0;
-   width:100%;
+
+    grid-row: -1;
 }
 
+.footer-grid-content img {
+    height: 30px;
+    width: 30px;
+}
 
-.footer-grid-content img{
-    height:30px;
-    width:30px;
-
+footer > p {
+    align-self: center;
+    justify-content: center;
 }
 .navbar-item-login:hover {
-    background-color:#DDFFBC;
+    background-color: #ddffbc;
 }
-.push-elements{
+.push-elements {
     display: flex;
-    flex:0 0 auto;
+    flex: 0 0 auto;
     margin: 0 auto;
     flex-direction: column;
-    
 }
-.input[type=button],input[type = submit]{
-    background-color: #52734D;
+.input[type="button"],
+input[type="submit"] {
+    background-color: #ddffbc;
 }
-.input[type=button],input[type = submit]:hover{
-    background-color: #DDFFBC;
+.input[type="button"],
+input[type="submit"]:hover {
+    background-color: #52734d;
 }
-.center-header{
+.center-header {
     margin: 0 auto;
 }
-.center-form{
+.center-form {
     margin: 0 auto;
 }
-.center-p{
+.center-p {
     margin: 0 auto;
 }
-.body-form{
-    background-color: #FEFFDE;
+
+/* NO, this breaks grid, in many ways than one */
+/* .body-form {
+    background-color: #feffde;
     height: 100%;
     min-height: 100%;
-    margin:0;
-    padding:0;
-}
-
+    margin: 0;
+    padding: 0;
+} */
 
 /*Shopping Basket Page*/
-.shopping-basket{
+.shopping-basket {
     display: flex;
-    flex:0 0 auto;
+    flex: 0 0 auto;
     flex-direction: column;
     max-width: 1200px;
     margin: 0 auto;
-    
 }
 
 .shopping-basket h2 {
@@ -499,7 +624,7 @@ COLORS:
 .shopping-basket-table th {
     padding: 20px;
     text-align: center;
-    background-color: #91C788;
+    background-color: #91c788;
 }
 
 .shopping-basket-table td {
@@ -508,29 +633,29 @@ COLORS:
     background-color: white;
 }
 
-.basket-item{
+.basket-item {
     margin: 0 auto;
 }
 
-.shopping-basket-total{
-    margin:0 auto;
-}
-.shopping-basket-actions{
+.shopping-basket-total {
     margin: 0 auto;
 }
-.shopping-basket-actions button{
+.shopping-basket-actions {
+    margin: 0 auto;
+}
+.shopping-basket-actions button {
     margin-top: 10px;
     margin-bottom: 20px;
     margin-left: 10px;
     margin-right: 10px;
     padding: 10px 20px;
-    background-color: #91C788;
+    background-color: #91c788;
     color: black;
     transition: background 0.3s, transform 0.3s;
     cursor: pointer;
 }
-.shopping-basket-actions button:hover{
-    background-color:#DDFFBC;
+.shopping-basket-actions button:hover {
+    background-color: #ddffbc;
     transform: scale(1.2);
 }
 
@@ -546,40 +671,38 @@ COLORS:
     padding: 20px;
     margin-top: 40px;
     margin-bottom: 40px;
-    background-color: #DDFFBC ;
-
+    background-color: #ddffbc;
 }
 
 .shopping-basket-total p {
     font-size: 18px;
-
 }
 /*Shopping Basket Page*/
 
 /*PreviousOrderPage*/
 .previous-orders-section {
     padding: 20px;
-    text-align: center; 
+    text-align: center;
 }
 
 .previous-orders-section h1 {
-    font-size: 2rem; 
-    margin-bottom: 10px; 
+    font-size: 2rem;
+    margin-bottom: 10px;
 }
 
 .previous-orders-section p {
-    font-size: 1rem; 
-    margin-bottom: 60px; 
+    font-size: 1rem;
+    margin-bottom: 60px;
 }
 
 .order-details {
-    display: grid; 
-    grid-template-columns: 1fr 2fr 1fr 1fr 1fr; 
-    gap: 20px; 
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 1fr 1fr;
+    gap: 20px;
     align-items: center;
-    background-color: white; 
+    background-color: white;
     padding: 30px;
-    border-radius: 10px; 
+    border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     max-width: 1200px;
     margin: 0 auto;
@@ -588,7 +711,7 @@ COLORS:
 }
 
 .order-id {
-    font-size: 0.7rem; 
+    font-size: 0.7rem;
     color: black;
     top: 5px;
     left: 5px;
@@ -596,7 +719,7 @@ COLORS:
 }
 
 .p-game-title {
-    font-size: 1.5rem; 
+    font-size: 1.5rem;
     color: black;
 }
 
@@ -616,17 +739,17 @@ COLORS:
 }
 
 .order-date p {
-    margin: 0;  
-    line-height: 1; 
+    margin: 0;
+    line-height: 1;
 }
 
 .p-game-price {
-    font-size: 1.2rem; 
-    color: #91C788; 
+    font-size: 1.2rem;
+    color: #91c788;
 }
 
 .p-game-image {
-    width: 70px;  
+    width: 70px;
 }
 
 .p-game-image img {
@@ -637,14 +760,12 @@ COLORS:
     margin-top: 10px;
     margin-bottom: 20px;
     padding: 10px 20px;
-    background-color: #91C788;
+    background-color: #91c788;
     color: black;
     transition: background 0.3s, transform 0.3s;
     cursor: pointer;
 }
 
-.basket-button:hover{
+.basket-button:hover {
     transform: scale(1.2);
 }
-/*PreviousOrderPage*/
-
