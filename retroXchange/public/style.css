@@ -39,8 +39,6 @@ a:visited {
     grid-template-rows: 1fr 9.44fr 1fr;
 }
 
-
-
 .login-page-layout {
     display: grid;
 
@@ -48,6 +46,12 @@ a:visited {
 }
 
 .signup-page-layout {
+    display: grid;
+
+    grid-template-rows: 1fr 8.7fr 1fr 1fr;
+}
+
+.basket-page-layout {
     display: grid;
 
     grid-template-rows: 1fr 8.7fr 1fr 1fr;
@@ -63,7 +67,7 @@ a:visited {
 
 .signup-form {
     display: flex;
-    
+
     justify-content: center;
     align-items: center;
 
@@ -92,7 +96,6 @@ a:visited {
     font-size: 120%;
 }
 
-
 .contact-us-header {
     display: flex;
     align-items: center;
@@ -103,12 +106,10 @@ a:visited {
 
 .contact-us-form {
     display: flex;
-    
+
     justify-content: center;
     align-items: center;
 }
-
-
 
 .contact-us-form textarea {
     display: flex;
@@ -133,7 +134,7 @@ a:visited {
 
 .login-form {
     display: flex;
-    
+
     justify-content: center;
     align-items: center;
 }
@@ -589,13 +590,15 @@ input[type="submit"]:hover {
 .center-p {
     margin: 0 auto;
 }
-.body-form {
+
+/* NO, this breaks grid, in many ways than one */
+/* .body-form {
     background-color: #feffde;
     height: 100%;
     min-height: 100%;
     margin: 0;
     padding: 0;
-}
+} */
 
 /*Shopping Basket Page*/
 .shopping-basket {
@@ -766,4 +769,3 @@ input[type="submit"]:hover {
 .basket-button:hover {
     transform: scale(1.2);
 }
-

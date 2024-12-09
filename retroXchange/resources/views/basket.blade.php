@@ -4,7 +4,7 @@
     @section('title', 'Your Basket')
 </x-head>
 
-<body class = "body-form">
+<body class = "basket-page-layout background">
 
     <x-header-navbar> </x-header-navbar>
 
