@@ -21,4 +21,24 @@ productContainer.forEach((item, i) => {
         });
     }
 });
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+
+function toggleDropdown(event, dropdownId) {
+    event.stopPropagation();  
+    var dropdown = document.getElementById(dropdownId);
+    dropdown.classList.toggle("show");
+}
+
+
+window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn') && !event.target.closest('.dropdown')) {
+        var dropdowns = document.querySelectorAll('.dropdown-content, .dropdown-content2, .dropdown-content3');
+        dropdowns.forEach(function(dropdown) {
+            dropdown.classList.remove('show');
+        });
+    }
+}
 
