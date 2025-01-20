@@ -1,0 +1,19 @@
+
+    .flex-container{
+        display: flex;
+        background-color: (20,50,20);
+    }
+
+
+    .flex.container > div {
+      background-color: #f2f5f2;
+      margin: 30px;
+      padding: 30px;
+      font-size: 10px;
+
+    }
+
+
+
+
+   
