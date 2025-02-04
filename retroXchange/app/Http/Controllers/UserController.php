@@ -17,13 +17,13 @@ class UserController extends Controller
     public function login(Request $details){
 
         //attempt handles the login attempts
-        //validates the email and password and that they've bee put in
+        //validates the email and password and that they've been put in
         $a = $details->validate([
             'email' => 'required',
             'password' => 'required',
         ]);
 
-        //if the authorisation has been successful using Auth
+        //check if the authorisation has been successful using Auth
             //a lot of this checking happens in the background with laravel's built-in features
         if (Auth::attempt($a)){
             //regenerate a session as user is now logged in
@@ -32,13 +32,20 @@ class UserController extends Controller
             //redirect to homepage if successful
             return redirect()->intended('/');
 
+        } else {
+            return back()->withErrors(
+                [
+                    'error' => 'Please enter the correct login details!'
+                ]
+                );
+
         }
 
         //if the details were not correct, go back to the login page with error message
             //*later maybe make a way to check if either password or email was incorrect
-        return back()->withErrors([
-            'Incorrect login details! Please try again'
-        ]);
+        //return back()->withErrors([
+        //    'Incorrect login details! Please try again'
+        //]);
 
 
     }
