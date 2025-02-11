@@ -34,14 +34,11 @@
             <img src="{{ asset('images/logo.png') }}" alt="retroxchange-logo" class="retroxchange-logo">
         </div>
         <div class="search-bar-placement">
-            <div class="search-bar-temp">
-                <p>Temporary Searchbar Placeholder</p>
-                <!-- This SVG was obtained from the bootstrap website -->
-                <svg xmlns="http://www.w3.org/2000/svg" width="1.5rem" height="1.5rem" fill="currentColor"
-                    class="bi bi-search" viewBox="0 0 16 16">
-                    <path
-                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
-                </svg>
+            <div class="search-bar">
+                <form action="{{ route('search') }}" method="GET">
+                    <input type="text" name="search" required/>
+                    <button type="submit">Search</button>
+                </form>
             </div>
         </div>
         <div class="basket-icon">
