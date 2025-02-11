@@ -20,6 +20,7 @@
                 <!-- Products -->
                 <!-- class that holds individual products-->
                 <!--loop through the array $products, each element being a variable $product-->
+                <!-- if no products are found, an error message is displayed -->
             @if ($products-> isNotEmpty())
                 @foreach ($products as $product)
                     <div class="product-card">
