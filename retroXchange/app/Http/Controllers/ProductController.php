@@ -28,9 +28,9 @@ class ProductController extends Controller
 
         //push so its appended to the end of array 'basket'
         Session::push('basket', $basketItem);
-
+        
         //redirection back to products page
-        return back()->with('success', 'Item added to basket');
+        return back()->with('success', 'Item added to basket!');
     }
 
     //list all items in basket
@@ -42,6 +42,7 @@ class ProductController extends Controller
         return view('basket', array('thebasket' => $thebasket));
     }
 
+    //bug: if theres duplicate products, it removes all instances of that product instead of just one
     public function removeFromBasket($id) {
         $thebasket = Session::get('basket');
         //array('thebasket' => $thebasket);

@@ -9,6 +9,11 @@
     <x-header-navbar> </x-header-navbar>
 
     <main>
+        <!--message that will display either successful login or item added to basket -->
+        @if (session()->has('success'))
+            <p style="color:red"> {{session('success')}}</p>
+        @endif
+
         <section class="product">
             <h2 class="product-category">Games</h2>
             {{-- <button class="pre-btn"><img src="{{ asset('images/arrow-button.png') }}" alt="back-button"></button>

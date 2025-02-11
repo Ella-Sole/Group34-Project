@@ -21,7 +21,13 @@ class UserController extends Controller
         $a = $details->validate([
             'email' => 'required',
             'password' => 'required',
-        ]);
+        ],
+        //[
+        //    'email.required' => 'Please enter an email', //message to user
+        //    'password.required' => 'Please enter a password',
+        //]
+        );
+
 
         //check if the authorisation has been successful using Auth
             //a lot of this checking happens in the background with laravel's built-in features
@@ -30,32 +36,33 @@ class UserController extends Controller
             $details->session()->regenerate();
 
             //redirect to homepage if successful
-            return redirect()->intended('/');
+            return redirect()->intended('/')->with('success', 'Login successful!');
 
         } else {
             return back()->withErrors(
                 [
-                    'error' => 'Please enter the correct login details!'
+                    'error' => 'Incorrect login details! Please try again'
                 ]
                 );
 
         }
 
-        //if the details were not correct, go back to the login page with error message
-            //*later maybe make a way to check if either password or email was incorrect
-        //return back()->withErrors([
-        //    'Incorrect login details! Please try again'
-        //]);
-
-
     }
 
     public function signup(Request $details){
         //validates the info put into form
-        $details->validate([
+        $s = $details->validate([
             'email' => 'required',
             'password' => 'required',
         ]);
+
+        //if($s->fails()){
+        //    return back()->withErrors(
+        //        [
+        //            'error' => 'Please enter valid user details!'
+        //        ]
+        //        );
+        //}
 
         //refer to users model to create a new row in login_details
         User::create([
@@ -64,7 +71,7 @@ class UserController extends Controller
         ]);
 
         //redirect to login if successful
-        return redirect()->intended('/login');
+        return redirect()->intended('/login')->with('success', 'Signup successful! Please login');
 
     }
 }

@@ -8,6 +8,10 @@
     <x-header-navbar> </x-header-navbar>
     <main>
 
+         @if (session()->has('success'))
+                    <p style="color:red"> {{session('success')}}</p>
+        @endif
+
         <!-- Gaming products  -->
         <section class="product">
             <h2 class="product-category">Games</h2>
