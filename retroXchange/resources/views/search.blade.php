@@ -46,8 +46,9 @@
                 <div>
                     <h2>No products found</h2>
                 </div>
+            @endif
             </div>
-        @endif
+
         </section>
     </main>
     <x-footer> </x-footer>
