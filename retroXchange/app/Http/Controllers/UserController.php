@@ -74,4 +74,18 @@ class UserController extends Controller
         return redirect()->intended('/login')->with('success', 'Signup successful! Please login');
 
     }
+
+    //logout functionality
+    public function logout(Request $details){
+        //authorise logout
+        Auth::logout();
+        //invalidate session
+        $details->session()->invalidate();
+        //regenerate csrf token
+        $details->session()->regenerateToken();
+
+        //return back to login page with a message
+        return redirect('/')->with('success', 'Logged out successfully!');
+
+    }
 }

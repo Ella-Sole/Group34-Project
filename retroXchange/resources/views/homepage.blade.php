@@ -9,7 +9,8 @@
     <x-header-navbar> </x-header-navbar>
 
     <main>
-        <!--message that will display either successful login or item added to basket -->
+
+        <!--message that will display either successful login/logout or item added to basket -->
         @if (session()->has('success'))
             <p style="color:red"> {{session('success')}}</p>
         @endif

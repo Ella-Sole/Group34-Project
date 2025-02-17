@@ -50,6 +50,9 @@ Route::get('/signup', function(){
     return view('signup');
 });
 
+//logout functionality calls the logout function of UserController
+Route::get('/logout', [UserController::class, 'logout'])->name('logout');
+
 Route::post('register', [UserController::class, 'signup'])->name('register');
  
 Route::get('/previousorders', function(){

@@ -8,8 +8,9 @@
     <x-header-navbar> </x-header-navbar>
     <main>
 
+        <!--message for item being successfully added to basket -->
          @if (session()->has('success'))
-                    <p style="color:red"> {{session('success')}}</p>
+            <p style="color:red"> {{session('success')}}</p>
         @endif
 
         <!-- Gaming products  -->
@@ -45,34 +46,6 @@
                         </div>
                     </div>
                 @endforeach
-
-                <!--commented out the extra frontend placeholder code:-->
-                <!-- Product 2 -->
-                <!--<div class="product-card">
-                        <div class="product-image">
-                            <img src="LastOfUsRemastered.webp" class="product-thumbnail" alt="">
-                        </div>
-                        <div class="product-info">
-                            <p class="product-brand">PlayStation4 Games</p>
-                            <h2 class="product-short-description">Last of Us: Remastered</h2>
-                            <span class="price">£10</span>
-                            <button class="basket"><img src="{{ asset('images/basket-icon.png') }}" alt="" style="height: 25px; width: 25px;"></button>
-                        </div>
-                    </div> -->
-
-                <!-- Product 3 -->
-                <!--<div class="product-card">
-                        <div class="product-image">
-                            <img src="{{ asset('images/super_mario.jpg') }}" class="product-thumbnail" alt="">
-                        </div>
-                        <div class="product-info">
-                            <p class="product-brand">Nintendo Switch games</p>
-                            <h2 class="product-short-description">Super Mario</h2>
-                            <span class="price">£20</span>
-                            <button class="basket"><img src="{{ asset('images/basket-icon.png') }}" alt="" style="height: 25px; width: 25px;"></button>
-                        </div>
-                    </div> -->
-
 
             </div>
         </section>

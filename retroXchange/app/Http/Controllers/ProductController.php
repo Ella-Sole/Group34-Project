@@ -29,7 +29,7 @@ class ProductController extends Controller
         //push so its appended to the end of array 'basket'
         Session::push('basket', $basketItem);
         
-        //redirection back to products page
+        //redirect back to products page with success message
         return back()->with('success', 'Item added to basket!');
     }
 
