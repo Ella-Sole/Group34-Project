@@ -74,4 +74,4 @@ Route::get('addToBasket/{id}', [ProductController::class, 'addToBasket']);
 //remove from basket when the button is clicked
 Route::get('removeFromBasket/{id}', [ProductController::class, 'removeFromBasket']);
 //searches for product using the controller's search function
-Route::get('/search/', 'App\Http\Controllers\PostsController@search')->name('search');
+Route::get('/search/', 'App\Http\Controllers\ProductController@search')->name('search');
