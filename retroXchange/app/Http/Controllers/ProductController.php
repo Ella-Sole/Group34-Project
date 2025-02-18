@@ -64,4 +64,17 @@ class ProductController extends Controller
         //return basket page with an array (again)
         return view('basket', array('thebasket' => $thebasket));
     }
+    public function search(Request $request){
+    // Get the search value from the request
+    $search = $request->input('search');
+
+    // Search for the product
+    $products = Product::query()
+        ->where('item-name', 'LIKE', "%{$search}%")
+        ->get();
+
+    // Return the search view with the resluts compacted
+    return view('search', compact('products'));
+}
+
 }
