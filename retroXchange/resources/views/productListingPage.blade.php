@@ -8,6 +8,10 @@
     <x-header-navbar> </x-header-navbar>
     <main>
 
+         @if (Auth::check())
+            <p> autheticated </p>
+        @endif
+        
         <!--message for item being successfully added to basket -->
          @if (session()->has('success'))
             <p style="color:red"> {{session('success')}}</p>

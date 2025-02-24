@@ -9,14 +9,16 @@ use App\Models\Product;
 use App\Http\Controllers\ProductController;
 //allow use of User controller
 use App\Http\Controllers\UserController;
+//allow use of sessions
 use Illuminate\Support\Facades\Session;
+//allow use of authentication
+use Illuminate\Support\Facades\Auth;
 
 //Route::get('/', function () {
 //    return view('welcome');
 //});
 
 //display the returned view page when the url has '/..'
-//some may be subject to change (may need user authentication in url etc.)
 
 //default '/' will just be homepage
 Route::get('/', function(){
