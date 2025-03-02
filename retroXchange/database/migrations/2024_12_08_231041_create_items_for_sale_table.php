@@ -14,9 +14,10 @@ class CreateItemsForSaleTable extends Migration
     public function up()
     {
         Schema::create('items_for_sale', function (Blueprint $table) {
-            $table->integer('item_id')->primary();
+            $table->integer('item_id')->primary()->autoIncrement();
             $table->decimal('item_price', 10, 0);
             $table->string('item_name', 100);
+            $table->integer('item_stock');
             $table->string('item_image');
             $table->text('item_description')->nullable();
             $table->enum('category', ['ps3', 'ps4', 'xbox one', 'xbox 360', 'switch', '3ds', '2ds', 'ds', 'gameboy colour', 'xbox', 'psp', 'psvita', 'wii', 'wiiu']);

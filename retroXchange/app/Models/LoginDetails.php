@@ -11,8 +11,8 @@ class LoginDetails extends Model
     //protected $primaryKey = 'login_id';
 
     //for safety precautions define which attributes can be fillable/set when data is input
-    // protected $fillable = [
-    //     'email',
-    //     'password'
-    // ];
+     protected $fillable = [
+         'email',
+         'password'
+     ];
 }

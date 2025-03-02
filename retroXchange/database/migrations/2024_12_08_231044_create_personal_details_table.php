@@ -14,7 +14,7 @@ class CreatePersonalDetailsTable extends Migration
     public function up()
     {
         Schema::create('personal_details', function (Blueprint $table) {
-            $table->integer('personal_details_id')->primary();
+            $table->integer('personal_details_id')->primary()->autoIncrement();
             $table->string('first_name', 50);
             $table->string('middle_name', 50)->nullable();
             $table->string('last_name', 50);

@@ -22,10 +22,6 @@ class UserController extends Controller
             'email' => 'required',
             'password' => 'required',
         ],
-        //[
-        //    'email.required' => 'Please enter an email', //message to user
-        //    'password.required' => 'Please enter a password',
-        //]
         );
 
 

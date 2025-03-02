@@ -14,7 +14,7 @@ class CreatePaymentMethodTable extends Migration
     public function up()
     {
         Schema::create('payment_method', function (Blueprint $table) {
-            $table->integer('payment_method_id')->primary();
+            $table->integer('payment_method_id')->primary()->autoIncrement();
             $table->string('card_name_holder', 50)->nullable();
             $table->integer('account_number')->nullable();
             $table->date('expiry_date')->nullable();

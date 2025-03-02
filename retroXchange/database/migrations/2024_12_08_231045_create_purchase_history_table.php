@@ -14,7 +14,7 @@ class CreatePurchaseHistoryTable extends Migration
     public function up()
     {
         Schema::create('purchase_history', function (Blueprint $table) {
-            $table->integer('receipt_id')->primary();
+            $table->integer('receipt_id')->primary()->autoIncrement();
             $table->integer('purchased_item');
             $table->dateTime('date_of_purchase');
             $table->enum('purchase_status', ['purchased', 'out for delivery', 'delivered', 'returned', 'not delivered/shipment lost']);
