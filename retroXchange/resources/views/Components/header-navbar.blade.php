@@ -82,10 +82,11 @@
                     <a href="{{ url('/contact') }}">CONTACT US</a>
                 </div>
                 <!--display log out option if the user is logged in-->
-                
+                @if (Auth::check())
                 <div class="navbar-item">
                     <a href="{{ url('/logout') }}">LOG OUT</a>
                 </div>  
+                @endif
                 
                 
             </nav>

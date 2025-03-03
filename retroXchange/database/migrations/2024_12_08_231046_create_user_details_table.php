@@ -14,14 +14,15 @@ class CreateUserDetailsTable extends Migration
     public function up()
     {
         Schema::create('user_details', function (Blueprint $table) {
-            $table->integer('user_id')->primary()->autoIncrement();
-            $table->integer('login_info')->unique('fkLoginDetails');
+            $table->integer('details_id')->primary()->autoIncrement();
+            //$table->integer('login_info')->unique('fkLoginDetails');
+            $table->foreignId('users_id')->constrained('users');
             $table->integer('personal_details_info')->unique('fkPersonalDetails');
             $table->integer('payment_method');
             $table->integer('purchase_history');
             $table->enum('user_status', ['Normal', 'Admin']);
             
-            $table->foreign('login_info', 'fkLoginDetails')->references('login_id')->on('login_details');
+            //$table->foreign('login_info', 'fkLoginDetails')->references('id')->on('users');
             $table->foreign('payment_method', 'fkPaymentMethod')->references('payment_method_id')->on('payment_method');
             $table->foreign('personal_details_info', 'fkPersonalDetails')->references('personal_details_id')->on('personal_details');
             $table->foreign('purchase_history', 'fkPurchaseHistory')->references('receipt_id')->on('purchase_history');

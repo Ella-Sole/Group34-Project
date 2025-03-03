@@ -3,11 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-//use the user model
 use App\Models\User;
-//use authentication
 use Illuminate\Support\Facades\Auth;
-//use hash
 use Illuminate\Support\Facades\Hash;
 
 
@@ -26,7 +23,6 @@ class UserController extends Controller
 
 
         //check if the authorisation has been successful using Auth
-            //a lot of this checking happens in the background with laravel's built-in features
         if (Auth::attempt($a)){
             //regenerate a session as user is now logged in
             $details->session()->regenerate();
@@ -51,14 +47,6 @@ class UserController extends Controller
             'email' => 'required',
             'password' => 'required',
         ]);
-
-        //if($s->fails()){
-        //    return back()->withErrors(
-        //        [
-        //            'error' => 'Please enter valid user details!'
-        //        ]
-        //        );
-        //}
 
         //refer to users model to create a new row in login_details
         User::create([

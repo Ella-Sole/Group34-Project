@@ -1,26 +1,16 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-//add use of arr functions
 use Illuminate\Support\Arr;
-//allow use of the Product model
 use App\Models\Product;
-//allow use of Product controller
 use App\Http\Controllers\ProductController;
-//allow use of User controller
 use App\Http\Controllers\UserController;
-//allow use of sessions
 use Illuminate\Support\Facades\Session;
-//allow use of authentication
 use Illuminate\Support\Facades\Auth;
-
-//Route::get('/', function () {
-//    return view('welcome');
-//});
 
 //display the returned view page when the url has '/..'
 
-//default '/' will just be homepage
+//default '/' returns homepage
 Route::get('/', function(){
     return view('homepage', [
         //fetch all the product rows data from the Product Model and put into an array 'products'
