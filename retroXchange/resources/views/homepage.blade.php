@@ -9,15 +9,12 @@
     <x-header-navbar> </x-header-navbar>
 
     <main>
+        <!--for debugging-->
         @if (Auth::check())
             <p> authenticated </p>
         @else
             <p> not authenticated </p>
         @endif
-
-        @auth
-            <p> yes auth </p>
-        @endauth
 
         <!--message that will display either successful login/logout or item added to basket -->
         @if (session()->has('success'))

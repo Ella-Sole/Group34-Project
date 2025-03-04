@@ -20,7 +20,7 @@ class CreateUserDetailsTable extends Migration
             $table->integer('personal_details_info')->unique('fkPersonalDetails');
             $table->integer('payment_method');
             $table->integer('purchase_history');
-            $table->enum('user_status', ['Normal', 'Admin']);
+            $table->enum('user_status', ['Normal', 'Admin'])->default('Normal');
             
             //$table->foreign('login_info', 'fkLoginDetails')->references('id')->on('users');
             $table->foreign('payment_method', 'fkPaymentMethod')->references('payment_method_id')->on('payment_method');

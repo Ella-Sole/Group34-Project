@@ -26,8 +26,26 @@ class ProductController extends Controller
         Session::put('basket', []);
         }
 
+        //use this to check if an item is already in the basket
+        $itemAdded = false;
+        //store basket into a variable
+        $b = Session::get('basket');
+
+        //loop over basket
+        foreach ($b as &$item){
+            if($item['item_id'] == $id){
+                $item['quantity'] += 1;
+                $itemAdded = true;
+
+            }
+
+        }
+
         //push so its appended to the end of array 'basket'
-        Session::push('basket', $basketItem);
+        if(!$itemAdded){
+        $basketItem->quantity = 1;
+        Session::push('basket', $basketItem); 
+        }
         
         //redirect back to products page with success message
         return back()->with('success', 'Item added to basket!');

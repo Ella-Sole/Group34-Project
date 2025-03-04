@@ -30,7 +30,7 @@
                         <tr align="center">
                             <td> <span class="game-title">{{ $b['item_name'] }}</span> </td>
                             <td> <span class="game-description">{{ $b['item_description'] }}</span> </td>
-                            <td> <span class="game-quantity">1</span> </td>
+                            <td> <span class="game-quantity">{{ $b['quantity'] }}</span> </td>
                             <td> <span class="game-price">£{{ $b['item_price'] }}</span> </td>
                             <td> <a href = "{{ url('removeFromBasket/' . $b->item_id) }}"><button
                                         class="remove-button">Remove</button></a> </td>
