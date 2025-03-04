@@ -35,12 +35,7 @@
         </div>
 
         <div class="account-option">
-        @if ($errors->has('error'))
-            <p style="color:red"> {{$errors->first('error')}} </p>
-
-        @endif
-            <p>Not yet got an account? <a href = "{{ url('/signup') }}"> Sign up </a></p><br>
-            <p>Forgot your password? <a href = ""> Reset Password</a> </p><br>
+            <p>Not yet got an account? <a href = "{{ url('/signup') }}"> Sign up</a></p>
         </div>
     </main>
 </body>

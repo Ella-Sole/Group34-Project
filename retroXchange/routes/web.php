@@ -70,3 +70,8 @@ Route::get('addToBasket/{id}', [ProductController::class, 'addToBasket']);
 Route::get('removeFromBasket/{id}', [ProductController::class, 'removeFromBasket']);
 //searches for product using the controller's search function
 Route::get('/search/', 'App\Http\Controllers\ProductController@search')->name('search');
+//password reset page
+Route::get('/reset', function(){
+    return view('reset');
+});
+
