@@ -4,6 +4,8 @@
 <x-head>
     @section('title', 'About Us')
 </x-head>
+          <button id="theme-change">change dark Mode</button>
+
 
 <body class = "about-us-page-layout background">
 
