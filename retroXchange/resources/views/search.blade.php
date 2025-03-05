@@ -7,6 +7,8 @@
 
 <body class="background page-layout">
     <x-header-navbar> </x-header-navbar>
+          <button id="theme-change">change dark Mode</button>
+
 
     <main>
         <section class="product">
