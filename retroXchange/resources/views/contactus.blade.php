@@ -3,6 +3,8 @@
 <x-head>
     @section('title', 'Contact Us')
 </x-head>
+          <button id="theme-change">change dark Mode</button>
+
 
 <body class = "contact-us-page-layout background">
     <x-header-navbar> </x-header-navbar>
