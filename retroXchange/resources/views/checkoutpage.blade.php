@@ -3,7 +3,7 @@
 <x-head>
     @section('title', 'Checkout Page')
 </x-head>
-          <button id="theme-change">change dark Mode</button>
+          
 
 
 <body class = "checkout-page-layout background">
