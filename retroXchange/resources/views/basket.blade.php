@@ -3,7 +3,7 @@
 <x-head>
     @section('title', 'Your Basket')
 </x-head>
-          <button id="theme-change">change dark Mode</button>
+         
 
 
 <body class = "basket-page-layout background">
