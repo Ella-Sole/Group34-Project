@@ -7,7 +7,7 @@
     <body class = "previous-order-page-layout background">
 
         <x-header-navbar> </x-header-navbar>
-              <button id="theme-change">change dark Mode</button>
+          
 
 
         <main>
