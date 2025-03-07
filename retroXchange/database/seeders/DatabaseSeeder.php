@@ -71,7 +71,7 @@ class DatabaseSeeder extends Seeder
         DB::table('items_for_sale')->insert([
             'item_price' => 2,
             'item_name' => 'FIFA 21',
-            'item_stock' => 3,
+            'item_stock' => 0,
             'item_image' => '91KwPLW4BqL._AC_SL1500_',
             'item_description' => 'Football',
             'category' => 'ps4',

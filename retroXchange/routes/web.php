@@ -1,5 +1,4 @@
 <?php
-
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Arr;
 use App\Models\Product;
@@ -10,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 
 //display the returned view page when the url has '/..'
 
-//default '/' returns homepage
+//default: '/' returns homepage
 Route::get('/', function(){
     return view('homepage', [
         //fetch all the product rows data from the Product Model and put into an array 'products'
@@ -73,5 +72,13 @@ Route::get('/search/', 'App\Http\Controllers\ProductController@search')->name('s
 //password reset page
 Route::get('/reset', function(){
     return view('reset');
+});
+
+//view individual product page
+Route::get('productview/{id}', function($id){
+    return view('productview', [
+
+        'product' => Product::where('item_id',$id)->first()
+    ]);
 });
 
