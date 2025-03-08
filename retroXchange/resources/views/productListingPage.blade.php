@@ -42,7 +42,6 @@
                         <div class="product-info"> <!--product info from database -->
                             <p class="product-brand">{{ $product['category'] }}</p> <!-- Category -->
                             <h2 class="product-short-description">{{ $product['item_name'] }}</h2>
-                            <!--*should be title here-->
                             <span class="price">£{{ $product['item_price'] }}</span> <!-- price -->
 
                             @if ($product['item_stock'] == 0)

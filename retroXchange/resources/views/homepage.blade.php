@@ -36,20 +36,29 @@
                     <div class="product-card">
                         <div class="product-image">
                             <!--make image location point to image named with same item ID-->
-                            <img src="{{ url('https://m.media-amazon.com/images/I/' . $product->item_image . '.jpg') }}"
-                                class="product-thumbnail" alt="">
+                            <a href = "{{ url('productview/' . $product->item_id) }}">
+                                <img src="{{ url('https://m.media-amazon.com/images/I/' . $product->item_image . '.jpg') }}"
+                                    class="product-thumbnail" alt="item-image">
+                            </a>
                         </div>
+
                         <div class="product-info"> <!--product info from database -->
                             <p class="product-brand">{{ $product['category'] }}</p> <!-- Category -->
                             <h2 class="product-short-description">{{ $product['item_name'] }}</h2>
-                            <!--*should be title here-->
                             <span class="price">£{{ $product['item_price'] }}</span> <!-- price -->
-                            <!--make the button send this products info into basket-->
-                            <!--add item to basket when button is clicked, passing in item_id (**add confirmation message to user)-->
-                            <a href = "{{ url('addToBasket/' . $product->item_id) }}">
-                                <button type = "submit" class="basket"><img src="{{ asset('images/basket-icon.png') }}"
-                                        alt="add-to-basket" style="height: 25px; width: 25px;"></button>
-                            </a>
+
+                            @if ($product['item_stock'] == 0)
+                                <!--if out of stock-->
+                                <p>OUT OF STOCK</p>
+                            @else <!--can only add to basket if in stock-->
+                                <!--make the button send this products info into basket-->
+                                <!--add item to basket when button is clicked, passing in item_id (**add confirmation message to user)-->
+                                <a href = "{{ url('addToBasket/' . $product->item_id) }}">
+                                    <button type = "submit" class="basket"><img src="{{ asset('images/basket-icon.png') }}"
+                                            alt="add-to-basket" style="height: 25px; width: 25px;"></button>
+                                </a>
+                            @endif
+
                         </div>
                     </div>
                 @endforeach

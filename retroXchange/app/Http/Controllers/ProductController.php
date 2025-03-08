@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-//use the product model
 use App\Models\Product;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Auth;
 
 class ProductController extends Controller
 {   
@@ -20,16 +20,19 @@ class ProductController extends Controller
             //(need to specify primary key, otherwise it looks for one named 'id')
         $basketItem = Product::where('item_id',$id)->first();
 
+        //.Auth::id() makes it so that each basket variable is assigned/titled to a specific user id
+            //if user id is 2 then basket variable is basket2
+
         //check if the session variable for the basket is set
-       if(!Session::has('basket')){
+       if(!Session::has('basket'.Auth::id())){
         //set basket as an array
-        Session::put('basket', []);
+        Session::put('basket'.Auth::id(), []);
         }
 
         //use this to check if an item is already in the basket
         $itemAdded = false;
         //store basket into a variable
-        $b = Session::get('basket');
+        $b = Session::get('basket'.Auth::id());
 
         //loop over basket
         foreach ($b as &$item){
@@ -44,7 +47,7 @@ class ProductController extends Controller
         //push so its appended to the end of array 'basket'
         if(!$itemAdded){
         $basketItem->quantity = 1;
-        Session::push('basket', $basketItem); 
+        Session::push('basket'.Auth::id(), $basketItem); 
         }
         
         //redirect back to products page with success message
@@ -54,7 +57,7 @@ class ProductController extends Controller
     //list all items in basket
     public function showBasket() {
         //put the basket session into its own variable
-        $thebasket = Session::get('basket');
+        $thebasket = Session::get('basket'.Auth::id());
 
         //return basket page with an array
         return view('basket', array('thebasket' => $thebasket));
@@ -62,8 +65,7 @@ class ProductController extends Controller
 
     //bug: if theres duplicate products, it removes all instances of that product instead of just one
     public function removeFromBasket($id) {
-        $thebasket = Session::get('basket');
-        //array('thebasket' => $thebasket);
+        $thebasket = Session::get('basket'.Auth::id());
 
         //get the item from database by id
         $removedItem = Product::where('item_id',$id)->first();
@@ -77,12 +79,13 @@ class ProductController extends Controller
                 unset($thebasket[$key]);
                 
                 //put new basket contents into session variable
-                Session::put('basket', $thebasket);
+                Session::put('basket'.Auth::id(), $thebasket);
             }
         }
         //return basket page with an array (again)
         return view('basket', array('thebasket' => $thebasket));
     }
+
     public function search(Request $request){
     // Get the search value from the request
     $search = $request->input('search');
@@ -92,7 +95,7 @@ class ProductController extends Controller
         ->where('item-name', 'LIKE', "%{$search}%")
         ->get();
 
-    // Return the search view with the resluts compacted
+    // Return the search view with the results compacted
     return view('search', compact('products'));
 }
 

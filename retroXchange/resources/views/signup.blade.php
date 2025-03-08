@@ -13,6 +13,11 @@
             <h1>Sign Up</h1>
         </div>
 
+        <!-- display message for errors -->
+        @if (session()->has('error'))
+            <p style="color:red"> {{session('error')}}</p>
+        @endif
+
         <div class = "signup-form">
             <form action="{{ route('register') }}" method="POST">
                 @csrf

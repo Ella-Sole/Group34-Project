@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 
 
 class UserController extends Controller
@@ -21,7 +22,6 @@ class UserController extends Controller
         ],
         );
 
-
         //check if the authorisation has been successful using Auth
         if (Auth::attempt($a)){
             //regenerate a session as user is now logged in
@@ -31,31 +31,37 @@ class UserController extends Controller
             return redirect()->intended('/')->with('success', 'Login successful!');
 
         } else {
-            return back()->withErrors(
-                [
-                    'error' => 'Incorrect login details! Please try again'
-                ]
-                );
+            return back()->with('error', 'Incorrect login details! Please try again');
 
         }
 
     }
 
     public function signup(Request $details){
+
         //validates the info put into form
-        $s = $details->validate([
+        $s = Validator::make($details->all(),[
             'email' => 'required',
             'password' => 'required',
+            'confirm-password' => 'required|same:password',
         ]);
 
-        //refer to users model to create a new row in login_details
-        User::create([
-            'email' => $details->email,
-            'password' => Hash::make($details->password),
-        ]);
+        //if passwords dont match, fails and returns error:
+        if ($s->fails()){
+            return back()->with('error', 'Please enter matching passwords!');
 
-        //redirect to login if successful
-        return redirect()->intended('/login')->with('success', 'Signup successful! Please login');
+        } else {
+
+            //refer to users model to create a new row in users table
+            User::create([
+                'email' => $details->email,
+                'password' => Hash::make($details->password),
+            ]);
+
+            //redirect to login if successful
+            return redirect()->intended('/login')->with('success', 'Signup successful! Please login');
+                
+        }
 
     }
 
@@ -63,8 +69,8 @@ class UserController extends Controller
     public function logout(Request $details){
         //authorise logout
         Auth::logout();
-        //invalidate session
-        $details->session()->invalidate();
+
+        $details->session()->regenerate();
         //regenerate csrf token
         $details->session()->regenerateToken();
 

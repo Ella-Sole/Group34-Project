@@ -13,11 +13,16 @@
             <h1>Log In</h1>
         </div>
 
-        <!-- display message for successful login -->
+        <!-- display message for errors -->
+        @if (session()->has('error'))
+            <p style="color:red"> {{session('error')}}</p>
+        @endif
+
+        <!--display message for successful signup-->
         @if (session()->has('success'))
             <p style="color:red"> {{session('success')}}</p>
         @endif
-
+        
         <!--when form is submitted, routes to loginuser-->
         <div class = "login-form">
             <form action="{{ route('loginUser') }}" method="POST">
