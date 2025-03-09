@@ -92,11 +92,11 @@ class ProductController extends Controller
 
     // Search for the product
     $products = Product::query()
-        ->where('item-name', 'LIKE', "%{$search}%")
+        ->where('item_name', 'LIKE', "%{$search}%")
         ->get();
 
     // Return the search view with the results compacted
     return view('search', compact('products'));
-}
+    }
 
 }
