@@ -11,10 +11,39 @@
         <main>
             <div class="checkout-title">
                 <section>
-                    <h1>Checkout</h1>
+                    <h1 align="center">Checkout</h1>
                     <p>Complete your purchase and enjoy your games!</p>
                 </section>
             </div>
+
+            <table class="shopping-basket-table" style="margin:0 auto;">
+                <tr>
+                    <th> Game </th>
+                    <th> Description of Game </th>
+                    <th> Quantity </th>
+                    <th> Price </th>
+                </tr>
+
+                    @foreach ($thebasket as $b)
+                        <tr align="center">
+                            <td> <span class="game-title">{{ $b['item_name'] }}</span> </td>
+                            <td> <span class="game-description">{{ $b['item_description'] }}</span> </td>
+                            <td> <span class="game-quantity">{{ $b['quantity'] }}</span> </td>
+                            <td> <span class="game-price">£{{ $b['item_price'] }}</span> </td>
+                        </tr>
+
+                        <!--check if total price variable is set-->
+                        @isset($total)
+                            <!--add up total price-->
+                            <?php $total = $total + $b['item_price']; ?>
+                        @else
+                            <!--else its the item's price as its at the start of the loop-->
+                            <?php $total = $b['item_price']; ?>
+                        @endisset
+                    @endforeach
+
+            </table>
+
             <div class="checkout-section">
             <section>
                 <form>
@@ -58,12 +87,17 @@
                     </div>
     
                     <div class="grand-total">
-                        <label>Grand Total:</label>
-                        <span>£0.00</span>
+                        <label>Total:</label>
+                        <span>£{{ $total }}</span>
                     </div>
-    
-                    <button type="submit" class="complete-order-btn">Complete Order</button>
+                        <!--
+                        <button type="submit" class="complete-order-btn" >Complete Order</button>
+                        -->
                 </form>
+                    <!--for submitting into purchase history table-->
+                    <a href = "{{ url('/completecheckout/' . $total) }}">
+                        <button class="complete-order-btn" >Complete Order</button>
+                    </a>
             </section>
         </div>
         </main>

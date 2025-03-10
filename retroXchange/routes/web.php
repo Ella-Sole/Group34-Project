@@ -4,6 +4,7 @@ use Illuminate\Support\Arr;
 use App\Models\Product;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\CheckoutController;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Auth;
 
@@ -20,10 +21,6 @@ Route::get('/', function(){
 
 Route::get('/about', function(){
     return view('aboutus');
-});
-
-Route::get('/checkout', function(){
-    return view('checkoutpage');
 });
 
 Route::get('/contact', function(){
@@ -67,6 +64,10 @@ Route::get('addToBasket/{id}', [ProductController::class, 'addToBasket']);
 
 //remove from basket when the button is clicked
 Route::get('removeFromBasket/{id}', [ProductController::class, 'removeFromBasket']);
+
+Route::get('/checkout', [CheckoutController::class, 'displayCheckout']);
+
+Route::get('/completecheckout/{total}', [CheckoutController::class, 'completeCheckout']);
 
 //searches for product using the controller's search function
 Route::get('/search/', 'App\Http\Controllers\ProductController@search')->name('search');
