@@ -6,6 +6,8 @@
 
 <body class = "games-page-layout background">
     <x-header-navbar> </x-header-navbar>
+        
+
     <main>
 
          @if (Auth::check())

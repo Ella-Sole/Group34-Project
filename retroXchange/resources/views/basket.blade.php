@@ -3,6 +3,8 @@
 <x-head>
     @section('title', 'Your Basket')
 </x-head>
+         
+
 
 <body class = "basket-page-layout background">
 

@@ -3,6 +3,8 @@
 <x-head>
     @section('title', 'Checkout Page')
 </x-head>
+          
+
 
 <body class = "checkout-page-layout background">
     <x-header-navbar> </x-header-navbar>

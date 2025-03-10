@@ -7,6 +7,8 @@
 
 <body class="background page-layout">
     <x-header-navbar> </x-header-navbar>
+        
+
 
     <main>
         <section class="product">

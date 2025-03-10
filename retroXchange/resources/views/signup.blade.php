@@ -6,6 +6,8 @@
 
 <body class = "signup-page-layout background">
     <x-header-navbar> </x-header-navbar>
+        
+
 
     <main>
 

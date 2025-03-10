@@ -7,6 +7,8 @@
     <body class = "previous-order-page-layout background">
 
         <x-header-navbar> </x-header-navbar>
+          
+
 
         <main>
             <section class="previous-orders-section">
