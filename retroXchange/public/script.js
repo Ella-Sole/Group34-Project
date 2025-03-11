@@ -58,4 +58,34 @@ function review(){
         document.getElementById("reviewForm").reset();
        }
 }
+function updateProfile() {
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            if (name && email) {
+                alert("Profile updated");
+            } else {
+                alert("Please enter name and email.");
+            }
+        }
+
+function addPayment() {
+            const paymentList = document.getElementById("payment-list");
+            const newPayment = document.createElement("div");
+            newPayment.classList.add("payment-option");
+            newPayment.innerHTML = '<span>MasterCard - **** 5824</span> <button class="button button-fail" onclick="deletePayment(this)">Delete</button>';
+            paymentList.appendChild(newPayment);
+        }
+
+function deletePayment(button) {
+            button.parentElement.remove();
+        }
+
+function removeProfile() {
+            if (confirm("Do you want to delete this profile?")) {
+                alert("Profile deleted");
+                document.getElementById("name").value = "";
+                document.getElementById("email").value = "";
+                document.getElementById("payment-list").innerHTML = "";
+            }
+        }
 
