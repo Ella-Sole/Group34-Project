@@ -42,4 +42,20 @@ window.onclick = function(event) {
         });
     }
 }
+function review(){
+       document.getElementById("review").addEventListener("submit", function(event) {
+        event.preventDefault();
+        
+        let name = document.getElementById("name").value;
+        let review = document.getElementById("review").value;
+        
+        if (name && review) {
+            let reviewDiv = document.createElement("div");
+            reviewDiv.classList.add("review");
+            reviewDiv.innerHTML = `<strong>${name}:</strong> <p>${review}</p>`;
+        }
+        
+        document.getElementById("reviewForm").reset();
+       }
+}
 
