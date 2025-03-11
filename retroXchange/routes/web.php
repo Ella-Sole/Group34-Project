@@ -84,4 +84,7 @@ Route::get('productview/{id}', function($id){
         'product' => Product::where('item_id',$id)->first()
     ]);
 });
+Route::get('/review',function(){
+    return view('review');
+});
 
