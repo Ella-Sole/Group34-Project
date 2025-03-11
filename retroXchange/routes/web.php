@@ -87,4 +87,6 @@ Route::get('productview/{id}', function($id){
 Route::get('/review',function(){
     return view('review');
 });
-
+Route::get('/userpayment',function(){
+    return view('userpayment');
+});
