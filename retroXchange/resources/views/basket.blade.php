@@ -18,17 +18,22 @@
                 <h2>Your Shopping Basket</h2>
                 <p>Review your selected games before proceeding to checkout!</p>
             </div>
-            <!--ShoppingBasket Table-->
-            <table class="shopping-basket-table">
-                <tr>
-                    <th> Game </th>
-                    <th> Description of Game </th>
-                    <th> Quantity </th>
-                    <th> Price </th>
-                </tr>
-                <!--if the basket is not empty-->
+
+                <!--checks if a basket variable has been set-->
                 @if (!is_null($thebasket))
+                <!--if a basket variable is set, checks if theres any items in it-->
+                @if (count($thebasket) > 0)
+            
+                    <!--ShoppingBasket Table-->
+                    <table class="shopping-basket-table">
+                        <tr>
+                            <th> Game </th>
+                            <th> Description of Game </th>
+                            <th> Quantity </th>
+                            <th> Price </th>
+                        </tr>
                     @foreach ($thebasket as $b)
+
                         <tr align="center">
                             <td> <span class="game-title">{{ $b['item_name'] }}</span> </td>
                             <td> <span class="game-description">{{ $b['item_description'] }}</span> </td>
@@ -48,33 +53,42 @@
                             <?php $total = $b['item_price']; ?>
                         @endisset
                     @endforeach
+            
+                    </table>
+                    <!--ShoppingBasket Total-->
+                    <div class="shopping-basket-total">
+                        <p><strong>Total Price:</span>£{{ $total }}</span></strong></p>
+                    </div>
+
+
                 @else
-                    <p> Basket is currently empty!</p>
+                    <!--message if nothing is in basket variable-->
+                    <p style="color:red"> Basket is currently empty!</p>
+                @endif
+                @else
+                    <!--same message if a basket variable isnt created-->
+                    <p style="color:red"> Basket is currently empty!</p>
                 @endif
 
-            </table>
-
-            <!--displays total price if theres a total variable set-->
-            @isset($total)
-                <!--ShoppingBasket Total-->
-                <div class="shopping-basket-total">
-                    <p><strong>Total Price:</span>£{{ $total }}</span></strong></p>
-                </div>
-            @else
-                <!--else total price is empty-->
-                <div class="shopping-basket-total">
-                    <p><strong>Total Price:</span> </span></strong></p>
-                </div>
-            @endisset
 
             <!--ShoppingBasket Actions-->
             <div class="shopping-basket-actions">
-                <button class="checkout-button" onclick="location.href='{{ url('/checkout') }}'">Proceed to
-                    Checkout</button>
+                <!--option to checkout shown only if basket isnt empty-->
+                @if (!is_null($thebasket))
+                @if (count($thebasket) > 0)
+                    <button class="checkout-button" onclick="location.href='{{ url('/checkout') }}'">Proceed to
+                        Checkout</button>
+                @endif
+                @endif
+
                 <button class="continue-button" onclick="location.href='{{ url('/products') }}'">Continue
                     Shopping</button>
-                <button class="previous-orders-button" onclick="location.href='{{ url('/previousorders') }}'">Previous
-                    Orders</button>
+
+                <!--previous orders only seen if a user is logged in-->
+                <!--@if (Auth::check())-->
+                    <button class="previous-orders-button" onclick="location.href='{{ url('/previousorders') }}'">Previous
+                        Orders</button>
+                <!--@endif-->
             </div>
         </div>
     </main>

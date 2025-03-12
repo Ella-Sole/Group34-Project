@@ -46,6 +46,7 @@ class ProductController extends Controller
 
         //push so its appended to the end of array 'basket'
         if(!$itemAdded){
+        //if not already added the quantity is 1
         $basketItem->quantity = 1;
         Session::push('basket'.Auth::id(), $basketItem); 
         }
@@ -63,7 +64,6 @@ class ProductController extends Controller
         return view('basket', array('thebasket' => $thebasket));
     }
 
-    //bug: if theres duplicate products, it removes all instances of that product instead of just one
     public function removeFromBasket($id) {
         $thebasket = Session::get('basket'.Auth::id());
 
