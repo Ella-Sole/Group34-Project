@@ -300,18 +300,55 @@ a:visited {
     grid-column: 3;
 }
 
-.search-bar-temp {
+.search-bar-background {
     display: flex;
     background-color: white;
     flex: 1;
+    flex-direction: column;
+    justify-content: space-between;
 
     border-radius: 10px;
     height: 2rem;
 
-    align-items: center;
-    justify-content: space-between;
     padding: 0.5rem;
 }
+
+.search-bar-alignment {
+    display: grid;
+
+    grid-template-columns: 90fr 2fr;
+    column-gap: 0.5rem;
+}
+
+.search-bar-input {
+    display: flex;
+    justify-content: left;
+
+    grid-column: 1;
+}
+
+.search-bar-button {
+    display: flex;
+    grid-column: 2;
+    justify-content: right;
+
+    align-items: center;
+}
+
+.search-bar-input > input {
+    background: none;
+    border: none;
+    outline: none;
+    flex-grow: 1;
+}
+
+.search-bar-button > button {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
 
 .login-icon {
     display: flex;
