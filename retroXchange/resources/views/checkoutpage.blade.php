@@ -15,6 +15,10 @@
                 <section>
                     <h1 align="center">Checkout</h1>
                     <p>Complete your purchase and enjoy your games!</p>
+                    <!-- display message for errors -->
+                    @if (session()->has('error'))
+                        <p style="color:red"> {{session('error')}}</p>
+                    @endif
                 </section>
             </div>
 
@@ -37,10 +41,10 @@
                         <!--check if total price variable is set-->
                         @isset($total)
                             <!--add up total price-->
-                            <?php $total = $total + $b['item_price']; ?>
+                            <?php $total += $b['item_price'] * $b['quantity']; ?>
                         @else
                             <!--else its the item's price as its at the start of the loop-->
-                            <?php $total = $b['item_price']; ?>
+                            <?php $total = $b['item_price'] * $b['quantity']; ?>
                         @endisset
                     @endforeach
 
@@ -48,7 +52,9 @@
 
             <div class="checkout-section">
             <section>
-                <form>
+                <form action="{{ url('/completecheckout/' . $total) }}" method="POST">
+                    <!--csrf for form security-->
+                    @csrf
                     <div class="form-row">
                         <div class="form-group">
                             <label for="firstName">First Name</label>
@@ -89,17 +95,12 @@
                     </div>
     
                     <div class="grand-total">
-                        <label>Total:</label>
-                        <span>£{{ $total }}</span>
+                        <span><h1>Total: £{{ $total }}</h1></span>
                     </div>
-                        <!--
-                        <button type="submit" class="complete-order-btn" >Complete Order</button>
-                        -->
+                        
+                    <button type="submit" class="complete-order-btn" >Complete Order</button>
+                        
                 </form>
-                    <!--for submitting into purchase history table-->
-                    <a href = "{{ url('/completecheckout/' . $total) }}">
-                        <button class="complete-order-btn" >Complete Order</button>
-                    </a>
             </section>
         </div>
         </main>

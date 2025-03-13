@@ -46,7 +46,7 @@ class UserController extends Controller
             'confirm-password' => 'required|same:password',
         ]);
 
-        //if passwords dont match, fails and returns error:
+        //if password & confirm password doesnt match, fails and returns error:
         if ($s->fails()){
             return back()->with('error', 'Please enter matching passwords!');
 
@@ -65,7 +65,6 @@ class UserController extends Controller
 
     }
 
-    //logout functionality
     public function logout(Request $details){
         //authorise logout
         Auth::logout();

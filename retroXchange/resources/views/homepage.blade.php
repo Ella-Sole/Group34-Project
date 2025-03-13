@@ -18,7 +18,7 @@
 
         <!--message that will display either successful login/logout or item added to basket -->
         @if (session()->has('success'))
-            <p style="color:red"> {{session('success')}}</p>
+            <h1 style="color:red" align="center"> {{session('success')}}</h1>
         @endif
 
         <section class="product">

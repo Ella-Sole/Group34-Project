@@ -9,14 +9,9 @@
         
 
     <main>
-
-         @if (Auth::check())
-            <p> autheticated </p>
-        @endif
-        
         <!--message for item being successfully added to basket -->
          @if (session()->has('success'))
-            <p style="color:red"> {{session('success')}}</p>
+            <h1 style="color:red" align="center"> {{session('success')}}</h1>
         @endif
 
         <!-- Gaming products  -->

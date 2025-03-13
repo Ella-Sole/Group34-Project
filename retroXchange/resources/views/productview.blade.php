@@ -4,8 +4,15 @@
     @section('title', 'Product')
 </x-head>
 
-<body>
+<body class="background page-layout">
 <x-header-navbar> </x-header-navbar>
+
+<main>
+    <!--message for item being successfully added to basket -->
+    @if (session()->has('success'))
+            <h1 style="color:red" align="center"> {{session('success')}}</h1>
+    @endif
+
 <div class="product-container">
 
 <!-- Product -->
@@ -40,7 +47,7 @@
 
 </div>
 
-
+</main>
 </body>
 
 </html>

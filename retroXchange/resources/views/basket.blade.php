@@ -47,10 +47,10 @@
                         <!--check if total price variable is set-->
                         @isset($total)
                             <!--add up total price-->
-                            <?php $total = $total + $b['item_price']; ?>
+                            <?php $total += $b['item_price'] * $b['quantity']; ?>
                         @else
                             <!--else its the item's price as its at the start of the loop-->
-                            <?php $total = $b['item_price']; ?>
+                            <?php $total = $b['item_price'] * $b['quantity']; ?>
                         @endisset
                     @endforeach
             

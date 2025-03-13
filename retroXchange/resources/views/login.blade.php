@@ -15,12 +15,12 @@
 
         <!-- display message for errors -->
         @if (session()->has('error'))
-            <p style="color:red"> {{session('error')}}</p>
+            <h1 style="color:red" align="center"> {{session('error')}}</h1>
         @endif
 
         <!--display message for successful signup-->
         @if (session()->has('success'))
-            <p style="color:red"> {{session('success')}}</p>
+            <h1 style="color:red" align="center"> {{session('success')}}</h1>
         @endif
         
         <!--when form is submitted, routes to loginuser-->

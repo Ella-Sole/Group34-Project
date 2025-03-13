@@ -67,7 +67,7 @@ Route::get('removeFromBasket/{id}', [ProductController::class, 'removeFromBasket
 
 Route::get('/checkout', [CheckoutController::class, 'displayCheckout']);
 
-Route::get('/completecheckout/{total}', [CheckoutController::class, 'completeCheckout']);
+Route::post('/completecheckout/{total}', [CheckoutController::class, 'completeCheckout']);
 
 //searches for product using the controller's search function
 Route::get('/search/', 'App\Http\Controllers\ProductController@search')->name('search');
