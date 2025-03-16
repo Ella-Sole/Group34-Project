@@ -33,6 +33,143 @@ a:visited {
     grid-template-rows: 1fr 10fr 1fr;
 }
 
+.sidemenu {
+    display:none;
+    height: 100%;
+    width: 15%;
+    position: fixed;
+    z-index: 1;
+    top: 12%;
+    left: 0;
+    background-color: #91C788;
+    overflow-x: hidden;
+    padding-top: 20px;
+    transform: translateX(-200%);
+    transition: transform 0.3s ease-in-out;
+    display: block;
+    margin-left: 0.52rem;
+  }
+
+  .sidemenu.show {
+    transform: translateX(0);
+  }
+  
+  .sidemenu a, .sidemenu-dropdown-btn {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+    display: block;
+    border: none;
+    background: none;
+    width:100%;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+  }
+
+  .sidemenu a:hover, .sidemenu-dropdown-btn:hover {
+    color:#DDFFBC;
+  }
+
+  .sidemenu a:hover, .sidemenu-dropdown-container:hover{
+    color:#63995b;
+  }
+  
+  .active {
+    background-color: #63995b;
+    color:#DDFFBC;
+  }
+  
+  .sidemenu-dropdown-container {
+    display: none;
+    background-color: #DDFFBC;
+    padding-left: 8px;
+  }
+
+/*admin pages*/
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+th {
+    font-weight: bold;
+}
+
+tr:nth-child(odd) {
+    background-color: #DDFFBC;
+}
+
+.admin-title{
+    background-color: #DDFFBC;
+    text-align: center;
+}
+
+.admin-addbtn{
+    margin-top: -5px;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #91C788;
+    color: black;
+    transition: background 0.3s, transform 0.3s;
+    cursor: pointer;
+}
+
+.admin-addbtn:hover{
+    background-color:#DDFFBC;
+    transform: scale(1.2);
+}
+
+.admin-addform {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    max-width: 500px; 
+    margin: 0 auto;
+    padding: 50px;
+    background: #DDFFBC;
+    border-radius: 8px;
+}
+
+.admin-addform label {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.admin-addform input,
+.admin-addform select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 10px;
+    border: 1px solid black;
+    box-sizing: border-box;
+}
+
+.admin-addform input[type="submit"] {
+    background: #91C788;
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.admin-addform input[type="file"] {
+    background: white;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.admin-addform input[type="submit"]:hover {
+    background: #DDFFBC;
+    transform: scale(1.05);
+}
+
 .contact-us-page-layout {
     display: grid;
 
@@ -218,23 +355,16 @@ a:visited {
     grid-row: 1;
 }
 
-.dropbtn {
+.sidemenu-btn {
     background-color: #91c788;
     color: black;
-    font-size: 16px;
     border: none;
     cursor: pointer;
 }
 
-.dropbtn:hover,
-.dropbtn:focus {
+.sidemenu-btn:hover,
+.sidemenu-btn:focus {
     background-color: #52734d;
-}
-
-.dropdown {
-    position: relative;
-    display: inline-block;
-    z-index: 999;
 }
 
 .dropdown-content,

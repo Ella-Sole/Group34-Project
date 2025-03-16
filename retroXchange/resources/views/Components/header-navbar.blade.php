@@ -1,32 +1,36 @@
 <header>
     <div class="header-grid-layout">
         <div class="dropdown">
-            <button onclick="myFunction()" class="dropbtn">
+            <button onclick="sidemenuFunction()" class="sidemenu-btn">
                 <a><svg xmlns="http://www.w3.org/2000/svg" width="3.8rem" height="3.9rem" fill="currentColor"
                         class="bi bi-list" viewBox="0 0 16 16">
                         <path fill-rule="evenodd"
                             d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
                     </svg></a>
             </button>
-
-            <div id="myDropdown" class="dropdown-content">
-                <a href="javascript:void(0);" onclick="toggleDropdown(event, 'productsDropdown')">Products</a>
-                <div id="productsDropdown" class="dropdown-content2">
-                    <a href="javascript:void(0);" onclick="toggleDropdown(event, 'gamesDropdown')">Games</a>
-                    <div id="gamesDropdown" class="dropdown-content3">
-                        <a href="#">PlayStation Games</a>
-                        <a href="#">Xbox Games</a>
-                        <a href="#">Switch Games</a>
-                    </div>
-                    <a href="javascript:void(0);" onclick="toggleDropdown(event, 'consolesDropdown')">Consoles</a>
-                    <div id="consolesDropdown" class="dropdown-content3">
-                        <a href="#">PlayStation Consoles</a>
-                        <a href="#">Xbox Consoles</a>
-                    </div>
+            
+            <div class="sidemenu">
+                <button class="sidemenu-dropdown-btn" class="active" >Games</button>
+                <div class="sidemenu-dropdown-container">
+                <a href="#">PlayStation Games</a>
+                <a href="#">Xbox Games</a>
+                <a href="#">Switch Games</a>
                 </div>
-                <a href="javascript:void(0);" onclick="toggleDropdown(event, 'settingsDropdown')">Settings</a>
-                <div id="settingsDropdown" class="dropdown-content2">
-                    <a href="#">Dark Mode</a>
+                <button class="sidemenu-dropdown-btn">Consoles</button>
+                <div class="sidemenu-dropdown-container">
+                <a href="#">PlayStation Consoles</a>
+                <a href="#">Xbox Consoles</a>
+                </div>
+                <button class="sidemenu-dropdown-btn">Settings</button>
+                <div class="sidemenu-dropdown-container">
+                <a href="#">Dark Mode</a>
+                </div>
+                <button class="sidemenu-dropdown-btn">Admin Management</button>
+                <div class="sidemenu-dropdown-container">
+                    <a href="{{ url('/admininventory') }}">Inventory</a>
+                    <a href="{{ url('/adminmanagement') }}">Order Management</a>
+                    <a href="{{ url('/admincustomermanagement') }}">Customer Management</a>
+                <img></img>
                 </div>
             </div>
         </div>

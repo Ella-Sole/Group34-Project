@@ -23,6 +23,22 @@ Route::get('/about', function(){
     return view('aboutus');
 });
 
+Route::get('/admininventory', function(){
+    return view('admininventory');
+});
+
+Route::get('/adminaddproduct', function(){
+    return view('adminaddproduct');
+});
+
+Route::get('/admincustomermanagement', function(){
+    return view('admincustomermanagement');
+});
+
+Route::get('/adminmanagement', function(){
+    return view('adminmanagement');
+});
+
 Route::get('/contact', function(){
     return view('contactus');
 });
@@ -68,6 +84,7 @@ Route::get('removeFromBasket/{id}', [ProductController::class, 'removeFromBasket
 Route::get('/checkout', [CheckoutController::class, 'displayCheckout']);
 
 Route::post('/completecheckout/{total}', [CheckoutController::class, 'completeCheckout']);
+
 
 //searches for product using the controller's search function
 Route::get('/search/', 'App\Http\Controllers\ProductController@search')->name('search');

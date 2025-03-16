@@ -28,64 +28,84 @@ function myFunction() {
 }
 
 function toggleDropdown(event, dropdownId) {
-    event.stopPropagation();  
+    event.stopPropagation();
     var dropdown = document.getElementById(dropdownId);
     dropdown.classList.toggle("show");
 }
 
 
-window.onclick = function(event) {
+window.onclick = function (event) {
     if (!event.target.matches('.dropbtn') && !event.target.closest('.dropdown')) {
         var dropdowns = document.querySelectorAll('.dropdown-content, .dropdown-content2, .dropdown-content3');
-        dropdowns.forEach(function(dropdown) {
+        dropdowns.forEach(function (dropdown) {
             dropdown.classList.remove('show');
         });
     }
 }
-function review(){
-       document.getElementById("review").addEventListener("submit", function(event) {
-        event.preventDefault();
-        
-        let name = document.getElementById("name").value;
-        let review = document.getElementById("review").value;
-        
-        if (name && review) {
-            let reviewDiv = document.createElement("div");
-            reviewDiv.classList.add("review");
-            reviewDiv.innerHTML = `<strong>${name}:</strong> <p>${review}</p>`;
-        }
-        
-        document.getElementById("reviewForm").reset();
-       }
-}
+
+// function review() {
+//     document.getElementById("review").addEventListener("submit", function (event) {
+//         event.preventDefault();
+
+//         let name = document.getElementById("name").value;
+//         let review = document.getElementById("review").value;
+
+//         if (name && review) {
+//             let reviewDiv = document.createElement("div");
+//             reviewDiv.classList.add("review");
+//             reviewDiv.innerHTML = `<strong>${name}:</strong> <p>${review}</p>`;
+//         }
+
+//         document.getElementById("reviewForm").reset();
+//     }
+// }
+
 function updateProfile() {
-            const name = document.getElementById("name").value;
-            const email = document.getElementById("email").value;
-            if (name && email) {
-                alert("Profile updated");
-            } else {
-                alert("Please enter name and email.");
-            }
-        }
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    if (name && email) {
+        alert("Profile updated");
+    } else {
+        alert("Please enter name and email.");
+    }
+}
 
 function addPayment() {
-            const paymentList = document.getElementById("payment-list");
-            const newPayment = document.createElement("div");
-            newPayment.classList.add("payment-option");
-            newPayment.innerHTML = '<span>MasterCard - **** 5824</span> <button class="button button-fail" onclick="deletePayment(this)">Delete</button>';
-            paymentList.appendChild(newPayment);
-        }
+    const paymentList = document.getElementById("payment-list");
+    const newPayment = document.createElement("div");
+    newPayment.classList.add("payment-option");
+    newPayment.innerHTML = '<span>MasterCard - **** 5824</span> <button class="button button-fail" onclick="deletePayment(this)">Delete</button>';
+    paymentList.appendChild(newPayment);
+}
 
 function deletePayment(button) {
-            button.parentElement.remove();
-        }
+    button.parentElement.remove();
+}
 
 function removeProfile() {
-            if (confirm("Do you want to delete this profile?")) {
-                alert("Profile deleted");
-                document.getElementById("name").value = "";
-                document.getElementById("email").value = "";
-                document.getElementById("payment-list").innerHTML = "";
-            }
-        }
+    if (confirm("Do you want to delete this profile?")) {
+        alert("Profile deleted");
+        document.getElementById("name").value = "";
+        document.getElementById("email").value = "";
+        document.getElementById("payment-list").innerHTML = "";
+    }
+}
 
+var dropdown = document.getElementsByClassName("sidemenu-dropdown-btn",);
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+    dropdown[i].addEventListener("click", function () {
+        this.classList.toggle("active");
+        var dropdownContent = this.nextElementSibling;
+        if (dropdownContent.style.display === "block") {
+            dropdownContent.style.display = "none";
+        } else {
+            dropdownContent.style.display = "block";
+        }
+    });
+}
+
+function sidemenuFunction() {
+    document.querySelector(".sidemenu").classList.toggle("show");
+}
