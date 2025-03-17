@@ -43,6 +43,10 @@ Route::get('/contact', function(){
     return view('contactus');
 });
 
+Route::get('/productlisting', function(){
+    return view('productlisting');
+});
+
 Route::get('/login', function(){
     return view('login');
 });
