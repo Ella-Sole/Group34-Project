@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 11, 2025 at 03:53 PM
+-- Generation Time: Mar 18, 2025 at 03:36 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -202,7 +202,8 @@ CREATE TABLE `personal_details` (
 
 CREATE TABLE `purchased_items` (
   `purchase_id` int(11) NOT NULL,
-  `item_id` int(11) NOT NULL
+  `item_id` int(11) NOT NULL,
+  `purchase_status` enum('purchased','out for delivery','delivered','returned','not delivered/shipment lost') NOT NULL DEFAULT 'purchased'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -215,8 +216,7 @@ CREATE TABLE `purchase_history` (
   `purchase_id` int(11) NOT NULL,
   `users_id` bigint(20) UNSIGNED NOT NULL,
   `total_price` decimal(10,0) NOT NULL,
-  `date_of_purchase` datetime NOT NULL,
-  `purchase_status` enum('purchased','out for delivery','delivered','returned','not delivered/shipment lost') NOT NULL DEFAULT 'purchased'
+  `date_of_purchase` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
