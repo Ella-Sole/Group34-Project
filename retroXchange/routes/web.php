@@ -5,6 +5,7 @@ use App\Models\Product;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\OrdersController;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Auth;
 
@@ -63,9 +64,11 @@ Route::get('/logout', [UserController::class, 'logout'])->name('logout');
 
 Route::post('register', [UserController::class, 'signup'])->name('register');
  
-Route::get('/previousorders', function(){
-    return view('previousOrders');
-});
+Route::get('/previousorders', [OrdersController::class, 'showPurchaseHistory']);
+
+Route::post('returnproduct', [OrdersController::class, 'displayReturnProduct'])->name('returnproduct');
+
+Route::post('confirmreturn', [OrdersController::class, 'returnProduct'])->name('confirmreturn');
 
 //products page
 Route::get('/products', function(){

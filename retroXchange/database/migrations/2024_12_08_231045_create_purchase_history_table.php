@@ -18,7 +18,6 @@ class CreatePurchaseHistoryTable extends Migration
             $table->foreignId('users_id')->constrained('users');
             $table->decimal('total_price', 10, 0);
             $table->dateTime('date_of_purchase');
-            $table->enum('purchase_status', ['purchased', 'out for delivery', 'delivered', 'returned', 'not delivered/shipment lost'])->default('purchased');
             
         });
     }

@@ -921,7 +921,7 @@ input[type="submit"]:hover {
 }
 
 .order-details {
-    display: grid;
+    display: block;
     grid-template-columns: 1fr 2fr 1fr 1fr 1fr;
     gap: 20px;
     align-items: center;
@@ -936,7 +936,7 @@ input[type="submit"]:hover {
 }
 
 .order-id {
-    font-size: 0.7rem;
+    font-size: 1rem;
     color: black;
     top: 5px;
     left: 5px;
@@ -974,11 +974,15 @@ input[type="submit"]:hover {
 }
 
 .p-game-image {
-    width: 70px;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    
 }
 
 .p-game-image img {
-    width: 100%;
+    width: 200;
+    height: 150px;
 }
 
 .basket-button {

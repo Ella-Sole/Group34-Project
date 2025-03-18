@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('purchased_items', function (Blueprint $table) {
             $table->integer('purchase_id');
             $table->integer('item_id');
+            $table->enum('purchase_status', ['purchased', 'out for delivery', 'delivered', 'returned', 'not delivered/shipment lost'])->default('purchased');
 
             $table->foreign('purchase_id')->references('purchase_id')->on('purchase_history');
             $table->foreign('item_id')->references('item_id')->on('items_for_sale');

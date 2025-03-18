@@ -85,10 +85,10 @@
                     Shopping</button>
 
                 <!--previous orders only seen if a user is logged in-->
-                <!--@if (Auth::check())-->
+                @if (Auth::check())
                     <button class="previous-orders-button" onclick="location.href='{{ url('/previousorders') }}'">Previous
                         Orders</button>
-                <!--@endif-->
+                @endif
             </div>
         </div>
     </main>

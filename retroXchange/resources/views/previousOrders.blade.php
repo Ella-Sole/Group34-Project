@@ -15,48 +15,50 @@
                 <h1>Your Previous Orders</h1>
                 <p>Review your past orders</p>
 
+                <!--loop over purchase histories rows, if matches user's id, display info with its items-->
+                @foreach($histories as $h)
+                    @if($h['users_id'] == Auth::id())
+                        <div class="order-details">
+                        
+                        <span class="order-id">Order ID: {{$h['purchase_id']}}</span>
 
-                <div class="order-details">
+                        @foreach($purchasedItems as $p)
 
-                    <span class="p-game-image"><img src="assets/images/Red_Dead_Redemption.jpg" alt="RDR Image"></span>
-                    <span class="order-id">Order 1</span>
-                    <span class="p-game-title"><b>Red Dead Redemption</b></span>
-                    <span class="p-quantity">1</span>
-                    <span class="order-date">
-                        <p>Purchase Date:</p>
-                        <p class="order-date1">01/01/2024</p>
-                    </span>
-                    <span class="p-game-price">Total: £10.00</span>
+                            @if($p['purchase_id'] == $h['purchase_id'])
+
+                                @foreach($products as $product)
+
+                                    @if($p['item_id'] == $product['item_id'])
+                                        <form method="post" action="{{ route('returnproduct') }}">
+                                        @csrf
+                                        <span class="p-game-image"><img style="vertical-align:middle" src="{{ url('https://m.media-amazon.com/images/I/' . $product->item_image . '.jpg') }}" alt="Image"></span>
+                                        <span class="p-game-title"><b>{{ $product['item_name'] }}</b></span>
+                                        <span><p>Status: {{$p['purchase_status']}}</p></span>
+                                        <input type="hidden" name="item_id" value="{{$p['item_id']}}">
+                                        <input type="hidden" name="purchase_id" value="{{$p['purchase_id']}}">
+                                        <span><button type= "submit">Return Item</button></span>
+                                        </form>
+                                        <br><br>
+                                    @endif
+                                @endforeach
+                            @endif
+                        @endforeach
+                        
+                        
+                
+                        <span class="order-date">
+                            <p>Purchase Date:</p>
+                            <p class="order-date1">{{$h['date_of_purchase']}}</p>
+                        </span>
+                        <span class="p-game-price">Total: £{{$h['total_price']}}</span><br>
                 </div>
 
-                <div class="order-details">
-                    <span class="p-game-image"><img src="assets/images/gta.jpg" alt="GTA Image"></span>
-                    <span class="order-id">Order 2</span>
-                    <span class="p-game-title"><b>Grand Theft Auto V</b></span>
-                    <span class="p-quantity">2</span>
-                    <span class="order-date">
-                        <p>Purchase Date:</p>
-                        <p class="order-date1">02/02/2024</p>
-                    </span>
-                    <span class="p-game-price">Total: £30.00</span>
-                </div>
-
-                <div class="order-details">
-                    <span class="p-game-image"><img src="assets/images/animal crossing.jpg"
-                            alt="Animal Crossing Image"></span>
-                    <span class="order-id">Order 3</span>
-                    <span class="p-game-title"><b>Animal Crossing</b></span>
-                    <span class="p-quantity">1</span>
-                    <span class="order-date">
-                        <p>Purchase Date:</p>
-                        <p class="order-date1">03/03/2024</p>
-                    </span>
-                    <span class="p-game-price">Total: £20.00</span>
-                </div>
+                    @endif
+                @endforeach
+                
 
                 <div class="previous-orders-actions">
-                    <button class="basket-button" onclick="location.href='{{ url('/basket') }}'">Return to Shopping
-                        Basket</button>
+                    <button class="basket-button" onclick="location.href='{{ url('/basket') }}'">Return to Shopping Basket</button>
                 </div>
             </section>
         </main>
