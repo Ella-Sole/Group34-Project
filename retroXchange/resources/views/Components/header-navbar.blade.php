@@ -16,15 +16,12 @@
                 <a href="#">Xbox Games</a>
                 <a href="#">Switch Games</a>
                 </div>
-                <button class="sidemenu-dropdown-btn">Consoles</button>
-                <div class="sidemenu-dropdown-container">
-                <a href="#">PlayStation Consoles</a>
-                <a href="#">Xbox Consoles</a>
-                </div>
                 <button class="sidemenu-dropdown-btn">Settings</button>
                 <div class="sidemenu-dropdown-container">
                 <a href="#">Dark Mode</a>
                 </div>
+                <!--only seen if an admin is logged in-->
+                @if (Auth::check() && (Auth::user()->user_status == 'Admin'))
                 <button class="sidemenu-dropdown-btn">Admin Management</button>
                 <div class="sidemenu-dropdown-container">
                     <a href="{{ url('/admininventory') }}">Inventory</a>
@@ -32,6 +29,7 @@
                     <a href="{{ url('/admincustomermanagement') }}">Customer Management</a>
                 <img></img>
                 </div>
+                @endif
             </div>
         </div>
         <div class="logo-div">
@@ -82,9 +80,6 @@
                 </div>
                 <div class="navbar-item">
                     <a href="{{ url('/products') }}">GAMES</a>
-                </div>
-                <div class="navbar-item">
-                    <a href="#">CONSOLES</a>
                 </div>
                 <div class="navbar-item">
                     <a href="{{ url('/about') }}">ABOUT US</a>
