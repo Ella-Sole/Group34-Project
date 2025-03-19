@@ -12,8 +12,10 @@
             <div class="sidemenu">
                 <button class="sidemenu-dropdown-btn" class="active" >Games</button>
                 <div class="sidemenu-dropdown-container">
-                <a href="#">PlayStation Games</a>
-                <a href="#">Xbox Games</a>
+                <a href="#">PlayStation 4 Games</a>
+                <a href="#">PlayStation 3 Games</a>
+                <a href="#">Xbox 360 Games</a>
+                <a href="#">Xbox One Games</a>
                 <a href="#">Switch Games</a>
                 </div>
                 <button class="sidemenu-dropdown-btn">Settings</button>
@@ -91,7 +93,7 @@
                 @if (Auth::check())
                 <div class="navbar-item">
                     <a href="{{ url('/logout') }}">LOG OUT</a>
-                </div>  
+                </div>
                 @endif
                 
                 
