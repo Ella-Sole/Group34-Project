@@ -18,8 +18,8 @@
                     <th>Phone Number</th>
                     <th>Address</th>
                     <th>Registration Date</th>
-                    <th>Order Count</th>
-                    <th>Status</th>
+                    <!--<th>Order Count</th>-->
+                    <!--<th>Status</th>-->
                     <th>Actions</th>
                 </tr>
                 <tr>
@@ -29,8 +29,8 @@
                     <td>+1234567890</td>
                     <td>123 Main St, City</td>
                     <td>2025-03-01</td>
-                    <td>5</td>
-                    <td>Active</td>
+                    <!--<td>5</td>-->
+                    <!--<td>Active</td>-->
                     <td><button>Edit</button><button>Delete</button></td>
                 </tr>
         </table>

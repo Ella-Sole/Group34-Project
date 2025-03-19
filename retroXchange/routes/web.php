@@ -25,7 +25,9 @@ Route::get('/about', function(){
 });
 
 Route::get('/admininventory', function(){
-    return view('admininventory');
+    return view('admininventory', [
+        'products' => Product::all()
+    ]);
 });
 
 Route::get('/adminaddproduct', function(){
@@ -108,9 +110,11 @@ Route::get('productview/{id}', function($id){
         'product' => Product::where('item_id',$id)->first()
     ]);
 });
+
 Route::get('/review',function(){
     return view('review');
 });
+
 Route::get('/userpayment',function(){
     return view('userpayment');
 });
