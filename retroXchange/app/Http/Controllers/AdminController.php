@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use Illuminate\Support\Facades\Validator;
 use App\Models\PurchasedItems;
+use App\Models\PurchaseHistory;
+use App\Models\User;
 
 //these functions are for all the admin pages (inventory, order management, customer management)
 class AdminController extends Controller
@@ -138,6 +140,23 @@ class AdminController extends Controller
         
         return redirect()->intended('/adminordermanagement')->with('success', 'Order #' . $purchaseid . ' processed!');
 
+    }
+
+    public function searchOrders(Request $request){
+        // Get the search value from the request
+        $search = $request->input('search');
+        
+        //search by either status OR order/purchase ID
+        $purchasedItems = PurchasedItems::query()
+            ->where('purchase_status', 'LIKE', "%{$search}%")
+            ->orWhere('purchase_id', 'LIKE', "%{$search}")
+            ->get();
+        
+        $histories = PurchaseHistory::all();
+        $products = Product::all();
+        $users = User::all();
+    
+        return view('adminordermanagement', compact('histories', 'purchasedItems', 'products', 'users'));
     }
     
     

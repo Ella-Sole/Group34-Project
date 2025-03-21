@@ -72,6 +72,9 @@ Route::get('/adminordermanagement', function(){
     ]);
 });
 
+//searching for an order within the order management page itself
+Route::get('/searchorders', [AdminController::class, 'searchOrders'])->name('searchOrders');
+
 //display the page to process an order
 Route::post('admindisplayprocessorder', [AdminController::class, 'displayProcessOrder'])->name('admindisplayprocessorder');
 
