@@ -93,7 +93,7 @@ class ProductController extends Controller
     // Search for the product
     $products = Product::query()
         ->where('item_name', 'LIKE', "%{$search}%")
-        ->orWhere('item_price', 'LIKE', "%{$search}%"}
+        ->orWhere('item_price', 'LIKE', "%{$search}%")
         ->get();
 
     // Return the search view with the results compacted
