@@ -10,7 +10,7 @@ use App\Models\PurchasedItems;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 
-
+//these functions are used for the purchase history page and return product page for the user
 class OrdersController extends Controller
 {
     public function showPurchaseHistory(){

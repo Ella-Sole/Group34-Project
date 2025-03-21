@@ -11,6 +11,12 @@
     
     <main>
         <h1 class="admin-title">Inventory</h1>
+
+        <!--message that will display for successful addition/edit/deletion of product -->
+        @if (session()->has('success'))
+            <h1 style="color:red" align="center"> {{session('success')}}</h1>
+        @endif
+
         <a href = "{{url('/adminaddproduct')}}">
         <button class="admin-addbtn">Add New</button>
         </a>

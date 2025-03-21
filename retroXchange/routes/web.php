@@ -6,6 +6,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\OrdersController;
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Auth;
 
@@ -33,6 +34,20 @@ Route::get('/admininventory', function(){
 Route::get('/adminaddproduct', function(){
     return view('adminaddproduct');
 });
+
+//gets the product by the id passed in and returns it to the view
+Route::get('/admineditproduct/{id}', function(){
+    return view('admineditproduct', [
+        'product' => Product::where('item_id',$id)->first()
+    ]);
+
+});
+
+//edit product form submission
+Route::post('editproduct', [AdminController::class, 'editProduct'])->name('editproduct');
+
+//add product form submission
+Route::post('addproduct', [AdminController::class, 'addProduct'])->name('addproduct');
 
 Route::get('/admincustomermanagement', function(){
     return view('admincustomermanagement');
