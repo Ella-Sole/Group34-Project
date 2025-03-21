@@ -15,7 +15,7 @@ class CreateItemsForSaleTable extends Migration
     {
         Schema::create('items_for_sale', function (Blueprint $table) {
             $table->integer('item_id')->primary()->autoIncrement();
-            $table->decimal('item_price', 10, 0);
+            $table->decimal('item_price', 10, 2);
             $table->string('item_name', 100);
             $table->integer('item_stock');
             $table->string('item_image');

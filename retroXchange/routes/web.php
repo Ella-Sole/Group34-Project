@@ -36,7 +36,7 @@ Route::get('/adminaddproduct', function(){
 });
 
 //gets the product by the id passed in and returns it to the view
-Route::get('/admineditproduct/{id}', function(){
+Route::get('admineditproduct/{id}', function($id){
     return view('admineditproduct', [
         'product' => Product::where('item_id',$id)->first()
     ]);

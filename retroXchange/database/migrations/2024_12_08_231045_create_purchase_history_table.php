@@ -16,7 +16,7 @@ class CreatePurchaseHistoryTable extends Migration
         Schema::create('purchase_history', function (Blueprint $table) {
             $table->integer('purchase_id')->primary()->autoIncrement();
             $table->foreignId('users_id')->constrained('users');
-            $table->decimal('total_price', 10, 0);
+            $table->decimal('total_price', 10, 2);
             $table->dateTime('date_of_purchase');
             
         });

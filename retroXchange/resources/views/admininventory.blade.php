@@ -41,7 +41,12 @@
                 <td>£{{ $p['item_price'] }}</td>
                 <td>{{ $p['item_stock'] }}</td>
                 <!--<td>40</td>-->
-                <td><button>Edit</button><button>Delete</button></td>
+                <td>
+                    <a href = "{{ url('admineditproduct/' . $p->item_id) }}">
+                    <button>Edit</button>
+                    </a>
+                    <button>Delete</button>
+                </td>
             </tr>
             <tr>
         @endforeach
