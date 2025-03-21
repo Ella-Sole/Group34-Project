@@ -72,6 +72,12 @@ Route::get('/adminordermanagement', function(){
     ]);
 });
 
+//display the page to process an order
+Route::post('admindisplayprocessorder', [AdminController::class, 'displayProcessOrder'])->name('admindisplayprocessorder');
+
+//process order
+Route::post('processorder', [AdminController::class, 'processOrder'])->name('processorder');
+
 Route::get('/contact', function(){
     return view('contactus');
 });

@@ -12,6 +12,11 @@
         <h1 class="admin-title">Order Management</h1>
         <table style="width:100%">
 
+        <!--message that will display for successful order process -->
+        @if (session()->has('success'))
+            <h1 style="color:red" align="center"> {{session('success')}}</h1>
+        @endif
+
         @foreach($histories as $h)
 
             @foreach($purchasedItems as $p)
@@ -47,7 +52,16 @@
                             <td>£{{ $product['item_price'] }}</td>
                             <td>£{{ $h['total_price'] }}</td>
                             <td>{{ $p['purchase_status'] }}</td>
-                            <td><button>Process</button></td>
+
+                            <!--use a form to input purchase & item id for processing-->
+                            <form method="post" action="{{ route('admindisplayprocessorder') }}">
+                                @csrf
+                                <input type="hidden" name="purchase_id" value="{{$p['purchase_id']}}">
+                                <input type="hidden" name="item_id" value="{{$p['item_id']}}">
+                                <input type="hidden" name="item_name" value="{{$p['item_name']}}">
+
+                                <td><button type="submit">Process</button></td>
+                            </form>
                         </tr>
                         @endif
                         
