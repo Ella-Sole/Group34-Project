@@ -2,6 +2,9 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Arr;
 use App\Models\Product;
+use App\Models\PurchaseHistory;
+use App\Models\PurchasedItems;
+use App\Models\User;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CheckoutController;
@@ -59,8 +62,14 @@ Route::get('/admincustomermanagement', function(){
     return view('admincustomermanagement');
 });
 
-Route::get('/adminmanagement', function(){
-    return view('adminmanagement');
+Route::get('/adminordermanagement', function(){
+    return view('adminordermanagement', [
+        'histories' => PurchaseHistory::all(),
+        'purchasedItems' => PurchasedItems::all(),
+        'products' => Product::all(),
+        'users' => User::all()
+
+    ]);
 });
 
 Route::get('/contact', function(){
