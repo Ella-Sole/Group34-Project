@@ -66,7 +66,9 @@
                     <a href = "{{ url('admineditproduct/' . $p->item_id) }}">
                     <button>Edit</button>
                     </a>
+                    <a href = "{{ url('admindeleteproduct/' . $p->item_id) }}">
                     <button>Delete</button>
+                    </a>
                 </td>
             </tr>
             <tr>

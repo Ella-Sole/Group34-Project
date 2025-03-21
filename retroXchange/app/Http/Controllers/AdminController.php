@@ -10,7 +10,6 @@ use Illuminate\Support\Facades\Validator;
 class AdminController extends Controller
 {
     public function addProduct(Request $request){
-
         //validates the info put into form
         $s = Validator::make($request->all(),[
             'pname' => 'required',
@@ -47,7 +46,6 @@ class AdminController extends Controller
     }
 
     public function editProduct(Request $request){
-
         //validates the info put into form
         $s = Validator::make($request->all(),[
             'pname' => 'required',
@@ -79,8 +77,11 @@ class AdminController extends Controller
                 'item_stock' => $request->pstock,
             ]);
 
+            //get title of product
+            $title = Product::where('item_id',$pid)->select('item_name')->pluck('item_name')->first();
+
             //redirect back to inventory page if successful
-            return redirect()->intended('/admininventory')->with('success', 'Product updated!');
+            return redirect()->intended('/admininventory')->with('success', $title . ' updated!');
                 
         }
 
@@ -91,7 +92,7 @@ class AdminController extends Controller
         // Get the search value from the request
         $search = $request->input('search');
     
-        // Search for the product
+        // Search for the product (by either title or category)
         $products = Product::query()
             ->where('item_name', 'LIKE', "%{$search}%")
             ->orWhere('category', 'LIKE', "%{$search}")
@@ -99,5 +100,19 @@ class AdminController extends Controller
     
 
         return view('admininventory', compact('products'));
-        }
+    }
+
+    public function deleteProduct($id){
+        //get title of product
+        $title = Product::where('item_id',$id)->select('item_name')->pluck('item_name')->first();
+
+        //find product by its id then delete that row
+        Product::where('item_id',$id)->delete();
+
+        //redirect back to inventory page
+        return redirect()->intended('/admininventory')->with('success', $title . ' deleted!');
+
+    }
+    
+    
 }

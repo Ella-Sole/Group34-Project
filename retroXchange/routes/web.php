@@ -52,6 +52,9 @@ Route::post('editproduct', [AdminController::class, 'editProduct'])->name('editp
 //add product form submission
 Route::post('addproduct', [AdminController::class, 'addProduct'])->name('addproduct');
 
+//delete product from inventory
+Route::get('admindeleteproduct/{id}', [AdminController::class, 'deleteProduct']);
+
 Route::get('/admincustomermanagement', function(){
     return view('admincustomermanagement');
 });
