@@ -31,6 +31,9 @@ Route::get('/admininventory', function(){
     ]);
 });
 
+//searching for a product within the inventory page itself
+Route::get('/searchinventory', [AdminController::class, 'searchInventory'])->name('searchInventory');
+
 Route::get('/adminaddproduct', function(){
     return view('adminaddproduct');
 });

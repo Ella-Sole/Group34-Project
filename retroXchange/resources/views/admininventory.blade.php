@@ -17,6 +17,27 @@
             <h1 style="color:red" align="center"> {{session('success')}}</h1>
         @endif
 
+        <!--search products within the inventory page itself-->
+        <div class="search-bar-placement">
+            <div class="search-bar-background">
+                <form action="{{ route('searchInventory') }}" method="GET">
+                    <div class="search-bar-alignment">
+                        <div class="search-bar-input">
+                            <input type="text" name="search" placeholder="Search inventory by product title or category"/>
+                        </div>
+                        <div class="search-bar-button">
+                            <button type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="1.5rem" height="1.5rem" fill="currentColor"
+                                class="bi bi-search" viewBox="0 0 16 16">
+                                <path
+                                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                            </svg></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div><br><br>
+
+
         <a href = "{{url('/adminaddproduct')}}">
         <button class="admin-addbtn">Add New</button>
         </a>
@@ -30,7 +51,7 @@
                 <th>Category</th>
                 <th>Price</th>
                 <th>Stock</th>
-                <!--<th>Amount Sold</th>-->
+                <th>Description</th>
                 <th>Actions</th>
             </tr>
             <tr>
@@ -40,7 +61,7 @@
                 <td>{{ $p['category' ]}}</td>
                 <td>£{{ $p['item_price'] }}</td>
                 <td>{{ $p['item_stock'] }}</td>
-                <!--<td>40</td>-->
+                <td>{{ $p['item_description'] }}</td>
                 <td>
                     <a href = "{{ url('admineditproduct/' . $p->item_id) }}">
                     <button>Edit</button>

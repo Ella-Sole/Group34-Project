@@ -86,4 +86,18 @@ class AdminController extends Controller
 
 
     }
+
+    public function searchInventory(Request $request){
+        // Get the search value from the request
+        $search = $request->input('search');
+    
+        // Search for the product
+        $products = Product::query()
+            ->where('item_name', 'LIKE', "%{$search}%")
+            ->orWhere('category', 'LIKE', "%{$search}")
+            ->get();
+    
+
+        return view('admininventory', compact('products'));
+        }
 }
