@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 18, 2025 at 03:36 PM
+-- Generation Time: Mar 21, 2025 at 08:50 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -69,7 +69,7 @@ CREATE TABLE `failed_jobs` (
 
 CREATE TABLE `items_for_sale` (
   `item_id` int(11) NOT NULL,
-  `item_price` decimal(10,0) NOT NULL,
+  `item_price` decimal(10,2) NOT NULL,
   `item_name` varchar(100) NOT NULL,
   `item_stock` int(11) NOT NULL,
   `item_image` varchar(255) NOT NULL,
@@ -82,13 +82,13 @@ CREATE TABLE `items_for_sale` (
 --
 
 INSERT INTO `items_for_sale` (`item_id`, `item_price`, `item_name`, `item_stock`, `item_image`, `item_description`, `category`) VALUES
-(1, 10, 'Red Dead Redemption', 5, '71W0shS7ylL._AC_SL1000', 'Action Survival', 'ps3'),
-(2, 4, 'Fallout 4', 7, '812nlgWkM6L.AC_SL1500', 'Action RPG', 'xbox one'),
-(3, 13, 'Legend of Zelda Breath of the Wild', 11, '81eHh0BNU0L._AC_SL1500', 'Action Adventure', 'switch'),
-(4, 20, 'Super Mario 64', 8, '81Xi9uVRf4L.AC_SL1500', 'Action Platformer', 'switch'),
-(5, 15, 'GTA V', 15, '91Y4xD7QGNL.AC_SL1500', 'Action Platformer', 'xbox 360'),
-(6, 2, 'FIFA 21', 0, '91KwPLW4BqL._AC_SL1500_', 'Football', 'ps4'),
-(7, 30, 'Animal Crossing: New Horizons', 16, '81s8etnYPrL._AC_SL1500_', 'Social Simulation', 'switch');
+(1, 10.00, 'Red Dead Redemption', 5, '71W0shS7ylL._AC_SL1000', 'Action Survival', 'ps3'),
+(2, 4.00, 'Fallout 4', 7, '812nlgWkM6L.AC_SL1500', 'Action RPG', 'xbox one'),
+(3, 13.00, 'Legend of Zelda Breath of the Wild', 11, '81eHh0BNU0L._AC_SL1500', 'Action Adventure', 'switch'),
+(4, 20.00, 'Super Mario 64', 8, '81Xi9uVRf4L.AC_SL1500', 'Action Platformer', 'switch'),
+(5, 15.00, 'GTA V', 15, '91Y4xD7QGNL.AC_SL1500', 'Action Platformer', 'xbox 360'),
+(6, 2.00, 'FIFA 21', 0, '91KwPLW4BqL._AC_SL1500_', 'Football', 'ps4'),
+(7, 30.00, 'Animal Crossing: New Horizons', 16, '81s8etnYPrL._AC_SL1500_', 'Social Simulation', 'switch');
 
 -- --------------------------------------------------------
 
@@ -215,7 +215,7 @@ CREATE TABLE `purchased_items` (
 CREATE TABLE `purchase_history` (
   `purchase_id` int(11) NOT NULL,
   `users_id` bigint(20) UNSIGNED NOT NULL,
-  `total_price` decimal(10,0) NOT NULL,
+  `total_price` decimal(10,2) NOT NULL,
   `date_of_purchase` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -249,6 +249,13 @@ CREATE TABLE `users` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `user_status` enum('Normal','Admin') NOT NULL DEFAULT 'Normal'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `email`, `password`, `remember_token`, `created_at`, `updated_at`, `user_status`) VALUES
+(1, 'admin@gmail.com', '$2y$12$cIAXrzWUZqlGZ6Q.BoxLUuvFXIoDakbnS3Ahv0ajIY8pPBFm7aN/q', NULL, NULL, NULL, 'Admin');
 
 -- --------------------------------------------------------
 
@@ -417,7 +424,7 @@ ALTER TABLE `purchase_history`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `user_details`
