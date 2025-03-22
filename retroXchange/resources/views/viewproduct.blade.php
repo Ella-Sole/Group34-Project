@@ -10,7 +10,12 @@
 
     <!--message for item being successfully added to basket -->
     @if (session()->has('success'))
-            <h2 style="color:red" align="center"> {{session('success')}}</h2>
+        <h2 style="color:red" align="center"> {{session('success')}}</h2>
+    @endif
+
+    <!--error message-->
+    @if (session()->has('error'))
+        <h2 style="color:red" align="center"> {{session('error')}}</h2>
     @endif
 
     <div class="product-listing-grid">
@@ -38,7 +43,7 @@
 
             <div>
                 <!--STOCK -->
-                @if ($product['item_stock'] == 0)
+                @if ($product['item_stock'] <= 0)
                     <p>OUT OF STOCK</p>
                 @else
                     <p>{{ $product['item_stock'] }} Available</p>

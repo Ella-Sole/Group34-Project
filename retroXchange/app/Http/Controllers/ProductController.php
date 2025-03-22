@@ -36,8 +36,19 @@ class ProductController extends Controller
 
         //loop over basket
         foreach ($b as &$item){
+            //if the same item has been found in the basket
             if($item['item_id'] == $id){
                 $item['quantity'] += 1;
+                //if items are added past the stock level
+                if($item['quantity'] > $item['item_stock']){
+
+                    //decrement back to original quantity in basket
+                    $item['quantity'] -= 1;
+
+                    //redirect back with error
+                    return back()->with('error', 'Items cant be added past stock level!');
+
+                }
                 $itemAdded = true;
 
             }

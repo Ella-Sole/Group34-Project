@@ -14,6 +14,11 @@
             <h2 style="color:red" align="center"> {{session('success')}}</h2>
         @endif
 
+        <!--error message-->
+        @if (session()->has('error'))
+            <h2 style="color:red" align="center"> {{session('error')}}</h2>
+        @endif
+
         <!-- Gaming products  -->
         <section class="product">
             <h2 class="product-category">Games</h2>
@@ -41,7 +46,7 @@
                             <h2 class="product-short-description">{{ $product['item_name'] }}</h2>
                             <span class="price">£{{ $product['item_price'] }}</span> <!-- price -->
 
-                            @if ($product['item_stock'] == 0)
+                            @if ($product['item_stock'] <= 0)
                                 <!--if out of stock-->
                                 <p>OUT OF STOCK</p>
                             @else <!--can only add to basket if in stock-->
