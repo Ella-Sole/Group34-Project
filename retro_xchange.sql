@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 21, 2025 at 08:50 PM
+-- Generation Time: Mar 22, 2025 at 06:15 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -82,13 +82,14 @@ CREATE TABLE `items_for_sale` (
 --
 
 INSERT INTO `items_for_sale` (`item_id`, `item_price`, `item_name`, `item_stock`, `item_image`, `item_description`, `category`) VALUES
-(1, 10.00, 'Red Dead Redemption', 5, '71W0shS7ylL._AC_SL1000', 'Action Survival', 'ps3'),
-(2, 4.00, 'Fallout 4', 7, '812nlgWkM6L.AC_SL1500', 'Action RPG', 'xbox one'),
-(3, 13.00, 'Legend of Zelda Breath of the Wild', 11, '81eHh0BNU0L._AC_SL1500', 'Action Adventure', 'switch'),
-(4, 20.00, 'Super Mario 64', 8, '81Xi9uVRf4L.AC_SL1500', 'Action Platformer', 'switch'),
-(5, 15.00, 'GTA V', 15, '91Y4xD7QGNL.AC_SL1500', 'Action Platformer', 'xbox 360'),
-(6, 2.00, 'FIFA 21', 0, '91KwPLW4BqL._AC_SL1500_', 'Football', 'ps4'),
-(7, 30.00, 'Animal Crossing: New Horizons', 16, '81s8etnYPrL._AC_SL1500_', 'Social Simulation', 'switch');
+(1, 19.99, 'Red Dead Redemption', 5, '71W0shS7ylL._AC_SL1000', 'Third-person action-adventure game', 'ps3'),
+(2, 10.00, 'Fallout 4', 7, '812nlgWkM6L.AC_SL1500', 'Single-player action RPG game', 'xbox one'),
+(3, 30.00, 'The Legend of Zelda: Tears of the Kingdom', 11, '81eHh0BNU0L._AC_SL1500', 'Open-world action-adventure game', 'switch'),
+(4, 20.00, 'Super Mario 3D All Stars', 8, '81Xi9uVRf4L.AC_SL1500', 'Compilation game including Super Mario 64, Super Mario Sunshine and Super Mario Galaxy', 'switch'),
+(5, 15.00, 'GTA V', 15, '91Y4xD7QGNL.AC_SL1500', 'Action-adventure game', 'xbox 360'),
+(6, 5.99, 'FIFA 21', 0, '91KwPLW4BqL._AC_SL1500_', 'Football game', 'ps4'),
+(7, 30.00, 'Animal Crossing: New Horizons', 16, '81s8etnYPrL._AC_SL1500_', 'Social simulation game', 'switch'),
+(8, 30.00, 'Hades', 9, '81TzcunnxZL._AC_SL1500_', 'Rouguelike action RPG game', 'ps4');
 
 -- --------------------------------------------------------
 
@@ -185,14 +186,23 @@ CREATE TABLE `payment_method` (
 
 CREATE TABLE `personal_details` (
   `personal_details_id` int(11) NOT NULL,
-  `first_name` varchar(50) NOT NULL,
+  `first_name` varchar(50) DEFAULT NULL,
   `middle_name` varchar(50) DEFAULT NULL,
-  `last_name` varchar(50) NOT NULL,
-  `gender` enum('Male','Female','Other','Prefer not to say') NOT NULL,
-  `phone_number` int(11) NOT NULL,
-  `address` varchar(100) NOT NULL,
-  `postcode` varchar(7) NOT NULL
+  `last_name` varchar(50) DEFAULT NULL,
+  `gender` enum('Male','Female','Other','Prefer not to say') DEFAULT NULL,
+  `phone_number` int(11) DEFAULT NULL,
+  `address` varchar(100) DEFAULT NULL,
+  `postcode` varchar(7) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `personal_details`
+--
+
+INSERT INTO `personal_details` (`personal_details_id`, `first_name`, `middle_name`, `last_name`, `gender`, `phone_number`, `address`, `postcode`) VALUES
+(1, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(2, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(3, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -255,7 +265,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `email`, `password`, `remember_token`, `created_at`, `updated_at`, `user_status`) VALUES
-(1, 'admin@gmail.com', '$2y$12$cIAXrzWUZqlGZ6Q.BoxLUuvFXIoDakbnS3Ahv0ajIY8pPBFm7aN/q', NULL, NULL, NULL, 'Admin');
+(1, 'admin@gmail.com', '$2y$12$oY6HZl9Ke9lFvGqRhwbHAuC/uATM/p5pqxhEIvvcxq/Y8c5i5LTAW', NULL, '2025-02-10 20:00:01', NULL, 'Admin'),
+(2, 'user@gmail.com', '$2y$12$Ht5NGltvlo0bsmWwsBHJwufkUhWz2wtRWEWkPc/avSUALJbQ3JQxi', NULL, '2025-03-22 16:14:05', NULL, 'Normal'),
+(3, 'bob@gmail.com', '$2y$12$Cx/cNWjGgFzbwTr3uVU9quM8X3N2Kp.GD8.z3EmCu9h6npzumI6le', NULL, '2025-03-20 13:10:12', NULL, 'Normal');
 
 -- --------------------------------------------------------
 
@@ -266,9 +278,18 @@ INSERT INTO `users` (`id`, `email`, `password`, `remember_token`, `created_at`, 
 CREATE TABLE `user_details` (
   `details_id` int(11) NOT NULL,
   `users_id` bigint(20) UNSIGNED NOT NULL,
-  `personal_details_info` int(11) NOT NULL,
-  `payment_method` int(11) NOT NULL
+  `personal_details_info` int(11) DEFAULT NULL,
+  `payment_method` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `user_details`
+--
+
+INSERT INTO `user_details` (`details_id`, `users_id`, `personal_details_info`, `payment_method`) VALUES
+(1, 1, 1, NULL),
+(2, 2, 2, NULL),
+(3, 3, 3, NULL);
 
 --
 -- Indexes for dumped tables
@@ -388,7 +409,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `items_for_sale`
 --
 ALTER TABLE `items_for_sale`
-  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `jobs`
@@ -412,7 +433,7 @@ ALTER TABLE `payment_method`
 -- AUTO_INCREMENT for table `personal_details`
 --
 ALTER TABLE `personal_details`
-  MODIFY `personal_details_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `personal_details_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `purchase_history`
@@ -424,13 +445,13 @@ ALTER TABLE `purchase_history`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `user_details`
 --
 ALTER TABLE `user_details`
-  MODIFY `details_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `details_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Constraints for dumped tables
@@ -440,22 +461,22 @@ ALTER TABLE `user_details`
 -- Constraints for table `purchased_items`
 --
 ALTER TABLE `purchased_items`
-  ADD CONSTRAINT `purchased_items_item_id_foreign` FOREIGN KEY (`item_id`) REFERENCES `items_for_sale` (`item_id`),
-  ADD CONSTRAINT `purchased_items_purchase_id_foreign` FOREIGN KEY (`purchase_id`) REFERENCES `purchase_history` (`purchase_id`);
+  ADD CONSTRAINT `purchased_items_item_id_foreign` FOREIGN KEY (`item_id`) REFERENCES `items_for_sale` (`item_id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `purchased_items_purchase_id_foreign` FOREIGN KEY (`purchase_id`) REFERENCES `purchase_history` (`purchase_id`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `purchase_history`
 --
 ALTER TABLE `purchase_history`
-  ADD CONSTRAINT `purchase_history_users_id_foreign` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`);
+  ADD CONSTRAINT `purchase_history_users_id_foreign` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `user_details`
 --
 ALTER TABLE `user_details`
-  ADD CONSTRAINT `fkPaymentMethod` FOREIGN KEY (`payment_method`) REFERENCES `payment_method` (`payment_method_id`),
-  ADD CONSTRAINT `fkPersonalDetails` FOREIGN KEY (`personal_details_info`) REFERENCES `personal_details` (`personal_details_id`),
-  ADD CONSTRAINT `user_details_users_id_foreign` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`);
+  ADD CONSTRAINT `fkPaymentMethod` FOREIGN KEY (`payment_method`) REFERENCES `payment_method` (`payment_method_id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `fkPersonalDetails` FOREIGN KEY (`personal_details_info`) REFERENCES `personal_details` (`personal_details_id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `user_details_users_id_foreign` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
