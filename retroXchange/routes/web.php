@@ -165,7 +165,7 @@ Route::get('/reset', function(){
 
 //view individual product page
 Route::get('productview/{id}', function($id){
-    return view('productview', [
+    return view('viewproduct', [
 
         'product' => Product::where('item_id',$id)->first()
     ]);
