@@ -12,6 +12,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\OrdersController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\PasswordResetController;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Auth;
 
