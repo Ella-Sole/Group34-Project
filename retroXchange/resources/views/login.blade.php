@@ -41,6 +41,7 @@
 
         <div class="account-option">
             <p>Not yet got an account? <a href = "{{ url('/signup') }}"> Sign up</a></p>
+            <p>Forgotten your details?</p> <a href = "{{ url('/reset') }}> Reset Password</a><p>
         </div>
     </main>
 </body>
