@@ -13,7 +13,7 @@
 
         <!--for displaying error message if validation fails-->
         @if (session()->has('error'))
-            <h1 style="color:red" align="center"> {{session('error')}}</h1>
+            <h2 style="color:red" align="center"> {{session('error')}}</h2>
         @endif
         
         <form class="admin-addform" method="post" action="{{ route ('editproduct') }}">

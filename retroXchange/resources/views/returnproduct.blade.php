@@ -10,7 +10,7 @@
 
     <!--message that will display when return is confirmed -->
     @if (session()->has('success'))
-            <h1 style="color:red" align="center"> {{session('success')}}</h1>
+            <h2 style="color:red" align="center"> {{session('success')}}</h2>
     @endif
 
     @foreach ($item as $t)

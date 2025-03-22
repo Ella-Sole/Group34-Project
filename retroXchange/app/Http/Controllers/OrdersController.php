@@ -49,7 +49,7 @@ class OrdersController extends Controller
         PurchasedItems::where('purchase_id', $purchaseid)->where('item_id', $itemid)->limit(1)->update(['purchase_status' => 'returned']);
         
         //back to homepage route
-        return redirect('/')->with('success', 'Item return confirmed!');
+        return redirect('/previousorders')->with('success', 'Item return confirmed!');
 
     }
 }

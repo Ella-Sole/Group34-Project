@@ -14,7 +14,7 @@
 
         <!--message that will display for successful addition/edit/deletion of product -->
         @if (session()->has('success'))
-            <h1 style="color:red" align="center"> {{session('success')}}</h1>
+            <h2 style="color:red" align="center"> {{session('success')}}</h2>
         @endif
 
         <!--search products within the inventory page itself-->

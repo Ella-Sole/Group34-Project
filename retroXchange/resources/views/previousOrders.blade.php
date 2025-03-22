@@ -7,11 +7,16 @@
     <body class = "previous-order-page-layout background">
 
         <x-header-navbar> </x-header-navbar>
-          
 
 
         <main>
             <section class="previous-orders-section">
+
+            <!--message for successful item return-->
+            @if (session()->has('success'))
+                <h2 style="color:red" align="center"> {{session('success')}}</h2>
+            @endif
+
                 <h1>Your Previous Orders</h1>
                 <p>Review your past orders</p>
 
@@ -20,7 +25,7 @@
                     @if($h['users_id'] == Auth::id())
                         <div class="order-details">
                         
-                        <span class="order-id">Order ID: {{$h['purchase_id']}}</span>
+                        <span class="order-id">Order ID: #{{$h['purchase_id']}}</span>
 
                         @foreach($purchasedItems as $p)
 
@@ -36,7 +41,12 @@
                                         <span><p>Status: {{$p['purchase_status']}}</p></span>
                                         <input type="hidden" name="item_id" value="{{$p['item_id']}}">
                                         <input type="hidden" name="purchase_id" value="{{$p['purchase_id']}}">
+
+                                        <!--option to return only if item isnt already returned-->
+                                        @if($p['purchase_status'] != 'returned')
                                         <span><button type= "submit">Return Item</button></span>
+                                        @endif
+
                                         </form>
                                         <br><br>
                                     @endif

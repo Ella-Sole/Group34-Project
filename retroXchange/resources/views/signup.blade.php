@@ -17,7 +17,7 @@
 
         <!-- display message for errors -->
         @if (session()->has('error'))
-            <h1 style="color:red" align="center"> {{session('error')}}</h1>
+            <h2 style="color:red" align="center"> {{session('error')}}</h2>
         @endif
 
         <div class = "signup-form">

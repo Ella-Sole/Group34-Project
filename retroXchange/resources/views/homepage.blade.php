@@ -9,16 +9,9 @@
     <x-header-navbar> </x-header-navbar>
 
     <main>
-        <!--for debugging-->
-        @if (Auth::check())
-            <p> authenticated </p>
-        @else
-            <p> not authenticated </p>
-        @endif
-
         <!--message that will display either successful login/logout or item added to basket -->
         @if (session()->has('success'))
-            <h1 style="color:red" align="center"> {{session('success')}}</h1>
+            <h2 style="color:red" align="center"> {{session('success')}}</h2>
         @endif
 
         <section class="product">

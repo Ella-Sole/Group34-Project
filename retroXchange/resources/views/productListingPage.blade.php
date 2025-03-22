@@ -11,7 +11,7 @@
     <main>
         <!--message for item being successfully added to basket -->
          @if (session()->has('success'))
-            <h1 style="color:red" align="center"> {{session('success')}}</h1>
+            <h2 style="color:red" align="center"> {{session('success')}}</h2>
         @endif
 
         <!-- Gaming products  -->
@@ -60,30 +60,8 @@
             </div>
         </section>
 
-        <!-- Consoles   -->
-
-        <!--<section class="product">
-            <h2 class="product-category">Consoles</h2>
-            <button class="pre-btn"><img src="{{ asset('images/arrow-button.png') }}" alt="back-button"></button>
-            <button class="nxt-btn"><img src="{{ asset('images/arrow-button.png') }}" alt="fwd-button"></button>
-         <div>
-            <div class="product-container"> -->
-
-        <!-- Product 11 -->
-        <!--<div class="product-card">
-                <div class="product-image">
-                    <img src="{{ asset('images/Nintendo_switch.jpg') }}" class="product-thumbnail" alt="">
-                </div>
-                <div class="product-info">
-                    <p class="product-brand">Switch Consoles</p>
-                    <h2 class="product-short-description">Nintendo Switch Console 32GB</h2>
-                    <span class="price">£200</span>
-                    <button class="basket"><img src="{{ asset('images/basket-icon.png') }}" alt="" style="width:20px; height:20px"></button>
-                </div>
-            </div> -->
         </div>
         </div>
-        <!--</section>-->
 
 
     </main>
