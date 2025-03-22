@@ -14,7 +14,7 @@
             <h1>Reset Password</h1>
         </div>
         <div class = "reset-form">
-            <form action="{{ route('reset') }}" method = "POST">
+            <form action="{{ route('password/request-reset') }}" method = "POST">
                 <label for = "email address">Email Address:</label><br>
                 <input type = "text" id = "email" name = "email" required><br>
                 <label for = "new password">New Password:</label><br>
