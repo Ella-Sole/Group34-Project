@@ -16,8 +16,8 @@ return new class extends Migration
             $table->integer('item_id');
             $table->enum('purchase_status', ['purchased', 'out for delivery', 'delivered', 'returned', 'not delivered/shipment lost'])->default('purchased');
 
-            $table->foreign('purchase_id')->references('purchase_id')->on('purchase_history');
-            $table->foreign('item_id')->references('item_id')->on('items_for_sale');
+            $table->foreign('purchase_id')->references('purchase_id')->on('purchase_history')->onDelete('cascade');
+            $table->foreign('item_id')->references('item_id')->on('items_for_sale')->onDelete('cascade');
         });
     }
 

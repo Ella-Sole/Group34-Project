@@ -15,13 +15,13 @@ class CreatePersonalDetailsTable extends Migration
     {
         Schema::create('personal_details', function (Blueprint $table) {
             $table->integer('personal_details_id')->primary()->autoIncrement();
-            $table->string('first_name', 50);
+            $table->string('first_name', 50)->nullable();
             $table->string('middle_name', 50)->nullable();
-            $table->string('last_name', 50);
-            $table->enum('gender', ['Male', 'Female', 'Other', 'Prefer not to say']);
-            $table->integer('phone_number');
-            $table->string('address', 100);
-            $table->string('postcode', 7);
+            $table->string('last_name', 50)->nullable();
+            $table->enum('gender', ['Male', 'Female', 'Other', 'Prefer not to say'])->nullable();
+            $table->integer('phone_number')->nullable();
+            $table->string('address', 100)->nullable();
+            $table->string('postcode', 7)->nullable();
         });
     }
 
