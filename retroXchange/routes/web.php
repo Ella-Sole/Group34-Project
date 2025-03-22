@@ -175,6 +175,10 @@ Route::get('/review',function(){
     return view('review');
 });
 
+Route::post('password/request-reset', [PasswordResetController::class, 'requestPasswordReset']);
+Route::post('password/reset', [PasswordResetController::class, 'resetPassword']);
+
+
 Route::get('/userpayment',function(){
     return view('userpayment');
 });
