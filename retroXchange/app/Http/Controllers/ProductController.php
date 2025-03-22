@@ -94,6 +94,7 @@ class ProductController extends Controller
     $products = Product::query()
         ->where('item_name', 'LIKE', "%{$search}%")
         ->orWhere('item_price', 'LIKE', "%{$search}%")
+        ->orWhere('category','LIKE', "%{$search}%")
         ->get();
 
     // Return the search view with the results compacted
