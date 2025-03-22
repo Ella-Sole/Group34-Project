@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Validator;
 use App\Models\PurchasedItems;
 use App\Models\PurchaseHistory;
 use App\Models\User;
+use App\Models\UserDetails;
+use App\Models\PersonalDetails;
 
 //these functions are for all the admin pages (inventory, order management, customer management)
 class AdminController extends Controller
@@ -158,6 +160,57 @@ class AdminController extends Controller
     
         return view('adminordermanagement', compact('histories', 'purchasedItems', 'products', 'users'));
     }
+
+    //Customer management page functions:
+    public function updateCustomerDetails(Request $request){
+
+        //validates the required put into form (email is required but other details can be null)
+        $s = Validator::make($request->all(),[
+            'email' => 'required',
+        ]);
+
+        //store user id
+        $userid = $request->id;
+        //store personal details id
+        $personaldetailsid = $request->detailsid;
+
+        //if fails, returns error:
+        if ($s->fails()){
+            return back()->with('error', 'Please enter an email!');
+
+        } else {
+            //find user's personal details by its id then update all fields
+            PersonalDetails::where('personal_details_id', $personaldetailsid)
+            ->update([
+                'first_name' => $request->fname,
+                'middle_name' => $request->mname,
+                'last_name' => $request->lname,
+                'phone_number' => $request->number,
+                'address' => $request->address,
+                'postcode' => $request->postcode,
+            ]);
+
+            //redirect back to page
+            return redirect()->intended('/admincustomermanagement')->with('success', 'Customer #' . $userid . ' details updated!');
+        }
+    }
+
+    public function deleteCustomer($id){
+
+        //delete user's personal details table after finding its id
+        $pd = UserDetails::where('users_id',$id)->select('personal_details_info')->pluck('personal_details_info')->first();
+        PersonalDetails::where('personal_details_id',$pd)->delete();
+        
+
+        //find user by its id then delete that row
+        //all associated relationships with this parent table are also deleted
+        User::where('id',$id)->delete();
+
+        //redirect back to page
+        return redirect()->intended('/admincustomermanagement')->with('success', 'Customer #' . $id . ' deleted!');
+
+    }
+
+    }
     
     
-}

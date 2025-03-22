@@ -9,12 +9,12 @@ class UserDetails extends Model
     //specify which database table the Model uses
     protected $table = 'user_details';
 
+    public $timestamps = false;
+
     //for safety precautions define which attributes can be fillable/set when data is input
-    // protected $fillable = [
-    //     'login_info',
-    //     'personal_details_info',
-    //     'payment_metod',
-    //     'purchase_history',
-    //     'user_status'
-    // ];
+     protected $fillable = [
+         'users_id',
+         'personal_details_info',
+         'payment_method'
+     ];
 }

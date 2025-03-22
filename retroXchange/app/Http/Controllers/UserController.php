@@ -7,6 +7,8 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use App\Models\UserDetails;
+use App\Models\PersonalDetails;
 
 
 class UserController extends Controller
@@ -53,9 +55,18 @@ class UserController extends Controller
         } else {
 
             //refer to users model to create a new row in users table
-            User::create([
+            $user = User::create([
                 'email' => $details->email,
                 'password' => Hash::make($details->password),
+            ]);
+            
+            //set table entries for user details
+            $p = PersonalDetails::create([
+            ]);
+            
+            UserDetails::create([
+                'users_id' => $user->id,
+                'personal_details_info' => $p->id,
             ]);
 
             //redirect to login if successful

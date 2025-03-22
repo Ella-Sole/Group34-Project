@@ -5,6 +5,8 @@ use App\Models\Product;
 use App\Models\PurchaseHistory;
 use App\Models\PurchasedItems;
 use App\Models\User;
+use App\Models\UserDetails;
+use App\Models\PersonalDetails;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CheckoutController;
@@ -59,8 +61,27 @@ Route::post('addproduct', [AdminController::class, 'addProduct'])->name('addprod
 Route::get('admindeleteproduct/{id}', [AdminController::class, 'deleteProduct']);
 
 Route::get('/admincustomermanagement', function(){
-    return view('admincustomermanagement');
+    return view('admincustomermanagement', [
+        'users' => User::all()
+    ]);
 });
+
+Route::get('admineditcustomer/{id}', function($id){
+    $pd = UserDetails::where('users_id',$id)->select('personal_details_info')->pluck('personal_details_info')->first();
+
+    return view('admineditcustomer', [
+        'user' => User::where('id',$id)->first(),
+        'details' => UserDetails::where('users_id', $id)->first(),
+        'personaldetails' => PersonalDetails::where('personal_details_id', $pd)->first()
+    ]);
+
+});
+
+//update/edit/add customer details
+Route::post('updatedetails', [AdminController::class, 'updateCustomerDetails'])->name('updatedetails');
+
+//delete customer
+Route::get('admindeletecustomer/{id}', [AdminController::class, 'deleteCustomer']);
 
 Route::get('/adminordermanagement', function(){
     return view('adminordermanagement', [

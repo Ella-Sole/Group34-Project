@@ -11,28 +11,37 @@
     <main>
         <h1 class="admin-title">Customer Management</h1>
         <table style="width:100%">
+
+        <!--message that will display for successful customer details update/delete -->
+        @if (session()->has('success'))
+            <h2 style="color:red" align="center"> {{session('success')}}</h2>
+        @endif
+            
+        @foreach($users as $u)
                 <tr>
                     <th>Customer ID</th>
-                    <th>Full Name</th>
                     <th>Email Address</th>
-                    <th>Phone Number</th>
-                    <th>Address</th>
                     <th>Registration Date</th>
-                    <!--<th>Order Count</th>-->
-                    <!--<th>Status</th>-->
                     <th>Actions</th>
                 </tr>
                 <tr>
-                    <td>#C1001</td>
-                    <td>Jane Doe</td>
-                    <td>jane@example.com</td>
-                    <td>+1234567890</td>
-                    <td>123 Main St, City</td>
-                    <td>2025-03-01</td>
-                    <!--<td>5</td>-->
-                    <!--<td>Active</td>-->
-                    <td><button>Edit</button><button>Delete</button></td>
+                    <td>#{{$u['id']}}</td>
+                    <td>{{$u['email']}}</td>
+                    <td>{{$u['created_at']}}</td>
+                    
+                    <td>
+                        <a href = "{{ url('admineditcustomer/' . $u->id) }}">
+                            <button>View/Update Details</button>
+                        </a>
+
+                        <a href = "{{ url('admindeletecustomer/' . $u->id) }}">
+                            <button>Delete</button>
+                        </a>
+                        
+                    </td>
                 </tr>
+
+        @endforeach
         </table>
     </main>
 
