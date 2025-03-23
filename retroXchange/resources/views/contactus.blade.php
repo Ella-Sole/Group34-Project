@@ -17,16 +17,17 @@
 
             <div class = "contact-us-form">
                 <section>
-                    <form>
-                        <label for="name"> Full Name:</lable><br>
+                    <form id = "contactForm">
+                        <label for="name"> Full Name:</label><br>
                             <input type="text" id="name" name="name"><br>
                             <label for="email address"> Email Address:</label><br>
                             <input type="text" id="email" name="email"> <br>
                             <label for = "query">Your Query:</label>
                             <textarea id="query" name="query" rows="10" cols="40"> 
                             </textarea> <br>
-                            <input type="submit" value="submit">
+                            <input type="submit" value="submit" onclick = "contactus()">
                     </form>
+                            <p id="successMessage" style="color: green; display: none;">Success! Your message has been sent.</p>
                 </section>
             </div>
         </main>
