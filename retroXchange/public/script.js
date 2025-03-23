@@ -125,4 +125,9 @@ document.querySelector(".sidemenu").classList.toggle("show");
             document.body.classList.add("dark-mode");
         }
     };
-
+function contactus(){
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent actual form submission
+            document.getElementById('successMessage').style.display = 'block';
+        });
+}
