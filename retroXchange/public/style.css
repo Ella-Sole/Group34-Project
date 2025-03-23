@@ -785,11 +785,11 @@ a:visited {
     font-weight: 900;
     font-size: 20px;
     padding-top: 5px;
-    display: flex; /* Aligns price and basket in a row */
-    align-items: center; /* Keeps them vertically centered */
-    justify-content: space-between; /* Spaces price and basket apart */
-    gap: 10px; /* Adds space between price and basket */
-    width: 100%; /* Ensures they take full width */
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; 
+    gap: 10px; 
+    width: 100%; 
     z-index: 400;
 }
 
@@ -802,7 +802,7 @@ a:visited {
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    margin-left: auto; /* Pushes basket to the right */
+    margin-left: auto;
     top: -1%;
 }
 
@@ -836,22 +836,22 @@ a:visited {
     opacity: 60%;
     z-index: 400;
     font-size: 12px;
-    white-space: nowrap; /* Prevents text from wrapping */
-    max-width: 70%; /* Ensures it doesn't take too much space */
+    white-space: nowrap;
+    max-width: 70%; 
 }
 
 .product-rating{
-    text-align: right; /* Aligns text to the right */
-    align-self: flex-end; /* Pushes it to the right if using flexbox */
-    width: 100%; /* Ensures it spans the full width */
+    text-align: right;
+    align-self: flex-end;
+    width: 100%;
     font-size: 12px;
     opacity: 60%;
 }
 
 .product-wrap {
     display: flex;
-    justify-content: space-between; /* Brand on the left, rating on the right */
-    align-items: center; /* Aligns them vertically */
+    justify-content: space-between; 
+    align-items: center;
     width: 100%;
 }
 
