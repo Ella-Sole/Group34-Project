@@ -11,7 +11,7 @@
     <main>
         <section class="user-reviews-section">
             <div class="user-reviews-heading">
-                <!-- Ideally get the title from the data from the db and paste it here, also to get to this page, ideally should be similar to <a href = "{{ url('productview/' . $product->item_id) }}"> where the index decides the review page -->
+                <!-- Ideally get the title from the data from the db and paste it here, also to get to this page, ideally should be similar to <a href = "{ url('productview/' . $product->item_id) }"> where the index decides the review page -->
                 <h2 class="user-reviews-heading">Reviews for ...</h2>
 
                 <!-- just realised but the write review is too generic, it wont know which game the review is written for, so backend for that is also required -->
