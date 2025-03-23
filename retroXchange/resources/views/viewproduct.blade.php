@@ -28,6 +28,10 @@
                 <h1 align="center">{{ $product['item_name'] }}</h1>
             </div><br>
 
+            <div class="product-listing-rating">
+                <a href="{{ url('/reviewproduct') }}"><p class="product-rating">&#9733 &#9733 &#9733 &#9733 &#9733 5.0 (2)</p></a>
+            </div>
+
             <div class="product-listing-category">
                 <p>Category: {{ $product['category'] }}</p>
             </div><br>

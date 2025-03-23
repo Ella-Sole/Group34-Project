@@ -217,6 +217,12 @@ tr:nth-child(odd) {
     grid-template-rows: 1fr 8.7fr 1fr 1fr;
 }
 
+.review-page-layout {
+    display: grid;
+
+    grid-template-rows: 1fr 8.7fr 1fr 1fr;
+}
+
 .checkout-title {
     display: flex;
     align-items: center;
@@ -279,17 +285,6 @@ tr:nth-child(odd) {
     font-size: 120%;
 }
 
-.contact-us-form input {
-    display: flex;
-    flex-wrap: wrap;
-
-    margin: 10px;
-    border-radius: 10px;
-    border: 1px solid black;
-
-    font-size: 120%;
-}
-
 .contact-us-header {
     display: flex;
     align-items: center;
@@ -315,6 +310,17 @@ tr:nth-child(odd) {
     border: 1px solid black;
 
     resize: none;
+    font-size: 120%;
+}
+
+.contact-us-form input {
+    display: flex;
+    flex-wrap: wrap;
+
+    margin: 10px;
+    border-radius: 10px;
+    border: 1px solid black;
+
     font-size: 120%;
 }
 
@@ -988,23 +994,66 @@ input[type="submit"]:hover {
     transform: scale(1.2);
 }
 
-.review-body {
+/* .review-body {
     font-family: Arial, sans-serif;
     margin: 20px;
     padding: 20px;
     background-color: #f4f4f4;
+} */
+
+.review-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    grid-row: 1;
 }
-.review-container {
+
+.review-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    grid-row: 1;
+}
+
+.review-form textarea {
+    display: flex;
+    flex-wrap: wrap;
+    width: 97%;
+
+    margin: 10px;
+    border-radius: 10px;
+    border: 1px solid black;
+
+    resize: none;
+    font-size: 120%;
+}
+
+.review-form input {
+    display: flex;
+    flex-wrap: wrap;
+
+    margin: 10px;
+    border-radius: 10px;
+    border: 1px solid black;
+
+    font-size: 120%;
+}
+
+
+/* .review-container {
     max-width: 600px;
     margin: auto;
     background: green;
     padding: 20px;
     border-radius: 10px;
-}
-.review {
+} */
+
+/* .review {
     border-bottom: 1px solid #ddd;
     padding: 10px 0;
-}
+} */
 
 .product-listing-grid {
     display: grid;
@@ -1040,7 +1089,7 @@ input[type="submit"]:hover {
     grid-row: 2;
     grid-column: 4;
 
-    grid-template-rows: 2fr 0.5fr 2fr 2fr 0.5fr;
+    grid-template-rows: 2fr 0.2fr 0.5fr 2fr 2fr 0.5fr;
     background-color: #ddffbc;
 
     margin: 10px;
@@ -1058,10 +1107,27 @@ input[type="submit"]:hover {
     align-items: center;
 }
 
-.product-listing-category {
+.product-listing-rating {
     display: flex;
 
     grid-row: 2;
+    font-size: 160%;
+
+    padding-left: 6%;
+
+    justify-content: flex-start;
+    align-items: center;
+    cursor: pointer;
+}
+
+.product-listing-rating > a {
+    text-decoration: none;
+}
+
+.product-listing-category {
+    display: flex;
+
+    grid-row: 3;
     font-size: 160%;
 
     padding-left: 6%;
@@ -1074,7 +1140,7 @@ input[type="submit"]:hover {
     display: flex;
     
     font-size: 180%;
-    grid-row: 3;
+    grid-row: 4;
 
     padding-left: 5%;
 }
@@ -1086,7 +1152,7 @@ input[type="submit"]:hover {
     flex-direction: column;
 
     font-size: 160%;
-    grid-row: 4;
+    grid-row: 5;
 
     padding-right: 7%;
 }
@@ -1098,9 +1164,10 @@ input[type="submit"]:hover {
     flex-direction: column;
 
     font-size: 160%;
-    grid-row: 5;
+    grid-row: 6;
 
     padding-right: 7%;
 
     color: red;
 }
+
