@@ -1,7 +1,7 @@
 <br>
 <div class="footer-grid-content">
     <footer>
-        <p> &copy 2024 RetroXchange. All rights reserved</p>
+        <p> &copy 2025 RetroXchange. All rights reserved</p>
         <div>
             <nav class = "navigation-bar">
                 <div class = "navbar-item-login">

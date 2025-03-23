@@ -111,8 +111,16 @@ Route::get('/productlisting', function(){
     return view('productlisting');
 });
 
+Route::get('/reviewproduct', function(){
+    return view('reviewproduct');
+});
+
 Route::get('/login', function(){
     return view('login');
+});
+
+Route::get('/viewreviews', function(){
+    return view('viewreviews');
 });
 
 //login functionality calls the login function of usercontroller
