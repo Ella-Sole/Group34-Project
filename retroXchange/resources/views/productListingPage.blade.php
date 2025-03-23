@@ -42,7 +42,7 @@
                         <div class="product-info"> <!--product info from database -->
                             <p class="product-brand">{{ $product['category'] }}</p> <!-- Category -->
                             <h2 class="product-name">{{ $product['item_name'] }}</h2>
-                            <p class="product-rating">⭐⭐⭐⭐⭐</p>
+                            <p class="product-rating">&#9733 &#9733 &#9733 &#9733 &#9733 5.0 (2)</p>
                             <h2 class="price">£{{ $product['item_price'] }}</h2> <!-- price -->
 
                             @if ($product['item_stock'] <= 0)
