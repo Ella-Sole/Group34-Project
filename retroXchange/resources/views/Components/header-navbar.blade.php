@@ -12,15 +12,19 @@
             <div class="sidemenu">
                 <button class="sidemenu-dropdown-btn" class="active" >Games</button>
                 <div class="sidemenu-dropdown-container">
-                <a href="#">PlayStation 4 Games</a>
-                <a href="#">PlayStation 3 Games</a>
-                <a href="#">Xbox 360 Games</a>
-                <a href="#">Xbox One Games</a>
+                <a href="#">PlayStation Games</a>
+                <a href="#">Xbox Games</a>
                 <a href="#">Switch Games</a>
+                </div>
+                <button class="sidemenu-dropdown-btn">Consoles</button>
+                <div class="sidemenu-dropdown-container">
+                <a href="{{ url('/playstationconsoles') }}">PlayStation Consoles</a>
+                <a href="#">Xbox Consoles</a>
                 </div>
                 <button class="sidemenu-dropdown-btn">Settings</button>
                 <div class="sidemenu-dropdown-container">
-                <a href="#">Dark Mode</a>
+                <a class="sidemenu-dropdown-btn" onclick="toggleDarkMode()">Dark Mode</a>
+                <a href="{{ url('/usersettings') }}">Account</a>
                 </div>
                 <!--only seen if an admin is logged in-->
                 @if (Auth::check() && (Auth::user()->user_status == 'Admin'))

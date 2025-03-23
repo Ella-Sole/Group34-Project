@@ -17,6 +17,9 @@
             <div class="basket-item">
                 <h2>Your Shopping Basket</h2>
                 <p>Review your selected games before proceeding to checkout!</p>
+                @if (!Auth::check())
+                <p>Log in to view purchase history!</p>
+                @endif
             </div>
 
                 <!--checks if a basket variable has been set-->

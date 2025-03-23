@@ -15,6 +15,8 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PasswordResetController;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Auth;
+use App\Models\UserReviews;
+use App\Http\Controllers\ReviewsController;
 
 //display the returned view page when the url has '/..'
 
@@ -115,6 +117,33 @@ Route::get('/login', function(){
     return view('login');
 });
 
+Route::get('/viewreviews/{id}', function($id){
+    if(UserReviews::exists()){
+        $reviews = UserReviews::all();
+    } else {
+        $reviews = [];
+    }
+    return view('viewreviews', [
+        'reviews' => $reviews,
+        'product' => Product::where('item_id',$id)->first()
+    ]);
+});
+
+Route::get('/reviewproduct/{id}', function($id){
+    if(!Auth::check()){
+        return back()->with('error', 'You must be logged in to review a product!');
+
+    } else{
+
+    return view('reviewproduct', [
+        'product' => Product::where('item_id',$id)->first()
+
+    ]);
+    }
+});
+
+Route::post('submitreview',[ReviewsController::class, 'submitReview'])->name('submitreview');
+
 //login functionality calls the login function of usercontroller
 Route::post('loginUser', [UserController::class, 'login'])->name('loginUser');
 
@@ -170,10 +199,6 @@ Route::get('productview/{id}', function($id){
 
         'product' => Product::where('item_id',$id)->first()
     ]);
-});
-
-Route::get('/review',function(){
-    return view('review');
 });
 
 Route::post('password/request-reset', [PasswordResetController::class, 'requestPasswordReset']);

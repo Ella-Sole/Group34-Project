@@ -139,5 +139,68 @@ class DatabaseSeeder extends Seeder
             'category' => 'ps4',
         ]);
 
+        DB::table('items_for_sale')->insert([
+            'item_price' => 17,
+            'item_name' => 'Nintendo Wii Remote',
+            'item_stock' => 3,
+            'item_image' => '613MCdoJsKL._AC_SX679_',
+            'item_description' => 'Remote controller',
+            'category' => 'wii console',
+        ]);
+
+        DB::table('items_for_sale')->insert([
+            'item_price' => 18,
+            'item_name' => 'Ceozon Ps3 Controller',
+            'item_stock' => 12,
+            'item_image' => '61s0qrNZJ9L._AC_SX385_',
+            'item_description' =>'Dual Vibration',
+            'category' => 'ps3 console',
+        ]);
+
+        DB::table('items_for_sale')->insert([
+            'item_price' => 20,
+            'item_name' => 'Generic Ps4 Controller',
+            'item_stock' => 5,
+            'item_image' => '71AELNYsd1L._AC_SX466_',
+            'item_description' => 'Gamepad Joystick',
+            'category' => 'ps4 console',
+        ]);
+
+        DB::table('items_for_sale')->insert([
+            'item_price' => 90,
+            'item_name' => 'Xbox 360 Elite Console',
+            'item_stock' => 10,
+            'item_image' => '61IlbDSM31L._AC_SY500_',
+            'item_description' => '120GB Hard Drive',
+            'category' => 'xbox 360 console',
+        ]);
+
+        DB::table('items_for_sale')->insert([
+            'item_price' => 213,
+            'item_name' => 'Sony PlayStation 4 Console',
+            'item_stock' => 13,
+            'item_image' => '61nxfegwhDL.__AC_SX300_SY300_QL70_ML2_',
+            'item_description' => '1TB Black (Renewed)',
+            'category' => 'ps4 console',
+        ]);
+
+        DB::table('items_for_sale')->insert([
+            'item_price' => 160,
+            'item_name' => 'Microsoft Xbox One S',
+            'item_stock' => 12,
+            'item_image' => '61KtYZcXXML.__AC_SY300_SX300_QL70_ML2_',
+            'item_description' => '500GB (renewed)',
+            'category' => 'xbox one console',
+        ]);
+
+        DB::table('items_for_sale')->insert([
+            'item_price' => 250,
+            'item_name' => 'Nintendo Switch (OLED Model)',
+            'item_stock' => 3,
+            'item_image' => '71m0aFDqciL._AC_SX522_',
+            'item_description' => '64GB white model',
+            'category' => 'switch console',
+        ]);
+
     }
 }

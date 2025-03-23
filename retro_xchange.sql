@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 22, 2025 at 06:15 PM
+-- Generation Time: Mar 23, 2025 at 05:13 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -74,7 +74,7 @@ CREATE TABLE `items_for_sale` (
   `item_stock` int(11) NOT NULL,
   `item_image` varchar(255) NOT NULL,
   `item_description` text DEFAULT NULL,
-  `category` enum('ps3','ps4','xbox one','xbox 360','switch','3ds','2ds','ds','gameboy colour','xbox','psp','psvita','wii','wiiu') NOT NULL
+  `category` enum('ps3','ps3 console','ps4','ps4 console','xbox one','xbox one console','xbox 360','xbox 360 console','switch','switch console','3ds','2ds','ds','gameboy colour','xbox','psp','psvita','wii','wii console','wiiu') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -89,7 +89,14 @@ INSERT INTO `items_for_sale` (`item_id`, `item_price`, `item_name`, `item_stock`
 (5, 15.00, 'GTA V', 15, '91Y4xD7QGNL.AC_SL1500', 'Action-adventure game', 'xbox 360'),
 (6, 5.99, 'FIFA 21', 0, '91KwPLW4BqL._AC_SL1500_', 'Football game', 'ps4'),
 (7, 30.00, 'Animal Crossing: New Horizons', 16, '81s8etnYPrL._AC_SL1500_', 'Social simulation game', 'switch'),
-(8, 30.00, 'Hades', 9, '81TzcunnxZL._AC_SL1500_', 'Rouguelike action RPG game', 'ps4');
+(8, 30.00, 'Hades', 9, '81TzcunnxZL._AC_SL1500_', 'Rouguelike action RPG game', 'ps4'),
+(9, 17.00, 'Nintendo Wii Remote', 3, '613MCdoJsKL._AC_SX679_', 'Remote controller', 'wii console'),
+(10, 18.00, 'Ceozon Ps3 Controller', 12, '61s0qrNZJ9L._AC_SX385_', 'Dual Vibration', 'ps3 console'),
+(11, 20.00, 'Generic Ps4 Controller', 5, '71AELNYsd1L._AC_SX466_', 'Gamepad Joystick', 'ps4 console'),
+(12, 90.00, 'Xbox 360 Elite Console', 10, '61IlbDSM31L._AC_SY500_', '120GB Hard Drive', 'xbox 360 console'),
+(13, 213.00, 'Sony PlayStation 4 Console', 13, '61nxfegwhDL.__AC_SX300_SY300_QL70_ML2_', '1TB Black (Renewed)', 'ps4 console'),
+(14, 160.00, 'Microsoft Xbox One S', 12, '61KtYZcXXML.__AC_SY300_SX300_QL70_ML2_', '500GB (renewed)', 'xbox one console'),
+(15, 250.00, 'Nintendo Switch (OLED Model)', 3, '71m0aFDqciL._AC_SX522_', '64GB white model', 'switch console');
 
 -- --------------------------------------------------------
 
@@ -151,7 +158,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (6, '2024_12_08_231044_create_personal_details_table', 1),
 (7, '2024_12_08_231045_create_purchase_history_table', 1),
 (8, '2024_12_08_231046_create_user_details_table', 1),
-(9, '2025_03_08_222219_create_purchased_items_table', 1);
+(9, '2025_03_08_222219_create_purchased_items_table', 1),
+(10, '2025_03_23_135747_create_user_reviews_table', 1);
 
 -- --------------------------------------------------------
 
@@ -265,9 +273,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `email`, `password`, `remember_token`, `created_at`, `updated_at`, `user_status`) VALUES
-(1, 'admin@gmail.com', '$2y$12$oY6HZl9Ke9lFvGqRhwbHAuC/uATM/p5pqxhEIvvcxq/Y8c5i5LTAW', NULL, '2025-02-10 20:00:01', NULL, 'Admin'),
-(2, 'user@gmail.com', '$2y$12$Ht5NGltvlo0bsmWwsBHJwufkUhWz2wtRWEWkPc/avSUALJbQ3JQxi', NULL, '2025-03-22 16:14:05', NULL, 'Normal'),
-(3, 'bob@gmail.com', '$2y$12$Cx/cNWjGgFzbwTr3uVU9quM8X3N2Kp.GD8.z3EmCu9h6npzumI6le', NULL, '2025-03-20 13:10:12', NULL, 'Normal');
+(1, 'admin@gmail.com', '$2y$12$Sp/9ZAyxEMbm0/40PtJDq.mHzohHoARSkIAKc3hRDfzL.V28JBUZ.', NULL, '2025-02-10 20:00:01', NULL, 'Admin'),
+(2, 'user@gmail.com', '$2y$12$xfISKMjQ.Cwqo3kN8SNyyeTF609cmBZRVpqtF12mc586c4rPsDNtC', NULL, '2025-03-22 16:14:05', NULL, 'Normal'),
+(3, 'bob@gmail.com', '$2y$12$0viqrrNiy3DCrIbKAyj7we4gFjMcZSCoojMuCLLgDos/hUOLKcsHO', NULL, '2025-03-20 13:10:12', NULL, 'Normal');
 
 -- --------------------------------------------------------
 
@@ -290,6 +298,19 @@ INSERT INTO `user_details` (`details_id`, `users_id`, `personal_details_info`, `
 (1, 1, 1, NULL),
 (2, 2, 2, NULL),
 (3, 3, 3, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_reviews`
+--
+
+CREATE TABLE `user_reviews` (
+  `review_id` int(11) NOT NULL,
+  `game_reviewed` int(11) NOT NULL,
+  `rating` enum('1','2','3','4','5') NOT NULL,
+  `review` varchar(9999) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Indexes for dumped tables
@@ -396,6 +417,13 @@ ALTER TABLE `user_details`
   ADD KEY `fkPaymentMethod` (`payment_method`);
 
 --
+-- Indexes for table `user_reviews`
+--
+ALTER TABLE `user_reviews`
+  ADD PRIMARY KEY (`review_id`),
+  ADD KEY `fkItemIdForReview` (`game_reviewed`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -409,7 +437,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `items_for_sale`
 --
 ALTER TABLE `items_for_sale`
-  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `jobs`
@@ -421,7 +449,7 @@ ALTER TABLE `jobs`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `payment_method`
@@ -454,6 +482,12 @@ ALTER TABLE `user_details`
   MODIFY `details_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
+-- AUTO_INCREMENT for table `user_reviews`
+--
+ALTER TABLE `user_reviews`
+  MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- Constraints for dumped tables
 --
 
@@ -477,6 +511,12 @@ ALTER TABLE `user_details`
   ADD CONSTRAINT `fkPaymentMethod` FOREIGN KEY (`payment_method`) REFERENCES `payment_method` (`payment_method_id`) ON DELETE CASCADE,
   ADD CONSTRAINT `fkPersonalDetails` FOREIGN KEY (`personal_details_info`) REFERENCES `personal_details` (`personal_details_id`) ON DELETE CASCADE,
   ADD CONSTRAINT `user_details_users_id_foreign` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `user_reviews`
+--
+ALTER TABLE `user_reviews`
+  ADD CONSTRAINT `fkItemIdForReview` FOREIGN KEY (`game_reviewed`) REFERENCES `items_for_sale` (`item_id`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

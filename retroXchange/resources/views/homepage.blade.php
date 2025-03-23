@@ -9,9 +9,10 @@
     <x-header-navbar> </x-header-navbar>
 
     <main>
+
         <!--message that will display either successful login/logout or item added to basket -->
         @if (session()->has('success'))
-            <h2 style="color:red" align="center"> {{session('success')}}</h2>
+            <p style="color:red"> {{session('success')}}</p>
         @endif
 
         <!--error message-->
@@ -19,11 +20,14 @@
             <h2 style="color:red" align="center"> {{session('error')}}</h2>
         @endif
 
-        <section class="product">
+        <section class="products">
             <h2 class="product-category">Games</h2>
-            {{-- <button class="pre-btn"><img src="{{ asset('images/arrow-button.png') }}" alt="back-button"></button>
-            <button class="nxt-btn"><img src="{{ asset('images/arrow-button.png') }}" alt="fwd-button"></button> --}}
-
+            <button class="pre-btn">
+            <img src="{{ asset('images/arrow-button.png') }}" alt="back-button" style="height: 25px; width: 25px;">
+            </button>
+            <button class="nxt-btn">
+            <img src="{{ asset('images/arrow-button.png') }}" alt="fwd-button" style="height: 25px; width: 25px;">
+            </button>
             <!-- class that holds all products-->
             <div class="product-container">
 
@@ -41,22 +45,26 @@
                         </div>
 
                         <div class="product-info"> <!--product info from database -->
-                            <p class="product-brand">{{ $product['category'] }}</p> <!-- Category -->
+                            <div class="product-wrap">
+                                <p class="product-brand">{{ $product['category'] }}</p> <!-- Category -->
+                                <p class="product-rating">&#9733 5.0</p>
+                            </div>
                             <h2 class="product-short-description">{{ $product['item_name'] }}</h2>
-                            <span class="price">£{{ $product['item_price'] }}</span> <!-- price -->
+                            <div class="product-wrap">
+                                <span class="price">£{{ $product['item_price'] }}</span> <!-- price -->
 
-                            @if ($product['item_stock'] <= 0)
-                                <!--if out of stock-->
-                                <p>OUT OF STOCK</p>
-                            @else <!--can only add to basket if in stock-->
-                                <!--make the button send this products info into basket-->
-                                <!--add item to basket when button is clicked, passing in item_id (**add confirmation message to user)-->
-                                <a href = "{{ url('addToBasket/' . $product->item_id) }}">
-                                    <button type = "submit" class="basket"><img src="{{ asset('images/basket-icon.png') }}"
-                                            alt="add-to-basket" style="height: 25px; width: 25px;"></button>
-                                </a>
-                            @endif
-
+                                @if ($product['item_stock'] == 0)
+                                    <!--if out of stock-->
+                                    <p>OUT OF STOCK</p>
+                                @else <!--can only add to basket if in stock-->
+                                    <!--make the button send this products info into basket-->
+                                    <!--add item to basket when button is clicked, passing in item_id (**add confirmation message to user)-->
+                                    <a href = "{{ url('addToBasket/' . $product->item_id) }}">
+                                        <button type = "submit" class="basket"><img src="{{ asset('images/basket-icon.png') }}"
+                                                alt="add-to-basket" style="height: 25px; width: 25px;"></button>
+                                    </a>
+                                @endif
+                            </div>
                         </div>
                     </div>
                 @endforeach

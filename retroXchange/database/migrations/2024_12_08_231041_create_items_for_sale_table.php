@@ -20,7 +20,11 @@ class CreateItemsForSaleTable extends Migration
             $table->integer('item_stock');
             $table->string('item_image');
             $table->text('item_description')->nullable();
-            $table->enum('category', ['ps3', 'ps4', 'xbox one', 'xbox 360', 'switch', '3ds', '2ds', 'ds', 'gameboy colour', 'xbox', 'psp', 'psvita', 'wii', 'wiiu']);
+            $table->enum('category', [
+                'ps3', 'ps3 console', 'ps4', 'ps4 console', 'xbox one', 'xbox one console', 
+                'xbox 360', 'xbox 360 console', 'switch', 'switch console', '3ds', '2ds', 
+                'ds', 'gameboy colour', 'xbox', 'psp', 'psvita', 'wii', 'wii console', 'wiiu'
+            ]);
         });
     }
 
