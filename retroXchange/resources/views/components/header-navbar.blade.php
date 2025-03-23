@@ -12,30 +12,32 @@
             <div class="sidemenu">
                 <button class="sidemenu-dropdown-btn" class="active" >Games</button>
                 <div class="sidemenu-dropdown-container">
-                <a href="#">PlayStation Games</a>
-                <a href="#">Xbox Games</a>
-                <a href="#">Switch Games</a>
+                <a href="{{ url('/playstationgames') }}">PlayStation Games</a>
+                <a href="{{ url('/xboxgames') }}">Xbox Games</a>
+                <a href="{{ url('/switchgames') }}">Switch Games</a>
                 </div>
                 <button class="sidemenu-dropdown-btn">Consoles</button>
                 <div class="sidemenu-dropdown-container">
                 <a href="{{ url('/playstationconsoles') }}">PlayStation Consoles</a>
-                <a href="#">Xbox Consoles</a>
+                <a href="{{ url('/xboxconsoles') }}">Xbox Consoles</a>
+                <a href="{{ url('/switchconsoles') }}">Switch Consoles</a>
                 </div>
                 <button class="sidemenu-dropdown-btn">Settings</button>
                 <div class="sidemenu-dropdown-container">
-                <a class="sidemenu-dropdown-btn" onclick="toggleDarkMode()">Dark Mode</a>
                 <a href="{{ url('/usersettings') }}">Account</a>
+                <a class="sidemenu-dropdown-btn" onclick="toggleDarkMode()">Dark Mode</a>
                 </div>
                 <!--only seen if an admin is logged in-->
                 @if (Auth::check() && (Auth::user()->user_status == 'Admin'))
                 <button class="sidemenu-dropdown-btn">Admin Management</button>
                 <div class="sidemenu-dropdown-container">
                     <a href="{{ url('/admininventory') }}">Inventory</a>
-                    <a href="{{ url('/adminordermanagement') }}">Order Management</a>
+                    <a href="{{ url('/adminmanagement') }}">Order Management</a>
                     <a href="{{ url('/admincustomermanagement') }}">Customer Management</a>
                 <img></img>
                 </div>
                 @endif
+
             </div>
         </div>
         <div class="logo-div">
@@ -88,6 +90,9 @@
                     <a href="{{ url('/products') }}">GAMES</a>
                 </div>
                 <div class="navbar-item">
+                    <a href="{{ url('/products-consoles') }}">CONSOLES</a>
+                </div>
+                <div class="navbar-item">
                     <a href="{{ url('/about') }}">ABOUT US</a>
                 </div>
                 <div class="navbar-item">
@@ -97,7 +102,7 @@
                 @if (Auth::check())
                 <div class="navbar-item">
                     <a href="{{ url('/logout') }}">LOG OUT</a>
-                </div>
+                </div>  
                 @endif
                 
                 
