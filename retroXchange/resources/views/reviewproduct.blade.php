@@ -15,22 +15,29 @@
                 <h1>Review</h1>
             </div>
 
+            @if (session()->has('error'))
+                <h2 style="color:red" align="center"> {{session('error')}}</h2>
+            @endif
+
             <div class = "review-form">
                 <section>
-                    <form>
-                        <label for = "query">Your Review:</label>
+                    <form method="post" action="{{ route ('submitreview') }}">
+                        @csrf
+                        <input type="hidden" name="pid" value="{{ $product->item_id }}">
+                        <label for = "review">Your Review:</label><br>
+
+                        <label for="rating">Choose a rating</label>
                         <select name="rating" id="rating" required>
-                            <option value="">Choose a rating</option>
                             <option value="1">&#9733</option>
                             <option value="2">&#9733&#9733</option>
                             <option value="3">&#9733&#9733&#9733</option>
                             <option value="4">&#9733&#9733&#9733&#9733</option>
                             <option value="5">&#9733&#9733&#9733&#9733&#9733</option>
                         </select><br>
-                        <textarea id="query" name="query" rows="10" cols="40" required> 
+
+                        <textarea id="review" name="review" rows="10" cols="40" required> 
                         </textarea> <br>
-                        <!-- Magical button that sends the data to the db -->
-                        <input type="submit" value="submit">
+                        <input type="submit" value="Submit Review">
                     </form>
                 </section>
             </div>

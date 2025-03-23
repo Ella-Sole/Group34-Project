@@ -29,7 +29,7 @@
             </div><br>
 
             <div class="product-listing-rating">
-                <a href="{{ url('/viewreviews') }}"><p class="product-rating">&#9733 &#9733 &#9733 &#9733 &#9733 5.0 (2)</p></a>
+                <a href="{{ url('/viewreviews/' . $product->item_id) }}"><p class="product-rating">&#9733 &#9733 &#9733 &#9733 &#9733 5.0 (2)</p></a>
             </div>
 
             <div class="product-listing-category">
