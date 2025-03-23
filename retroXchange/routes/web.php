@@ -119,6 +119,10 @@ Route::get('/login', function(){
     return view('login');
 });
 
+Route::get('/viewreviews', function(){
+    return view('viewreviews');
+});
+
 //login functionality calls the login function of usercontroller
 Route::post('loginUser', [UserController::class, 'login'])->name('loginUser');
 

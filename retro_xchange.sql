@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 22, 2025 at 06:15 PM
+-- Generation Time: Mar 23, 2025 at 06:01 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -291,6 +291,20 @@ INSERT INTO `user_details` (`details_id`, `users_id`, `personal_details_info`, `
 (2, 2, 2, NULL),
 (3, 3, 3, NULL);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_reviews`
+--
+
+CREATE TABLE `user_reviews` (
+  `review_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `game_reviewed` int(50) NOT NULL,
+  `rating` enum('1','2','3','4','5') NOT NULL,
+  `review` varchar(9999) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
 --
 -- Indexes for dumped tables
 --
@@ -396,6 +410,14 @@ ALTER TABLE `user_details`
   ADD KEY `fkPaymentMethod` (`payment_method`);
 
 --
+-- Indexes for table `user_reviews`
+--
+ALTER TABLE `user_reviews`
+  ADD PRIMARY KEY (`review_id`),
+  ADD KEY `fkItemIdForReview` (`game_reviewed`),
+  ADD KEY `fkUserDetails` (`user_id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -454,6 +476,12 @@ ALTER TABLE `user_details`
   MODIFY `details_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
+-- AUTO_INCREMENT for table `user_reviews`
+--
+ALTER TABLE `user_reviews`
+  MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- Constraints for dumped tables
 --
 
@@ -477,6 +505,13 @@ ALTER TABLE `user_details`
   ADD CONSTRAINT `fkPaymentMethod` FOREIGN KEY (`payment_method`) REFERENCES `payment_method` (`payment_method_id`) ON DELETE CASCADE,
   ADD CONSTRAINT `fkPersonalDetails` FOREIGN KEY (`personal_details_info`) REFERENCES `personal_details` (`personal_details_id`) ON DELETE CASCADE,
   ADD CONSTRAINT `user_details_users_id_foreign` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `user_reviews`
+--
+ALTER TABLE `user_reviews`
+  ADD CONSTRAINT `fkItemIdForReview` FOREIGN KEY (`game_reviewed`) REFERENCES `items_for_sale` (`item_id`),
+  ADD CONSTRAINT `fkUserDetails` FOREIGN KEY (`user_id`) REFERENCES `purchased_items` (`purchase_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
