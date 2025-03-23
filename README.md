@@ -26,9 +26,15 @@ Admin Order Management Page:
     Displays the details of all current orders, along with the status of the item, and an option to process an order (update the status) and an option to delete orders.
 
 Views: retroXchange\resources\views
+
 Models: retroXchange\app\Models
+
 Controllers: retroXchange\app\Http\Controllers
+
 Routes: retroXchange\routes\web.php
+
 Database migrations: retroXchange\database\migrations
+
 Database seeder file: retroXchange\database\seeders
+
 JS and CSS files: retroXchange\public
