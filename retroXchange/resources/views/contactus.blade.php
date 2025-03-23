@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <x-head>
-    @section('title', 'Contact Us')
 </x-head>
         
 
