@@ -12,7 +12,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\OrdersController;
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\PasswordResetController;
+use App\Http\Controllers\ForgotPasswordController;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Auth;
 use App\Models\UserReviews;
@@ -188,10 +188,7 @@ Route::post('/completecheckout/{total}', [CheckoutController::class, 'completeCh
 //searches for product using the controller's search function
 Route::get('/search/', 'App\Http\Controllers\ProductController@search')->name('search');
 
-//password reset page
-Route::get('/reset', function(){
-    return view('reset');
-});
+
 
 //view individual product page
 Route::get('productview/{id}', function($id){
@@ -208,3 +205,11 @@ Route::post('password/reset', [PasswordResetController::class, 'resetPassword'])
 Route::get('/userpayment',function(){
     return view('userpayment');
 });
+//shows the form for the password reset
+Route::get('forget-password', [ForgotPasswordController::class, 'showForgetPasswordForm'])->name('forget.password.get');
+//submits the password reset
+Route::post('forget-password', [ForgotPasswordController::class, 'submitForgetPasswordForm'])->name('forget.password.post'); 
+//emails the password reset
+Route::get('reset-password/{token}', [ForgotPasswordController::class, 'showResetPasswordForm'])->name('reset.password.get');
+//submits the users new password
+Route::post('reset-password', [ForgotPasswordController::class, 'submitResetPasswordForm'])->name('reset.password.post');	
