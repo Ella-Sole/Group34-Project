@@ -69,12 +69,6 @@
             
 
         </div>
-
-        <div class="reviews-per-product">
-            
-        </div>
-
-
     </div>
 
     <x-footer> </x-footer>
