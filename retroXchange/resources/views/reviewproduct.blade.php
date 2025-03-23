@@ -29,6 +29,7 @@
                         </select><br>
                         <textarea id="query" name="query" rows="10" cols="40" required> 
                         </textarea> <br>
+                        <!-- Magical button that sends the data to the db -->
                         <input type="submit" value="submit">
                     </form>
                 </section>
