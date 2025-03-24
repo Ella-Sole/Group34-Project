@@ -1,9 +1,9 @@
 APP_NAME=Laravel
 APP_ENV=local
-APP_KEY=base64:pu415Wt1Ng0u7nZjpn6nz4usFBo1dBNjTYWq7Hcwx0A=
+APP_KEY=base64:ZzBVthkMfIV1RtPeYziA/aB+H7nEg1CDazAW4s85NFE=
 APP_DEBUG=true
 APP_TIMEZONE=UTC
-APP_URL=
+APP_URL=http://localhost
 
 APP_LOCALE=en
 APP_FALLBACK_LOCALE=en
@@ -24,9 +24,9 @@ LOG_LEVEL=debug
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE=cs2team34_db
-DB_USERNAME=cs2team34
-DB_PASSWORD=5kPZi30uZCDNjHD
+DB_DATABASE=retro_xchange
+DB_USERNAME=root
+DB_PASSWORD=
 #changed from database to file to fix error
 SESSION_DRIVER=file
 #
