@@ -38,3 +38,7 @@ Database migrations: retroXchange\database\migrations
 Database seeder file: retroXchange\database\seeders
 
 JS and CSS files: retroXchange\public
+
+To allow connection to a locally hosted database, rename .env.example to .env
+Ensure a vendor folder is installed within the local copy of the retroXchange folder by doing the 'composer install' command
+To locally run the website, do the command 'php artisan serve'
