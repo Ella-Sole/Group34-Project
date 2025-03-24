@@ -24,8 +24,8 @@
         </div>
 
         <div class="product-listing-reviews">
-            <a href="{{ url('/viewreviews/' . $product->item_id) }}">
-                <h2 class="product-listing-rating">User Rating: &#9733 &#9733 &#9733 &#9733 &#9733 4.6 (20)</h2>
+            <a href="{{ url('/viewreviews/' . $product->item_id) }}" class="product-listing-rating">
+                <h2 class="product-listing-rating-text">User Rating: &#9733 &#9733 &#9733 &#9733 &#9733 4.6 (20)</h2>
             </a>
         </div>
 

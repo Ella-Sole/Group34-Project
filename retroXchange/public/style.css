@@ -1356,6 +1356,7 @@ input[type="submit"]:hover {
 }
 
 .review-text {
+    color: #000000;
     font-size: 110%;
 }
 
@@ -1454,7 +1455,7 @@ input[type="submit"]:hover {
     margin-left: 3%;
 }
 
-.product-listing-rating {
+.product-listing-rating-text {
     display: flex;
 
     grid-row: 2;
@@ -1464,10 +1465,20 @@ input[type="submit"]:hover {
     align-items: center;
     cursor: pointer;
 
-    
+    text-decoration: none;
+    outline: none;
+    box-shadow: none;
 }
 
-.product-listing-reviews > a {
+.product-listing-rating {
+    text-decoration: none;
+    outline: none;
+    box-shadow: none;
+}
+
+.product-listing-rating:focus
+.product-listing-rating:active {
+    outline: none;
     text-decoration: none;
 }
 
@@ -1915,5 +1926,21 @@ tr:nth-child(odd) {
 }
 
 .dark-mode .no-white-background {
+    background-color: #1b3a2f;
+}
+
+.dark-mode .user-reviews-heading > a {
+    background-color: #1b3a2f;
+}
+
+.dark-mode .written-review {
+    background-color: #1b3a2f;
+}
+
+.dark-mode .review-text {
+    color: white;
+}
+
+.dark-mode .order-details {
     background-color: #1b3a2f;
 }
