@@ -171,6 +171,72 @@ Route::get('/products', function(){
     ]);
 });
 
+Route::get('/products-consoles', function(){
+    return view('productListingPageConsoles', [
+        'products' => Product::all()
+    ]);
+});
+
+Route::get('/productlisting', function(){
+    return view('productlisting');
+});
+
+Route::get('/productListingPageConsoles', function(){
+    return view('productListingPageConsoles');
+});
+
+Route::get('/playstationconsoles', function () {
+    $products = Product::whereIn('category', [
+        'ps3 console', 'ps4 console'
+    ])->get();
+
+    return view('playstationconsoles', compact('products'));
+});
+
+Route::get('/playstationgames', function () {
+    $products = Product::whereIn('category', [
+        'ps3', 'ps4'
+    ])->get();
+
+    return view('playstationgames', compact('products'));
+});
+
+Route::get('/xboxconsoles', function () {
+    $products = Product::whereIn('category', [
+        'xbox one console', 'xbox 360 console'
+    ])->get();
+
+    return view('xboxconsoles', compact('products'));
+});
+
+Route::get('/xboxgames', function () {
+    $products = Product::whereIn('category', [
+        'xbox one', 'xbox 360'
+    ])->get();
+
+    return view('xboxgames', compact('products'));
+});
+
+Route::get('/switchconsoles', function () {
+    $products = Product::whereIn('category', [
+        'switch console'
+    ])->get();
+
+    return view('switchconsoles', compact('products'));
+});
+
+Route::get('/switchgames', function () {
+    $products = Product::whereIn('category', [
+        'switch'
+    ])->get();
+
+    return view('switchgames', compact('products'));
+});
+
+Route::get('/usersettings', function(){
+    return view('usersettings');
+});
+
 //uses showBasket function to display the basket content in the basket page
 Route::get('/basket', [ProductController::class,'showBasket'])->name('basket');
 
