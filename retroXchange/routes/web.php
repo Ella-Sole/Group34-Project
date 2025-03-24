@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Auth;
 use App\Models\UserReviews;
 use App\Http\Controllers\ReviewsController;
+use App\Http\Controllers\SettingsController;
 
 //display the returned view page when the url has '/..'
 
@@ -236,6 +237,13 @@ Route::get('/switchgames', function () {
 Route::get('/usersettings', function(){
     return view('usersettings');
 });
+
+Route::post('updateemail', [SettingsController::class, 'updateEmail'])->name('updateemail');
+
+Route::post('updatename', [SettingsController::class, 'updateName'])->name('updatename');
+
+Route::get('/deleteaccount', [SettingsController::class, 'deleteAccount'])->name('deleteaccount');
+
 
 //uses showBasket function to display the basket content in the basket page
 Route::get('/basket', [ProductController::class,'showBasket'])->name('basket');

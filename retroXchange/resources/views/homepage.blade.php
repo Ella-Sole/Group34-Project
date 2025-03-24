@@ -33,7 +33,7 @@
 
         <!-- message that will display either successful login/logout or item added to basket -->
         @if (session()->has('success'))
-            <p style="color:red"> {{ session('success') }}</p>
+            <h2 style="color:red"> {{ session('success') }}</h2>
         @endif
 
         <!--error message-->
