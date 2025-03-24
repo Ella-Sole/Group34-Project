@@ -62,6 +62,13 @@ body {
     padding-top: 7.5vh;
 }
 
+.background page-layout {
+    display: grid;
+
+    grid-template-rows: 1fr 9.7fr 1fr;
+    padding-top: 7.5vh;
+}
+
 .games-page-layout {
     display: grid;
 
