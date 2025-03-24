@@ -4,29 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us</title>
-    <script>
-        function validateForm(event) {
-            event.preventDefault(); // Prevent form submission
-            
-            let name = document.getElementById("name").value.trim();
-            let email = document.getElementById("email").value.trim();
-            let query = document.getElementById("query").value.trim();
-            let errorMessages = [];
-            
-            if (name === "") errorMessages.push("Full Name is missing");
-            if (email === "") errorMessages.push("Email Address is missing");
-            if (query === "") errorMessages.push("Your Query is missing");
-            
-            let messageDiv = document.getElementById("message");
-            if (errorMessages.length > 0) {
-                messageDiv.innerHTML = "<b>Missing Fields:</b><br>" + errorMessages.join("<br>");
-                messageDiv.style.color = "red";
-            } else {
-                messageDiv.innerHTML = "Success the querey has been sent!";
-                messageDiv.style.color = "green";
-            }
-        }
-    </script>
 </head>
 <body class="contact-us-page-layout background">
     <x-header-navbar></x-header-navbar>
