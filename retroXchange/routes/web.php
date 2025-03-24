@@ -12,7 +12,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\OrdersController;
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\PasswordResetController;
+use App\Http\Controllers\ForgotPasswordController;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Auth;
 use App\Models\UserReviews;
@@ -171,6 +171,72 @@ Route::get('/products', function(){
     ]);
 });
 
+Route::get('/products-consoles', function(){
+    return view('productListingPageConsoles', [
+        'products' => Product::all()
+    ]);
+});
+
+Route::get('/productlisting', function(){
+    return view('productlisting');
+});
+
+Route::get('/productListingPageConsoles', function(){
+    return view('productListingPageConsoles');
+});
+
+Route::get('/playstationconsoles', function () {
+    $products = Product::whereIn('category', [
+        'ps3 console', 'ps4 console'
+    ])->get();
+
+    return view('playstationconsoles', compact('products'));
+});
+
+Route::get('/playstationgames', function () {
+    $products = Product::whereIn('category', [
+        'ps3', 'ps4'
+    ])->get();
+
+    return view('playstationgames', compact('products'));
+});
+
+Route::get('/xboxconsoles', function () {
+    $products = Product::whereIn('category', [
+        'xbox one console', 'xbox 360 console'
+    ])->get();
+
+    return view('xboxconsoles', compact('products'));
+});
+
+Route::get('/xboxgames', function () {
+    $products = Product::whereIn('category', [
+        'xbox one', 'xbox 360'
+    ])->get();
+
+    return view('xboxgames', compact('products'));
+});
+
+Route::get('/switchconsoles', function () {
+    $products = Product::whereIn('category', [
+        'switch console'
+    ])->get();
+
+    return view('switchconsoles', compact('products'));
+});
+
+Route::get('/switchgames', function () {
+    $products = Product::whereIn('category', [
+        'switch'
+    ])->get();
+
+    return view('switchgames', compact('products'));
+});
+
+Route::get('/usersettings', function(){
+    return view('usersettings');
+});
+
 //uses showBasket function to display the basket content in the basket page
 Route::get('/basket', [ProductController::class,'showBasket'])->name('basket');
 
@@ -188,10 +254,7 @@ Route::post('/completecheckout/{total}', [CheckoutController::class, 'completeCh
 //searches for product using the controller's search function
 Route::get('/search/', 'App\Http\Controllers\ProductController@search')->name('search');
 
-//password reset page
-Route::get('/reset', function(){
-    return view('reset');
-});
+
 
 //view individual product page
 Route::get('productview/{id}', function($id){
@@ -208,3 +271,11 @@ Route::post('password/reset', [PasswordResetController::class, 'resetPassword'])
 Route::get('/userpayment',function(){
     return view('userpayment');
 });
+//shows the form for the password reset
+Route::get('forget-password', [ForgotPasswordController::class, 'showForgetPasswordForm'])->name('forget.password.get');
+//submits the password reset
+Route::post('forget-password', [ForgotPasswordController::class, 'submitForgetPasswordForm'])->name('forget.password.post'); 
+//emails the password reset
+Route::get('reset-password/{token}', [ForgotPasswordController::class, 'showResetPasswordForm'])->name('reset.password.get');
+//submits the users new password
+Route::post('reset-password', [ForgotPasswordController::class, 'submitResetPasswordForm'])->name('reset.password.post');	

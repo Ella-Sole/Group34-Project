@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <x-head>
-    @section('title', 'Games')
+    @section('title', 'Consoles')
 </x-head>
 
 <body class = "games-page-layout background">
@@ -23,7 +23,7 @@
             <x-product-card-buttons />
             <!-- class that holds all products-->
             <div class="product-container">
-                @foreach ($products->whereIn('category', ['ps3', 'ps4', 'xbox one', 'xbox 360', 'switch']) as $product)
+                @foreach ($products->whereIn('category', ['ps3 console', 'ps4 console', 'xbox one console', 'xbox 360 console', 'switch console', 'wii console']) as $product)
                 <x-product-card :product="$product"/>
                 @endforeach
             </div>
