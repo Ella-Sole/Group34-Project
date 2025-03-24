@@ -8,7 +8,21 @@
 <body class="contact-us-page-layout background">
     <x-header-navbar> </x-header-navbar>
 
-    <main>
+    <main class="main-homepage">
+
+        <div style="height:30px;"></div>
+
+        <div class="welcome-homepage">
+            <h1>Welcome to RetroXchange</h1>
+        </div>
+
+        <div class="about-us-logo">
+            <img src="{{ asset('images/logo.png') }}" alt="retroxchange-logo">
+        </div>
+
+        <div class="homepage-slogan">
+            <h2>Your Marketplace for Timeless Treasures</h2>
+        </div>
 
         {{-- //for debugging
         @if (Auth::check())
@@ -20,6 +34,11 @@
         <!-- message that will display either successful login/logout or item added to basket -->
         @if (session()->has('success'))
             <p style="color:red"> {{ session('success') }}</p>
+        @endif
+
+        <!--error message-->
+        @if (session()->has('error'))
+            <h2 style="color:red" align="center"> {{ session('error') }}</h2>
         @endif
 
         <div style="height:30px;"></div>

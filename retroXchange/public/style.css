@@ -599,6 +599,11 @@ html, body {
     height: auto;
 }
 
+.main-homepage > .about-us-logo > img {
+    width: 15rem;
+    height: auto;
+}
+
 .about-us-company-story {
     display: flex;
 
@@ -1336,6 +1341,20 @@ input[type="submit"]:hover {
 
 .review-text {
     font-size: 110%;
+}
+
+.welcome-homepage {
+    display: flex;
+    
+    justify-content: center;
+    align-items: center;
+}
+
+.homepage-slogan {
+    display: flex;
+    
+    justify-content: center;
+    align-items: center;
 }
 
 /***********************************PRODUCTS LISTING PAGE************************/
