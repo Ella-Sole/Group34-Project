@@ -318,7 +318,7 @@ html, body {
     max-width: 80vw;
     position: fixed;
     z-index: 999;
-    top: 60px;
+    top: 74px;
     left: 0;
     background-color: #91c788;
     overflow-x: hidden;
@@ -327,6 +327,9 @@ html, body {
     transition: transform 0.3s ease-in-out;
     display: block;
     margin-left: 0.52rem;
+
+    border-right: 1px solid black;
+    border-top: 1px solid black;
 
     left: -0.5%;
 }
@@ -377,7 +380,7 @@ html, body {
 
 @media screen and (max-width: 768px) { 
     .sidemenu {
-        width: 200px; 
+        width: 200px;
     }
 }
 
@@ -535,6 +538,9 @@ html, body {
 
     grid-row: 2;
     grid-column: 1 / span 5;
+
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
 }
 
 .navigation-bar {
@@ -718,6 +724,9 @@ html, body {
     display: grid;
     grid-template-rows: auto 1fr;
     gap: 5px; 
+
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
 }
 
 .product-section img {
@@ -777,6 +786,9 @@ html, body {
     justify-content: space-between;
     align-items: center;
     height: 600px;
+
+    margin-left: 2%;
+    margin-right: 2%;
 }
 
 .product-card {
@@ -922,6 +934,8 @@ html, body {
     justify-content: center;
     align-items: center;
     width: 100%; 
+
+    border-top: 1px solid black;
 }
 
 .footer-grid-content img {
@@ -1700,22 +1714,20 @@ tr:nth-child(odd) {
     background-color: #2F4F4F;
 }
 
-.dark-mode .search-bar-background{
-    background-color: #2D6A4F;
-}
-
 .dark-mode .header-grid-layout{
     background-color: #1B3A2F;
 }
 
-.dark-mode .search-bar-background,
+
+/* Ideally the search bar should still be white */
+/* .dark-mode .search-bar-background,
 .dark-mode .search-bar-input{
     background-color: #2E2E2E;
 }
 
 .dark-mode .search-bar-button svg {
     fill: white;
-}
+} */
 
 .dark-mode .basket-icon:hover,
 .dark-mode .login-icon:hover{
@@ -1863,5 +1875,15 @@ tr:nth-child(odd) {
     border: 1px solid #2D6A4F;
 }
 
+.dark-mode .footer-grid-content,
+.dark-mode .navigation-bar-flexbox,
+.dark-mode .sidemenu,
+.dark-mode .products {
+    border: 1px solid #2D6A4F;
+}
 
 
+.dark-mode .shopping-basket-actions button{
+    background-color: #1B3A2F;
+    color: white;
+}

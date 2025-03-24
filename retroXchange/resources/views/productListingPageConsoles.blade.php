@@ -17,7 +17,7 @@
             <h2 style="color:red" align="center"> {{ session('error') }}</h2>
         @endif
 
-        <div style="height:30px;"></div>
+        <div style="height:50px;"></div>
 
         <section class="products">
             <h2 class="product-category">Playstation Consoles</h2>

@@ -48,8 +48,9 @@
         </div>
 
         <div class="logo-div">
-            <img src="{{ asset('images/logo.png') }}" alt="retroxchange-logo" class="retroxchange-logo">
+            <a href="{{ url('/') }}"><img src="{{ asset('images/logo.png') }}" alt="retroxchange-logo" class="retroxchange-logo"></a>
         </div>
+
         <div class="search-bar-placement">
             <div class="search-bar-background">
                 <form action="{{ route('search') }}" method="GET">

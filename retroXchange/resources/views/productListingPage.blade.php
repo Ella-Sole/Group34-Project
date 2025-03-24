@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <x-head>
-    @section('title', 'Games')
+    @section('title', 'retroXchange Games')
 </x-head>
 
 <body class = "games-page-layout background">
@@ -30,7 +30,7 @@
             </div>
         </section> --}}
 
-        <div style="height:30px;"></div>
+        <div style="height:50px;"></div>
 
         <section class="products">
             <h2 class="product-category">Playstation Games</h2>
