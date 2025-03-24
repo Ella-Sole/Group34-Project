@@ -22,6 +22,8 @@
             <p style="color:red"> {{ session('success') }}</p>
         @endif
 
+        <div style="height:30px;"></div>
+
         <section class="products">
             <h2 class="product-category">Recommended For You</h2>
             <x-product-card-buttons />
@@ -58,6 +60,8 @@
                 @endforeach
             </div>
         </section>
+
+        <div style="height:30px;"></div>
     </main>
 
     <x-footer> </x-footer>

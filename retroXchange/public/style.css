@@ -21,8 +21,20 @@ a:visited {
     background-color: #FEFFDE;
 }
 
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
 .background {
     background-color: #feffde;
+}
+
+.twitter{
+    background-color: white;
+    color: white;
 }
 
 
@@ -901,13 +913,10 @@ a:visited {
 .footer-grid-content {
     background-color: #ddffbc;
     display: flex;
-    flex: 1;
-
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-
-    grid-row: -1;
+    width: 100%; 
 }
 
 .footer-grid-content img {
