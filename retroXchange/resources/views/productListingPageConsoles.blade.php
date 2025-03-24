@@ -17,17 +17,47 @@
             <h2 style="color:red" align="center"> {{ session('error') }}</h2>
         @endif
 
-        <!-- Gaming products  -->
+        <div style="height:50px;"></div>
+
         <section class="products">
-            <h2 class="product-category">Games</h2>
+            <h2 class="product-category">Playstation Consoles</h2>
             <x-product-card-buttons />
             <!-- class that holds all products-->
             <div class="product-container">
-                @foreach ($products->whereIn('category', ['ps3 console', 'ps4 console', 'xbox one console', 'xbox 360 console', 'switch console', 'wii console']) as $product)
+                @foreach ($products->whereIn('category', ['ps3 console', 'ps4 console']) as $product)
                 <x-product-card :product="$product"/>
                 @endforeach
             </div>
         </section>
+
+        <div style="height:30px;"></div>
+
+        <section class="products">
+            <h2 class="product-category">Microsoft Consoles</h2>
+            <x-product-card-buttons />
+            <!-- class that holds all products-->
+            <div class="product-container">
+                @foreach ($products->whereIn('category', ['xbox one console', 'xbox 360 console']) as $product)
+                <x-product-card :product="$product"/>
+                @endforeach
+            </div>
+        </section>
+
+        <div style="height:30px;"></div>
+
+        <section class="products">
+            <h2 class="product-category">Nintendo Consoles</h2>
+            <x-product-card-buttons />
+            <!-- class that holds all products-->
+            <div class="product-container">
+                @foreach ($products->whereIn('category', ['switch console', 'wii console']) as $product)
+                <x-product-card :product="$product"/>
+                @endforeach
+            </div>
+        </section>
+
+        <div style="height:30px;"></div>
+
     </main>
     <x-footer> </x-footer>
     <script src="{{ asset('/script.js') }}"></script>

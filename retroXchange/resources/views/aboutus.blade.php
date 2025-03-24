@@ -11,7 +11,6 @@
 
     <x-header-navbar> </x-header-navbar>
 
-    <!-- Mostly Jeremiah's Work, Heavily Edited by Igors -->
     <main class="about-us-body">
         <div class="about-us-logo">
             <img src="{{ asset('images/logo.png') }}" alt="retroxchange-logo">
