@@ -43,23 +43,6 @@ window.onclick = function (event) {
     }
 }
 
-// function review() {
-//     document.getElementById("review").addEventListener("submit", function (event) {
-//         event.preventDefault();
-
-//         let name = document.getElementById("name").value;
-//         let review = document.getElementById("review").value;
-
-//         if (name && review) {
-//             let reviewDiv = document.createElement("div");
-//             reviewDiv.classList.add("review");
-//             reviewDiv.innerHTML = `<strong>${name}:</strong> <p>${review}</p>`;
-//         }
-
-//         document.getElementById("reviewForm").reset();
-//     }
-// }
-
 function updateProfile() {
     const name = document.getElementById("name").value;
     const email = document.getElementById("email").value;
@@ -127,13 +110,13 @@ document.querySelector(".sidemenu").classList.toggle("show");
     };
 function contactus(){
 document.getElementById('contactForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent actual form submission
+            event.preventDefault(); 
             document.getElementById('successMessage').style.display = 'block';
         });
 }
 
 function validateForm(event) {
-    event.preventDefault(); // Prevent form submission
+    event.preventDefault(); 
     
     let name = document.getElementById("name").value.trim();
     let email = document.getElementById("email").value.trim();
@@ -141,15 +124,20 @@ function validateForm(event) {
     let errorMessages = [];
     
     if (name === "") errorMessages.push("Full Name is missing");
-    if (email === "") errorMessages.push("Email Address is missing");
+    if (email === "") {
+        errorMessages.push("Email Address is missing");
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        errorMessages.push("Invalid Email Address format");
+    }
     if (query === "") errorMessages.push("Your Query is missing");
+
     
     let messageDiv = document.getElementById("message");
     if (errorMessages.length > 0) {
-        messageDiv.innerHTML = "<b>Missing Fields:</b><br>" + errorMessages.join("<br>");
+        messageDiv.innerHTML = "<b>Error:</b><br>" + errorMessages.join("<br>");
         messageDiv.style.color = "red";
     } else {
-        messageDiv.innerHTML = "Success the querey has been sent!";
+        messageDiv.innerHTML = "The query has been sent. Thank you!";
         messageDiv.style.color = "green";
     }
 }

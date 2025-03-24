@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us</title>
-</head>
 
-<body class="contact-us-page-layout background">
-    <x-header-navbar></x-header-navbar>
+
+<x-head>
+    @section('title', 'Contact Us')
+</x-head>
+
+<body class = "contact-us-page-layout background">
+    <x-header-navbar> </x-header-navbar>
     <div>
         <main>
-            <div class="contact-us-header">
+            <div class = "contact-us-header">
                 <h1>Contact Us</h1>
+                <h2>Your feedback means a lot to us</h2>
             </div>
-            <div class="contact-us-form">
+            <div class = "contact-us-form">
                 <section>
                     <form onsubmit="validateForm(event)">
                         <label for="name">Full Name:</label><br>
@@ -29,6 +30,8 @@
             </div>
         </main>
     </div>
-    <x-footer></x-footer>
+    <x-footer> </x-footer>
+    <script src="{{ asset('/script.js') }}"></script>
 </body>
+
 </html>
