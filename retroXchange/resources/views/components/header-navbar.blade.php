@@ -39,7 +39,7 @@
                 <button class="sidemenu-dropdown-btn">Admin Management</button>
                 <div class="sidemenu-dropdown-container">
                     <a href="{{ url('/admininventory') }}">Inventory</a>
-                    <a href="{{ url('/adminmanagement') }}">Order Management</a>
+                    <a href="{{ url('/adminordermanagement') }}">Order Management</a>
                     <a href="{{ url('/admincustomermanagement') }}">Customer Management</a>
                 <img></img>
                 </div>
