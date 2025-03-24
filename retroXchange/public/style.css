@@ -21,6 +21,11 @@ a:visited {
     background-color: #FEFFDE;
 }
 
+.background {
+    background-color: #feffde;
+}
+
+
 /******************************PAGE LAYOUTS********************************/
 
 .page-layout {
@@ -310,6 +315,12 @@ a:visited {
     transition: transform 0.3s ease-in-out;
     display: block;
     margin-left: 0.52rem;
+
+    left: -0.5%;
+}
+
+.sidemenu-btn:hover {
+    background-color: #63995b;
 }
 
 .sidemenu.show {
@@ -368,18 +379,20 @@ a:visited {
     display: grid;
     background-color: #91c788;
 
-    grid-template-columns: 1fr 3fr 50fr 2fr 2fr;
+    grid-template-columns: 1fr 3fr 48fr 2fr 2fr;
     grid-template-rows: 4.5fr 2fr;
     column-gap: 0.1rem;
 
     grid-row: 1;
 
     position: fixed; 
-    top: 0;  
+    top: 0;
     width: 100%; 
     z-index: 1000; 
-    padding: 0;
+
+    left: 0;
 }
+
 .retroxchange-logo {
     width: 3.5rem;
     height: auto;

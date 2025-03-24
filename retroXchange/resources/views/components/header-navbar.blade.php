@@ -24,9 +24,16 @@
                 </div>
                 <button class="sidemenu-dropdown-btn">Settings</button>
                 <div class="sidemenu-dropdown-container">
-                <a href="{{ url('/usersettings') }}">Account</a>
+                <!--only seen if a user is logged in-->    
+                @if (Auth::check())
+                    <a href="{{ url('/usersettings') }}">Account</a>
+                @endif
                 <a class="sidemenu-dropdown-btn" onclick="toggleDarkMode()">Dark Mode</a>
                 </div>
+                <!--display log out option if the user is logged in-->
+                @if (Auth::check())
+                    <a href="{{ url('/logout') }}">Log Out</a>
+                @endif
                 <!--only seen if an admin is logged in-->
                 @if (Auth::check() && (Auth::user()->user_status == 'Admin'))
                 <button class="sidemenu-dropdown-btn">Admin Management</button>
@@ -37,9 +44,9 @@
                 <img></img>
                 </div>
                 @endif
-
             </div>
         </div>
+
         <div class="logo-div">
             <img src="{{ asset('images/logo.png') }}" alt="retroxchange-logo" class="retroxchange-logo">
         </div>
@@ -61,6 +68,7 @@
                 </form>
             </div>
         </div>
+
         <div class="basket-icon">
             <a href="{{ url('/basket') }}">
                 <svg xmlns="http://www.w3.org/2000/svg" width="1.7rem" height="2rem" fill="currentColor"
@@ -70,6 +78,7 @@
                 </svg>
             </a>
         </div>
+        
         <div class="login-icon">
             <a href="{{ url('/login') }}">
                 <!-- This SVG was obtained from the bootstrap website -->
@@ -97,15 +106,7 @@
                 </div>
                 <div class="navbar-item">
                     <a href="{{ url('/contact') }}">CONTACT US</a>
-                </div>
-                <!--display log out option if the user is logged in-->
-                @if (Auth::check())
-                <div class="navbar-item">
-                    <a href="{{ url('/logout') }}">LOG OUT</a>
-                </div>  
-                @endif
-                
-                
+                </div>     
             </nav>
         </div>
     </div>

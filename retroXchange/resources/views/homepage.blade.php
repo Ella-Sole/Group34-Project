@@ -9,19 +9,19 @@
     <x-header-navbar> </x-header-navbar>
 
     <main>
-        <!--
-        //for debugging
+
+        {{-- //for debugging
         @if (Auth::check())
             <p> authenticated </p>
         @else
             <p> not authenticated </p>
+        @endif --}}
+
+        <!-- message that will display either successful login/logout or item added to basket -->
+        @if (session()->has('success'))
+            <p style="color:red"> {{ session('success') }}</p>
         @endif
 
-        //message that will display either successful login/logout or item added to basket
-        @if (session()->has('success'))
-            <p style="color:red"> {{session('success')}}</p>
-        @endif
--->
         <section class="products">
             <h2 class="product-category">Recommended For You</h2>
             <x-product-card-buttons />
@@ -31,7 +31,7 @@
                 <!-- class that holds individual products-->
                 <!--loop through the array $products, each element being a variable $product-->
                 @foreach ($products as $product)
-                <x-product-card :product="$product" />
+                    <x-product-card :product="$product" />
                 @endforeach
             </div>
         </section>
@@ -42,11 +42,11 @@
             <x-product-card-buttons />
             <div class="product-container">
                 @foreach ($products as $product)
-                <x-product-card :product="$product" />
+                    <x-product-card :product="$product" />
                 @endforeach
             </div>
         </section>
-        
+
         <div style="height:30px;"></div>
 
         <section class="products">
@@ -54,7 +54,7 @@
             <x-product-card-buttons />
             <div class="product-container">
                 @foreach ($products as $product)
-                <x-product-card :product="$product" />
+                    <x-product-card :product="$product" />
                 @endforeach
             </div>
         </section>

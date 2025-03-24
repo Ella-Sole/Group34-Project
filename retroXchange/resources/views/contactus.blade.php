@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us</title>
 </head>
+
 <body class="contact-us-page-layout background">
     <x-header-navbar></x-header-navbar>
     <div>
