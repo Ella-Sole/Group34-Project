@@ -22,6 +22,10 @@ a:visited {
     background-color: #feffde;
 }
 
+main{
+    padding-top: 80px;
+}
+
 html,
 body {
     height: 100%;
