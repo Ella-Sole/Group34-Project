@@ -46,5 +46,7 @@ Ensure a vendor folder is installed within the local copy of the retroXchange fo
 To locally run the website, do the command 'php artisan serve'
 
 Admin user login:
+
 admin@gmail.com
+
 password
