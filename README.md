@@ -44,3 +44,7 @@ To allow connection to a locally hosted database, rename .env.example to .env, i
 Ensure a vendor folder is installed within the local copy of the retroXchange folder by doing the 'composer install' command
 
 To locally run the website, do the command 'php artisan serve'
+
+Admin user login:
+admin@gmail.com
+password
